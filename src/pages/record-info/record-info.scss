@@ -1,0 +1,178 @@
+page-record-info {
+    .record-title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .record-wrp {
+        background-color: #F5F8FA;
+    }
+    .record-comment {
+        padding-left: 20px;
+        padding-right: 20px;
+        background-color: #ffffff;
+    }
+    .record-wrp-footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 40px;
+        color: #a0a0a0;
+        font-size: 12px;
+    }
+    .record-footer-laud {
+        display: flex;
+        flex-direction: row;
+    }
+    .record-footer-collection {
+        padding-right: 20px;
+    }
+    .record-reply {
+        background-color: #ffffff;
+    }
+    .record-reply-head {
+        margin-top: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border-bottom: 1px solid #f5f5f5;
+    }
+    .record-reply-title {
+        width: 80px;
+        height: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-left: 2px solid #FF4B66;
+    }
+    .record-title-img {
+        margin-right: 10px;
+    }
+    .record-reply-all {
+        font-size: 12px;
+        color: #a0a0a0;
+    }
+    .record-user {
+        margin-top: 20px;
+        margin-bottom: 60px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .user-main {
+        padding-bottom: 20px;
+        display: flex;
+        flex-direction: row;
+    }
+    .user-header {
+        width: 40px;
+        height: 40px;
+    }
+    .user-info {
+        padding-left: 10px;
+        width: 90%;
+    }
+    .user-info-footer {
+        padding-bottom: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        color: #a0a0a0;
+        font-size: 12px;
+    }
+    .user-info-laud {
+        display: flex;
+        flex-direction: row;
+    }
+    .user-info-reply {
+        margin-right: 20px;
+    }
+    .user-reply {
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-bottom: 10px;
+        background-color: #f5f8fa;
+    }
+    .user-reply-name::after {
+        content: ":";
+    }
+    .user-reply-all {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        color: #79a8e8;
+        font-size: 12px;
+    }
+    .acticle-reply {
+        padding: 8px;
+    }
+    .reply-user {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        line-height: 50px;
+    }
+    .reply-head {
+        display: flex;
+        flex-direction: row;
+        line-height: 50px;
+        vertical-align: middle;
+    }
+    .reply-head-img {
+        margin-right: 10px;
+        width: 50px;
+        height: 50px;
+        border-radius: 10%;
+        overflow: hidden
+    }
+    .reply-info {
+        flex: 1;
+    }
+    .reply-pp {
+        margin-top: 5px;
+        width: 80px;
+        height: 20px;
+        background-color: #ff3399;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #ffffff;
+    }
+    .reply-text {
+        color: #a0a0a0;
+    }
+    .article-wrp {
+        position: fixed;
+        bottom: 3%;
+        width: 100%;
+        z-index: 9999;
+    }
+    .article-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .article-text {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-radius: 20px;
+        background-color: #458bec;
+        color: #ffffff;
+    }
+    .mainimg {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .imgdiv {
+        width: 32.8%;
+    }
+}

@@ -1,0 +1,16 @@
+<ion-tabs #myTabs [selectedIndex]="mySelectedIndex" name="conference">
+    <ion-tab tabsHideOnSubPages="true" [root]="tab1Root" tabTitle="首页" tabIcon="home" tabUrlPath="conference-schedule"></ion-tab>
+    <ion-tab tabsHideOnSubPages="true" [root]="tab2Root" tabTitle="精选" tabIcon="rose"></ion-tab>
+    <ion-tab tabsHideOnSubPages="true" [root]="tab3Root" tabTitle="" tabIcon=""></ion-tab>
+    <ion-tab tabsHideOnSubPages="true" [root]="noticePage" tabTitle="消息" tabIcon="notifications"></ion-tab>
+    <ion-tab tabsHideOnSubPages="true" [root]="profilePage" tabTitle="我的" tabIcon="contact"></ion-tab>
+    <ion-fab bottom center style="border-top: 0.55px solid rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;">
+        <button ion-fab width="57" height="57" (click)="selectTab()">
+            <ion-icon name="add" role="img"></ion-icon>
+            <!-- <img role="img" src="自定义图片">-->
+        </button>
+    </ion-fab>
+</ion-tabs>

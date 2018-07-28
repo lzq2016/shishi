@@ -1,0 +1,50 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>评论</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <ion-list *ngIf="hasData">
+        <ion-item *ngFor="let item of items">
+            <ion-grid>
+                <ion-row align-items-center>
+                    <ion-col col-2>
+                        <ion-avatar item-start>
+                            <img src="{{item.avatar}}">
+                        </ion-avatar>
+                    </ion-col>
+                    <ion-col col-7>
+                        <span style="color:#3E91C4;" (click)="goMe(item.userId)">{{item.name}}</span>
+                    </ion-col>
+                    <ion-col col-3>
+                        <p class="contentButton" (click)="reply(item.replyId,item.type_en)">回复评论</p>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-12>
+                        <p class="contentText">回复了你的{{item.type}} <span class="contentTitle" (click)="goContent(item)">{{item.title}}</span></p>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-12>
+                        <ion-card>
+                            <ion-card-content class="contentComment">
+                                {{item.content}}
+                            </ion-card-content>
+                        </ion-card>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-1>
+                        <p class="timeText">{{item.time}}</p>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
+    </ion-list>
+    <page-nodata *ngIf="!hasData"></page-nodata>
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载中...">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>

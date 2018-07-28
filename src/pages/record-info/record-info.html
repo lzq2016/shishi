@@ -1,0 +1,70 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>日记详情</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content (pan)="test($event)">
+    <ion-slides style="height:auto;" pager="true">
+        <ion-slide *ngFor="let item of info.image_set">
+            <img style='width:100%;' [src]="item.image">
+        </ion-slide>
+    </ion-slides>
+    <div class='record-wrp'>
+        <div class='record-comment'>
+            <div class='record-article'>
+                <p class='acticle-title'>{{info.content}}</p>
+            </div>
+            <div class='record-wrp-footer'>
+                <div>{{info.updated_at}}</div>
+                <div class='record-footer-laud'>
+                    <div class="record-footer-collection">{{info.collect_count}}次收藏</div>
+                    <div>{{info.like_count}}赞</div>
+                </div>
+            </div>
+        </div>
+        <div class="acticle-reply">
+            <div *ngFor="let item of comment" style="padding-top:10px;padding-bottom:10px;border-bottom:1px solid #DEDEDE;">
+                <div class="reply-user">
+                    <div class="reply-head">
+                        <div class="reply-head-img">
+                            <!-- <img src="assets/img/avatar/girl-avatar.png"> -->
+                            <img src="{{item.userImg}}" (click)="goMe(item.userId)">
+                        </div>
+                        <div class="reply-info">
+                            <div (click)="goMe(item.userId)">{{item.userName}}</div>
+                            <!-- <div class='reply-pp' [ngStyle]="{'background-color':item.like_count === 0 ? '#ff3399' : '#488aff' }">匹配</div> -->
+                        </div>
+                    </div>
+                    <div>
+                        <!-- <span class="reply-text"><ion-icon ios="ios-thumbs-up-outline" md="ios-thumbs-up-outline">
+            </ion-icon>&nbsp;&nbsp;{{item.zan}}</span> -->
+                        <!-- <span class="reply-text"><ion-icon ios="ios-thumbs-down-outline" md="ios-thumbs-down-outline">
+            </ion-icon>{{item.fou}}</span> -->
+                        <span class="reply-text"><ion-icon ios="ios-chatbubbles-outline" md="ios-chatbubbles-outline">
+            </ion-icon>&nbsp;&nbsp;{{item.info}}</span>
+                    </div>
+                </div>
+                <div>
+                    <p (click)="commentDetail(item.id)">{{item.reply}}</p>
+                    <div class="mainimg">
+                        <div *ngFor="let img of item.plimg" class="imgdiv">
+                            <img [src]="img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+                <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载中...">
+                </ion-infinite-scroll-content>
+            </ion-infinite-scroll>
+        </div>
+        <div class="article-wrp">
+            <div class="article-btn">
+                <button ion-button round color="ss-primary" (click)="makeComment()">
+                    <ion-icon ios="ios-create-outline" md="ios-create-outline"></ion-icon><span>说说我的想法</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- <record-footer></record-footer> -->
+</ion-content>

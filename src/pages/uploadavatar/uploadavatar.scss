@@ -1,0 +1,22 @@
+page-uploadavatar {
+    .getPicButton {
+        height: 100px;
+        width: 100px;
+        border: 2px dotted #999;
+        margin: 0;
+        font-size: 25px;
+        color: #999;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .thumb {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        background-position: center center;
+        background-size: cover;
+        vertical-align: middle;
+        margin-left: 5px;
+        border: 2px solid #FF9800;
+    }
+}

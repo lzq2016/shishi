@@ -1,0 +1,28 @@
+comment-reply {
+  div.actionBar{
+    height: 40px;
+    span{
+      float: left;
+      height: 40px;
+      min-width: 40px;
+      line-height: 40px;
+      margin-right: 8px;
+    }
+    .thumb,.negative {
+      background: center no-repeat;
+      background-size: 50% 50%;
+    }
+    .thumb{
+      background-image: url(../assets/img/p2p/thumb.svg);
+    }
+    .thumb.on{
+      background-image: url(../assets/img/p2p/thumb_on.svg);
+    }
+    .negative{
+      background-image: url(../assets/img/p2p/negative.svg);
+    }
+    .negative.on{
+      background-image: url(../assets/img/p2p/negative_on.svg);
+    }
+  }
+}

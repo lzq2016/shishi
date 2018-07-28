@@ -1,0 +1,96 @@
+<!--<ion-header>-->
+<!--<ion-navbar>-->
+<!--<button ion-button menuToggle>-->
+<!--<ion-icon name="menu"></ion-icon>-->
+<!--</button>-->
+<!--<ion-title>Speakers</ion-title>-->
+<!--</ion-navbar>-->
+<!--</ion-header>-->
+<!--,zIndex:i-pagePointer>=0?pageCount+pagePointer-i:pageCount+i-pagePointer-->
+<ion-content class="outer-content speaker-list">
+    <!--<button class="pageButton" (click)="goHomePage()">回到首页</button>-->
+    <div class="flipBoard" (panstart)="duringPan($event)" (panmove)="duringPan($event)" (panend)="panDone($event)">
+        <div class="flipPage" *ngFor="let card of cardList;let i = index" [editZindex]="neverPanned&&i===0?999:''" (click)="goDetail(card)">
+            <div class="up-half clone" [ngStyle]="{visibility:(i-pagePointer)*(i-pagePointer)<=1?'visible':'hidden'}">
+                <flippage-one [cardData]="card.content_object"></flippage-one>
+                <!-- <flippage-two *ngIf="page.type===2" [dataSource]="cardList.slice(0,2)"></flippage-two>
+        <flippage-three *ngIf="page.type===3"></flippage-three>
+        <flippage-fresh *ngIf="page.type===-1" (fresh)="handleFresh()"></flippage-fresh>-->
+            </div>
+            <div class="down-half clone" [ngStyle]="{visibility:(i-pagePointer)*(i-pagePointer)<=1?'visible':'hidden'}">
+                <flippage-one [cardData]="card.content_object" downHalf></flippage-one>
+                <!--<flippage-two *ngIf="page.type===2" downHalf [dataSource]="cardList.slice(0,2)"></flippage-two>
+        <flippage-three *ngIf="page.type===3" downHalf></flippage-three>
+        <flippage-fresh *ngIf="page.type===-1" downHalf (fresh)="handleFresh()"></flippage-fresh>-->
+            </div>
+        </div>
+        <!--<div class="type-1" >-->
+        <!--<div style="display: flex;flex: 1;">-->
+        <!--<ss-v-out-image-news-card fullCard [occupyParent]="'fullWidth'"></ss-v-out-image-news-card>-->
+        <!--</div>-->
+        <!--<ss-news-footer fullCard style="margin-bottom: 10px;"></ss-news-footer>-->
+        <!--</div>-->
+        <!--<div class="type-2" *ngIf="type===2">-->
+        <!--<div class="half">-->
+        <!--<ss-v-in-image-news-card [occupyParent]="'fullAll'" fullCard></ss-v-in-image-news-card>-->
+        <!--</div>-->
+        <!--<div class="firstQurt quarter" *ngFor="let item of cardList.slice(0,2)">-->
+        <!--<ss-h-news-card [heightPercent]="75" class="quarter"></ss-h-news-card>-->
+        <!--<div style="height: 25%;">-->
+        <!--<ss-news-footer [occupyParent]="'fullHeight'"></ss-news-footer>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="type-3" *ngIf="type===3">-->
+        <!--<ss-v-in-image-news-card [occupyParent]="'fullAll'" fullCard></ss-v-in-image-news-card>-->
+        <!--</div>-->
+    </div>
+    <!--<ion-list [virtualScroll]="speakers">-->
+    <!--<ion-grid fixed>-->
+    <!--<ion-row align-items-stretch>-->
+    <!--<ion-col col-12 col-md-6 align-self-stretch align-self-center *virtualItem="let speaker" approxItemHeight="457px">-->
+    <!--<ion-card class="speaker-card">-->
+    <!--<ion-card-header>-->
+    <!--<button ion-item detail-none (click)="goToSpeakerDetail(speaker)">-->
+    <!--<ion-avatar item-start>-->
+    <!--<img [src]="speaker.profilePic" alt="Speaker profile pic">-->
+    <!--</ion-avatar>-->
+    <!--{{speaker.name}}-->
+    <!--</button>-->
+    <!--</ion-card-header>-->
+    <!--<ion-card-content class="outer-content">-->
+    <!--<ion-list>-->
+    <!--<button ion-item *ngFor="let session of speaker.sessions" (click)="goToSessionDetail(session)">-->
+    <!--<h3>{{session.name}}</h3>-->
+    <!--</button>-->
+    <!--<button ion-item (click)="goToSpeakerDetail(speaker)">-->
+    <!--<h3>About {{speaker.name}}</h3>-->
+    <!--</button>-->
+    <!--</ion-list>-->
+    <!--</ion-card-content>-->
+    <!--<ion-row no-padding>-->
+    <!--<ion-col col-12 col-lg-auto text-center text-lg-left>-->
+    <!--<button ion-button clear small color="primary" icon-start (click)="goToSpeakerTwitter(speaker)">-->
+    <!--<ion-icon name="logo-twitter"></ion-icon>-->
+    <!--Tweet-->
+    <!--</button>-->
+    <!--</ion-col>-->
+    <!--<ion-col col-12 col-lg-auto text-center>-->
+    <!--<button ion-button clear small color="primary" icon-start (click)="openSpeakerShare(speaker)">-->
+    <!--<ion-icon name='share-alt'></ion-icon>-->
+    <!--Share-->
+    <!--</button>-->
+    <!--</ion-col>-->
+    <!--<ion-col col-12 col-lg-auto text-center text-lg-right>-->
+    <!--<button ion-button clear small color="primary" icon-start (click)="openContact(speaker)">-->
+    <!--<ion-icon name='chatboxes'></ion-icon>-->
+    <!--Contact-->
+    <!--</button>-->
+    <!--</ion-col>-->
+    <!--</ion-row>-->
+    <!--</ion-card>-->
+    <!--</ion-col>-->
+    <!--</ion-row>-->
+    <!--</ion-grid>-->
+    <!--</ion-list>-->
+</ion-content>

@@ -1,0 +1,46 @@
+page-attention {
+    .label-ios {
+        margin: 0;
+    }
+    .label-md {
+        margin: 0;
+    }
+    .attention {
+        border: 1px solid #FF8694;
+        height: 30px;
+        border-radius: 10px;
+        line-height: 30px;
+        text-align: center;
+        color: #FF1A36;
+    }
+    .attentioned {
+        border: 1px solid #FCCBD1;
+        height: 30px;
+        border-radius: 10px;
+        line-height: 30px;
+        text-align: center;
+        color: #FCCBD1;
+    }
+    .contentText {
+        color: #484848;
+        white-space: normal;
+        word-wrap: break-word;
+        word-break: break-all;
+    }
+    .timeText {
+        color: #9D9D9D;
+        font-size: 12px;
+    }
+}
+
+.toast-md .toast-wrapper {
+    width: 70%;
+    opacity: 0.8!important;
+    border-radius: 10px;
+}
+
+.toast-message {
+    text-align: center;
+    padding-top: 10px!important;
+    padding-bottom: 10px!important;
+}

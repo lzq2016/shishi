@@ -1,0 +1,7 @@
+<div class="container">
+  <ng-container *ngIf="shareTo&&shareTo.lists">
+    <div *ngFor="let item of shareTo.lists.slice(0,5)">
+      <div [style.background-image]="item.icon"></div>
+    </div>
+  </ng-container>
+</div>

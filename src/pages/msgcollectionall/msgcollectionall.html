@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>收藏</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <ion-list *ngIf="hasData">
+        <ion-item *ngFor="let item of items">
+            <ion-grid>
+                <ion-row align-items-center>
+                    <ion-col col-4>
+                        <img class="contentImg" src="{{item.img}}" />
+                    </ion-col>
+                    <ion-col col-8>
+                        <p class="contentTitle" (click)="goContent(item)">{{item.title}}</p>
+                        <!-- <p class="contentText">o signify that the loading has completed. This method will change the infinite scroll’s state from </p> -->
+                        <p class="timeText">收藏于{{item.time}}</p>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
+    </ion-list>
+    <page-nodata *ngIf="!hasData"></page-nodata>
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载中...">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>

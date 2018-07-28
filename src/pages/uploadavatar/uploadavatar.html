@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>上传头像</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <ion-grid>
+        <ion-row>
+            <ion-col col-12>
+                <!-- <img src="assets/img/newLogo.jpg" style="width: 100%;"> -->
+                <img src="{{avatar}}" style="width: 100%;">
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-12>
+                <button ion-button icon-only block clear class="getPicButton" (click)="getPics()">
+                    <ion-icon name="md-add"></ion-icon>
+                </button>
+                <span class="thumb" [ngStyle]="{'background-image': 'url(' + avatar + ')'}"></span>
+            </ion-col>
+        </ion-row>
+        <ion-row responsive-sm *ngIf="selectedImg">
+            <ion-col>
+                <button ion-button block (click)="uploadAvatar()">上传头像
+                    <ion-icon style="margin-left: 5px" name="md-arrow-forward"></ion-icon>
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

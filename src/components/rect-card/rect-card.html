@@ -1,0 +1,13 @@
+<div class="rectBox">
+  <div class="contentBox" [class.stretch]="cardInfo.bgImg===''||cardInfo.bgImg==undefined">
+    <div class="title">{{cardInfo.title}}</div>
+    <div class="subTitle">{{cardInfo.subTitle}}</div>
+  </div>
+  <div class="bgImgBox" *ngIf="cardInfo.bgImg">
+    <div>
+      <img [src]="cardInfo.bgImg">
+    </div>
+  </div>
+</div>
+<div class="footBox"><news-base></news-base></div>
+

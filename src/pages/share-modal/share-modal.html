@@ -1,0 +1,14 @@
+<div (click)="goBack()"
+     style="position: absolute;z-index: 10001;width: 100%;height: calc(100% - 110px);top: 0;left: 0;"></div>
+<ion-header class="notTop">
+
+  <div class="header-container">
+    <span (click)="goBack($event)"></span>
+    <p>分享到</p>
+  </div>
+
+</ion-header>
+
+<ion-content class="notTop">
+  <share-list [shareID]="'testID'"></share-list>
+</ion-content>

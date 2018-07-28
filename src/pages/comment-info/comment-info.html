@@ -1,0 +1,40 @@
+<record-head [title]="title" showhead=""></record-head>
+<ion-content>
+    <div class="details-main">
+        <record-follow [user]="uinfo"></record-follow>
+        <p [innerHTML]="info.content"></p>
+        <div class="imgmain">
+            <div *ngFor="let item of info.image_set">
+                <img [src]="item.image">
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="details-comment-all">
+            <ion-icon ios="logo-twitch" md="logo-twitch"></ion-icon>&nbsp;&nbsp;{{info.like_count}}条评论
+        </div>
+        <div class="comment-user-all" *ngFor="let item of comment">
+            <div class="comment-user-main">
+                <div class="comment-user-head"><img [src]="item.user.avatar" class="comment-user-headimg"></div>
+                <div class="comment-user-info">
+                    <div class="comment-user-user">
+                        <div>{{item.user.username}}</div>
+                        <div>{{item.updated_at}}</div>
+                    </div>
+                    <div>{{item.content}}</div>
+                </div>
+            </div>
+        </div>
+        <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+            <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载中...">
+            </ion-infinite-scroll-content>
+        </ion-infinite-scroll>
+    </div>
+    <div class="article-wrp">
+        <div class="article-btn">
+            <button ion-button round color="ss-primary" (click)="makeComment()">
+                <ion-icon ios="ios-create-outline" md="ios-create-outline"></ion-icon><span>说说我的想法</span>
+            </button>
+        </div>
+    </div>
+</ion-content>

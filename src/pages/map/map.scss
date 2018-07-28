@@ -1,0 +1,56 @@
+
+page-map ion-content {
+  background: rgb(229, 227, 223);
+}
+
+page-map {
+  #map_canvas {
+    height: 500px;
+    width: 320px;
+    background-color : transparent;
+  }
+}
+
+page-map ion-content {
+  background: rgb(229, 227, 223);
+}
+
+page-map #map_canvas {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 150ms ease-in
+}
+
+page-map #map_canvas.show-map {
+  opacity: 1;
+}
+
+ion-app._gmaps_cdv_ .nav-decor{
+  background-color: transparent !important;
+}
+
+.ss-topBack{
+  //position: fixed;
+  //top: 0;
+  z-index: 10086;
+  width: 100%;
+  background-color: #ff9800;
+  color: #fff;
+  font-weight: bolder;
+  font-size: 24px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  span{
+    background: url(../assets/img/p2p/back.svg) no-repeat center;
+    background-size: 80%;
+    position: absolute;
+    left: 10px;
+    width: 40px;
+    height: 40px;
+  }
+}
+.quarter{
+  height: 25%;
+}

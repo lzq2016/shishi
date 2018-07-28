@@ -1,0 +1,41 @@
+// Styles for all of the user pages:
+// Login, Signup, Support
+
+page-comment-detail {
+  ion-card {
+    box-shadow: none;
+  }
+  .big-box {
+    position: relative;
+    background-color: #fff;
+    &:before {
+      content: "";
+      display: block;
+      padding-top: 100%; /* initial ratio of 1:1*/
+    }
+    .content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      padding: 5px;
+    }
+  }
+  .desc{
+    line-height: 18px;
+    //overflow: hidden;
+    //margin: 0;
+    //padding: 0 3vw;
+    p{
+      text-align: left;
+      color: rgba(0,0,0,1);
+    }
+  }
+  .image-box {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: 50% 50%
+  }
+}

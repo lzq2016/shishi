@@ -1,0 +1,47 @@
+<ion-grid id="ss-comment-attachments" class="con-grid">
+    <ng-container [ngSwitch]="attachments?.length">
+        <ion-row *ngSwitchCase="1">
+            <ion-col col-12 class="big-box" *ngFor="let item of attachments">
+                <ion-thumbnail item-start class="">
+                    <div class="content">
+                        <img class="image-box" [ngStyle]="{'background-image': 'url(' + item + ')'}">
+                        <!--<div *ngIf="!item?.url" class="avatar">-->
+                            <!--<img src="../../assets/img/appicon.png" />-->
+                        <!--</div>-->
+                    </div>
+                </ion-thumbnail>
+            </ion-col>
+        </ion-row>
+        <ion-row *ngSwitchCase="4">
+            <ion-col col-8 style="padding: 0">
+                <ion-grid style="padding: 0">
+                    <ion-row>
+                        <ion-col col-6 class="big-box" *ngFor="let item of attachments">
+                            <ion-thumbnail item-start>
+                                <div class="content">
+                                    <img class="image-box" [ngStyle]="{'background-image': 'url(' + item + ')'}">
+                                    <!--<div *ngIf="item?.url" class="avatar">-->
+                                        <!--<img src="../../assets/img/appicon.png" />-->
+                                    <!--</div>-->
+                                </div>
+                            </ion-thumbnail>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-col>
+        </ion-row>
+        <ion-row *ngSwitchDefault>
+            <ion-col col-4 class="big-box" *ngFor="let item of attachments">
+                <ion-thumbnail item-start class="">
+                    <div class="content">
+                        <!-- <img class="image-box" [ngStyle]="{'background-image': 'url(' + item?.url + ')'}" *ngIf="item?.url">
+            <div *ngIf="!item?.url" class="avatar">
+              <img src="../../assets/img/appicon.png"/>
+            </div> -->
+                        <img class="image-box" [ngStyle]="{'background-image': 'url(' + item + ')'}">
+                    </div>
+                </ion-thumbnail>
+            </ion-col>
+        </ion-row>
+    </ng-container>
+</ion-grid>

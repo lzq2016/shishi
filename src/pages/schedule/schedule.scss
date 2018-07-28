@@ -1,0 +1,83 @@
+$categories: (
+ ionic: color($colors, primary),
+ angular: #AC282B,
+ communication: #8E8D93,
+ tooling: #FE4C52,
+ services: #FD8B2D,
+ design: #FED035,
+ workshop: #69BB7B,
+ food: #3BC7C4,
+ documentation: #B16BE3,
+ navigation: #6600CC,
+);
+
+@function auxiliary-categories() {
+  @return map-remove($categories);
+}
+
+page-schedule {
+  @each $track, $value in auxiliary-categories() {
+   ion-item-sliding[track=#{$track}] ion-label {
+     //border-left: 2px solid $value;
+     //padding-left: 10px;
+   }
+  }
+}
+
+ion-segment.segment ion-segment-button.segment-button{
+  color: #ff9800;
+}
+ion-segment.segment ion-segment-button.segment-button.segment-activated{
+  border-color: #ff9800;
+}
+
+//.card-background-page {
+//
+//  ion-card {
+//    position: relative;
+//    text-align: center;
+//  }
+//
+//  .card-title {
+//    position: absolute;
+//    top: 36%;
+//    font-size: 2.0em;
+//    width: 100%;
+//    font-weight: bold;
+//    color: rgba(0,0,0,.6);
+//    text-align: center;
+//  }
+//
+//  .card-subtitle {
+//    font-size: 1.0em;
+//    position: absolute;
+//    bottom: 0%;
+//    width: 100%;
+//    color: rgba(0,0,0,.8);
+//    text-align: right;
+//  }
+//
+//}
+//
+//.fav>ion-avatar>img{
+//  width: 20%;
+//  float: left;
+//}
+//.fav>div{
+//  width: 80%;
+//  float: left;
+//}
+//.fav>div{
+//  p{
+//    margin-left: 10px;
+//  }
+//  h2{
+//    margin-left: 10px;
+//    font-size: 20px;
+//  }
+//}
+//.fav{
+//  p,h2{
+//    padding: 0 10px;
+//  }
+//}

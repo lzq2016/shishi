@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>获赞</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <ion-list *ngIf="hasData">
+        <ion-item *ngFor="let item of items">
+            <ion-grid>
+                <ion-row>
+                    <ion-col col-1>
+                        <ion-icon name="heart" class="heartColor"></ion-icon>
+                    </ion-col>
+                    <ion-col col-11>
+                        <p class="contentText"><span class="contentName" (click)="goMe(item.userId)">{{item.name}}</span><span>喜欢了你的{{item.type}}</span><span (click)="goContent
+(item)" class="contentTitle">《{{item.title}}》</span></p>
+                        <p class="timeText">{{item.time}}</p>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
+    </ion-list>
+    <page-nodata *ngIf="!hasData"></page-nodata>
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载中...">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>

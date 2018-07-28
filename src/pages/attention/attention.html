@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>关注</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <ion-list *ngIf="hasData">
+        <ion-item *ngFor="let item of items">
+            <ion-grid>
+                <ion-row align-items-center>
+                    <ion-col col-2>
+                        <ion-avatar item-start>
+                            <img src="{{item.avatar}}" (click)="goMe(item.id)">
+                        </ion-avatar>
+                    </ion-col>
+                    <ion-col col-7>
+                        <p class="contentText"><span (click)="goMe(item.id)" style="color:#3E91C4;">{{item.name}}</span> 关注了你</p>
+                        <p class="timeText">{{item.time}}</p>
+                    </ion-col>
+                    <ion-col col-3>
+                        <p (click)="attention(item.id)" class="{{item.followed?'attentioned':'attention'}}">{{item.followed?"已关注":"关注"}}</p>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
+    </ion-list>
+    <page-nodata *ngIf="!hasData"></page-nodata>
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载中...">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>

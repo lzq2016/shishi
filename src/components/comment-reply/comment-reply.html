@@ -1,0 +1,10 @@
+<div>
+  <div class="actionBar">
+    <span (click)="replying=!replying">回复</span>
+    <span class="thumb" [ngClass]="{on:isThumb}" (click)="isThumb=!isThumb;isNegative=false;"></span>
+    <span class="negative" [ngClass]="{on:isNegative}" (click)="isNegative=!isNegative;isThumb=false;"></span>
+  </div>
+  <div *ngIf="replying">
+    <textarea rows="1" placeholder="添加回复..."></textarea>
+  </div>
+</div>

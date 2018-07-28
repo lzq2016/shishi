@@ -1,0 +1,23 @@
+page-comment-modal {
+  ion-header {
+    .header-container {
+      height: 50px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: center;
+      &>span {
+        position: absolute;
+        left: 0;
+        width: 50px;
+        height: 100%;
+        background: url(../assets/img/p2p/delete.svg) no-repeat center;
+        background-size: 60%;
+      }
+    }
+  }
+  .notTop{
+    top:40%;
+  }
+}

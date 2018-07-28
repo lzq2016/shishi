@@ -1,0 +1,16 @@
+<ion-header ng-style="border-bottom:1px solid #484848;">
+    <ion-navbar>
+        <ion-title>收藏</ion-title>
+        <ion-buttons>
+            <button ion-button (click)="closeModal()" icon-only clear>
+                <ion-icon name="arrow-back"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <ion-tabs tabsPlacement="top" class="tabs-basic">
+        <ion-tab tabTitle="Water" [root]="tab1"></ion-tab>
+        <ion-tab tabTitle="Water1" [root]="tab2"></ion-tab>
+    </ion-tabs>
+</ion-content>

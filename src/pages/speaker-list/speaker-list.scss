@@ -1,0 +1,102 @@
+page-speaker-list {
+  .scroll-content {
+    background: #EDEDED;
+  }
+  .pageButton {
+    background: #fbfbff;
+    color: #000;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10000;
+  }
+  .flipBoard{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    font-size: 0;
+    background-color: #fff;
+    overflow: hidden;
+  }
+
+  .flipPage{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+
+  //.speaker-card {
+  //  height: 100%;
+  //  display: flex;
+  //  flex-direction: column;
+  //
+  //  ion-card-content {
+  //    flex: 1 1 auto;
+  //  }
+  //}
+
+  // Todo: remove when this issue https://github.com/ionic-team/ionic/issues/11212 is fixed
+  //@media(min-width: 769px) {
+  //  .speaker-card {
+  //    height: 370px;
+  //  }
+  //}
+
+  //.speaker-card ion-card-header .item {
+  //  padding: 4px 16px;
+  //}
+  //
+  //.speaker-card ion-card-content {
+  //  padding-left: 0;
+  //  padding-right: 0;
+  //}
+
+  //.type-1{
+  //
+  //  display: flex;
+  //  flex-direction: column;
+  //  height: 100%;
+  //
+  //}
+
+  //.type-2{
+  //  height: 100%;
+  //  overflow: hidden;
+  //
+  //  .half{
+  //    height: 50%;
+  //    position: relative;
+  //    color: #fff;
+  //  }
+  //
+  //  @media screen and (min-width:350px) {
+  //  }
+  //
+  //  .firstQurt{
+  //    height: 25%;
+  //    background-color: #fff
+  //  }
+  //}
+
+  //.type-3{
+  //  height: 100%;
+  //}
+  .clone{
+    height: 50%;
+    overflow: hidden;
+    position: relative;
+    backface-visibility:hidden;
+  }
+  .up-half{
+    transform: perspective(1000px) rotate3d(1, 0, 0, 0deg);
+    //一开始是-180,往后翻+到0 往前翻再回到-180
+    transform-origin: bottom center 0;
+  }
+  .down-half{
+    transform: perspective(1000px) rotate3d(1, 0, 0, 0deg);
+    //往前翻+到180 往后翻再回到0
+    transform-origin: top center 0;
+  }
+}

@@ -1,0 +1,24 @@
+share-list {
+  div.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    &>div{
+      flex: 1;
+      width: 60px;
+      height: 60px;
+      display: inline-block;
+      //margin: 5px;
+      div{
+        margin: 5px auto;
+        height: 50px;
+        min-width: 50px;
+        background: transparent no-repeat center;
+        background-size: auto 70%;
+      }
+    }
+  }
+}

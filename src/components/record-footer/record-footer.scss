@@ -1,0 +1,29 @@
+record-footer {
+  .record-bottom{
+    position: fixed;
+    z-index: 9999;
+    bottom: 0px;
+  }
+  .record-bottom{
+    width: 100%;
+  }
+  .bottoms{
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #333333;
+  }
+  .bootom{
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+  }
+
+}

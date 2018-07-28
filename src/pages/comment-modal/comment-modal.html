@@ -1,0 +1,31 @@
+<div *ngIf="showModalOccupy"
+     (click)="goBack()"
+     style="z-index: 10001;position: absolute;height: 40%;width: 100%;top: 0;left: 0;"></div>
+<ion-header class="notTop" (click)="goTop()" [@headerTop]="this.showModalOccupy?'notTop':'top'">
+
+  <div class="header-container">
+    <span (click)="goBack($event)"></span>
+    <p>留下你的评论吧</p>
+  </div>
+
+</ion-header>
+
+
+<ion-content class="notTop" [@contentTop]="this.showModalOccupy?'notTop':'top'">
+  <ion-list>
+    <ng-container *ngIf="data">
+      <comment-item *ngFor="let item of data.list" [data]="item"></comment-item>
+    </ng-container>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-input type="textarea"></ion-input>
+    <ion-buttons end>
+      <button ion-button item-end>
+        <ion-icon name="send">发送</ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

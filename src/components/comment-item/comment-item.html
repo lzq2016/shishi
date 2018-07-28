@@ -1,0 +1,18 @@
+<ion-card>
+  <div style="display: flex;align-items: flex-start;justify-content: center;">
+    <div style="width: 15%;position: relative;">
+      <ion-avatar item-star><img [src]="data.icon" alt="加载失败"></ion-avatar>
+      <span style="height: 25px;line-height: 25px;font: 18px bolder;position: absolute;left: 100%;top: 0;width: 500%;overflow: hidden;text-overflow: ellipsis;white-space: nowrap">{{data.name}}</span>
+    </div>
+    <div style="flex: 1;display: flex;margin-top: 25px;flex-direction: column;">
+      <div>{{data.comment}}</div>
+      <comment-reply></comment-reply>
+      <div *ngIf="data.reply">
+        <a (click)="showReply=!showReply"><span *ngIf="showReply">收起所有回复...</span><span *ngIf="!showReply">查看所有{{data.reply.length}}条回复</span></a>
+        <ng-container *ngIf="showReply">
+          <comment-item *ngFor="let item of data.reply" [data]="item" fullCard></comment-item>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</ion-card>

@@ -1,0 +1,12 @@
+<div class='record-head'>
+    <div class='record-wrp-header'>
+        <img class='record-title-img' [src]="user.avatar">
+        <span>{{user.username}}</span>
+    </div>
+    <div class='record-add-buttom' (click)="attention()" *ngIf="!user.attentioned">
+        <ion-icon ios="ios-add" md="md-add"></ion-icon>关注
+    </div>
+    <div class='record-add-buttom1' *ngIf="user.attentioned">
+        <ion-icon ios="ios-add" md="md-add"></ion-icon>已关注
+    </div>
+</div>

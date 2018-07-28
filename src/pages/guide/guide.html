@@ -1,0 +1,13 @@
+<ion-content>
+    <ion-slides effect="fade">
+        <ion-slide *ngFor="let slide of slides">
+            <img [src]="slide" class="slide-image" />
+        </ion-slide>
+        <ion-slide>
+            <img src="assets/img/guide3.jpg" class="slide-image" />
+            <button ion-button large clear icon-end class="guideStart" (click)="start()">
+                <img src="assets/img/guideStart.png">
+            </button>
+        </ion-slide>
+    </ion-slides>
+</ion-content>

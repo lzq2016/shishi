@@ -1,0 +1,20 @@
+flippage-two {
+  .flip-container{
+    height: 200%;
+    overflow: hidden;
+    width: 100%;
+    .half{
+      height: 50%;
+      position: relative;
+      color: #fff;
+    }
+
+    @media screen and (min-width:350px) {
+    }
+
+    .firstQurt{
+      height: 25%;
+      background-color: #fff
+    }
+  }
+}

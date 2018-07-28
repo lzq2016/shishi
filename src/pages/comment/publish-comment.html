@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-navbar>
+        <!-- <button ion-button (click)="dismiss()">
+            取消
+        </button> -->
+        <ion-title>说说我的想法</ion-title>
+        <ion-buttons end>
+            <button ion-button clear (click)="onSave(targetForm)">
+                发布
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <form #targetForm="ngForm" novalidate>
+        <ion-list no-lines>
+            <ion-item>
+                <ion-textarea class="comment-content" [(ngModel)]="comment.content" placeholder="优质内容有机会获得编辑推荐，被更多人看到" name="content" type="text" #content="ngModel" required></ion-textarea>
+            </ion-item>
+        </ion-list>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-3 class="big-box" *ngFor="let item of comment?.attachments">
+                    <ion-thumbnail item-start class="">
+                        <div class="content">
+                            <img class="image-box" [ngStyle]="{'background-image': 'url(' + item?.url + ')'}" *ngIf="item?.url">
+                            <div *ngIf="!item?.url" class="avatar">
+                                <img src="../../assets/img/appicon.png" />
+                            </div>
+                        </div>
+                    </ion-thumbnail>
+                </ion-col>
+                <ion-col col-3 class="big-box">
+                    <div class="content">
+                        <button ion-button icon-only block clear class="add-btn" (click)="getPics()">
+                            <ion-icon name="md-add"></ion-icon>
+                        </button>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </form>
+</ion-content>

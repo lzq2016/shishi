@@ -1,0 +1,14 @@
+page-msgcollection {
+    .tab-button-text {
+        color: #484848;
+        font-size: 14px;
+    }
+    .tab-button[aria-selected=true] {
+        font-weight: bold;
+        border-bottom: 2px solid #FFDA1C;
+    }
+    .tabbar {
+        background-color: transparent!important;
+        border-bottom: none!important;
+    }
+}

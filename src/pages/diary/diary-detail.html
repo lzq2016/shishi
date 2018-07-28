@@ -1,0 +1,62 @@
+<div class="fake-navi-bar">
+  <ion-header>
+    <ion-navbar>
+      <!--<button ion-button icon-only>-->
+      <!--<ion-icon name="back"></ion-icon>-->
+      <!--</button>-->
+      <!--<ion-title>日记详情</ion-title>-->
+      <ion-buttons end>
+        <button ion-button icon-only (click)="onMore()">
+          <ion-icon ios="ios-more-outline" md="md-more"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+</div>
+
+<ion-content>
+  <div class="slide-wrap" [ngStyle]="{height: slideH}">
+    <ion-slides loop="true">
+      <ion-slide *ngFor="let item of slides;let i = index">
+        <ion-card class="ss-full-card">
+          <img class="image-box" [ngStyle]="{'background-image': 'url(' + item.image + ')'}"/>
+          <div class="slide-text card-subtitle" padding-right>{{i - (-1)}}/{{slides?.length}}</div>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+  <ion-card class="detail-card" style="box-shadow: none">
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img src="{{'https://tse2-mm.cn.bing.net/th?id=OIP.HOPk3iifOhlWjUuLrr8imwHaEK&p=0&o=5&pid=1.1'}}">
+      </ion-thumbnail>
+      <h2>{{'哈哈哈'}}</h2>
+      <ion-note item-end>{{'2018-05-01'}}</ion-note>
+    </ion-item>
+    <ion-card-content>
+      <div class="desc" noLineCut>
+        <p>
+          {{comment?.content}}
+        </p>
+      </div>
+      <ss-comment-attachments *ngIf="comment?.attachments" [attachments]="comment.attachments"></ss-comment-attachments>
+    </ion-card-content>
+
+    <!--<div class="container">-->
+      <!--<div class="imgBox">-->
+        <!--<img [src]="bgImg" alt="加载失败">-->
+      <!--</div>-->
+      <!--<div class="contentBox">-->
+        <!--<div class="title">-->
+          <!--<h2><span>{{title}}</span></h2>-->
+        <!--</div>-->
+        <!--<div class="desc" noLineCut>-->
+          <!--<p>-->
+            <!--{{subTitle}}-->
+          <!--</p>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  </ion-card>
+</ion-content>

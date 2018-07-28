@@ -1,0 +1,42 @@
+page-msgcomment {
+    .label-ios {
+        margin: 0;
+    }
+    .label-md {
+        margin: 0;
+    }
+    .card-md {
+        margin: 0;
+    }
+    .contentButton {
+        border: 1px solid #E3E3E3;
+        height: 30px;
+        border-radius: 5px;
+        line-height: 30px;
+        text-align: center;
+        color: #484848;
+        font-size: 12px;
+    }
+    .conentText {
+        color: #484848;
+        white-space: normal;
+        word-wrap: break-word;
+        word-break: break-all;
+    }
+    .contentTitle {
+        color: #3E91C4;
+        white-space: normal;
+        word-wrap: break-word;
+        word-break: break-all;
+    }
+    .contentComment {
+        color: #484848;
+        white-space: normal;
+        word-wrap: break-word;
+        word-break: break-all;
+    }
+    .timeText {
+        color: #9D9D9D;
+        font-size: 12px;
+    }
+}

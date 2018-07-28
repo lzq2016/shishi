@@ -1,0 +1,11 @@
+<ion-card [class.no-boxshadow]="noBoxshadow" [style.height]="heightPercent?heightPercent+'%':'none'">
+  <div class="newsBox">
+    <div class="content">
+      <div>
+        <h2><span>{{title}}</span></h2>
+        <p><span>{{describe}}</span></p>
+      </div>
+    </div>
+    <div class="imgBox" [style.background-image]="newsUrl"></div>
+  </div>
+</ion-card>

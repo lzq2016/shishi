@@ -1,0 +1,11 @@
+<div class="flip-container">
+  <div class="half">
+    <ss-v-in-image-news-card [occupyParent]="'fullAll'" fullCard></ss-v-in-image-news-card>
+  </div>
+  <div class="firstQurt quarter" *ngFor="let item of dataSource">
+    <ss-h-news-card [heightPercent]="75" class="quarter"></ss-h-news-card>
+    <div style="height: 25%;">
+      <ss-news-footer [occupyParent]="'fullHeight'"></ss-news-footer>
+    </div>
+  </div>
+</div>

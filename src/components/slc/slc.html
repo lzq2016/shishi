@@ -1,0 +1,3 @@
+<div>
+  <span *ngFor="let item of items" [ngStyle]=item.styles[item.key] (click)="item.clickEvent(item)"></span>
+</div>

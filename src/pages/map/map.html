@@ -1,0 +1,68 @@
+<ion-header>
+  <div class="ss-topBack"><span></span>{{name}}</div>
+</ion-header>
+<ion-content>
+  <!--<div style="height:40px"></div>-->
+  <div>
+    <ss-avatar-info-bar></ss-avatar-info-bar>
+  </div>
+  <!--<ion-list style="margin-top: 32px;font-size: 0;">-->
+  <!--<ng-container *ngFor="let i of [1,2]">-->
+  <!--带个人信息栏的新闻卡片:上栏中图下文字(满宽)-->
+  <div style="font-size: 0">
+    <ss-avatar-news-bar></ss-avatar-news-bar>
+    <img src="assets/img/test/lion.jpg" alt="加载不出啦" style="width: 100%;">
+    <p style="font-size:16px;margin: 0;">带个人信息栏的新闻卡片:上栏中图下文字(满宽),注脚随便加</p>
+    <ss-news-footer fullCard></ss-news-footer>
+  </div>
+  <!--带个人信息栏的新闻卡片:上栏中图下文字(卡片)-->
+  <ion-card>
+    <ss-avatar-news-bar></ss-avatar-news-bar>
+    <img src="assets/img/test/lion.jpg" alt="加载不出啦">
+    <p style="font-size:16px">带个人信息栏的新闻卡片:上栏中图下文字(卡片)</p>
+    <ss-news-footer fullCard></ss-news-footer>
+  </ion-card>
+  <!--</ng-container>-->
+
+  <!-- 头像栏+水平新闻栏(满宽形式)-->
+  <div style="font-size: 0">
+    <ss-avatar-news-bar></ss-avatar-news-bar>
+    <ss-h-news-card fullCard></ss-h-news-card>
+    <ss-news-footer fullCard></ss-news-footer>
+  </div>
+  <!-- 头像栏+水平新闻栏(卡片形式)-->
+  <ion-card>
+    <!--<div style="font-size: 0">-->
+      <ss-avatar-news-bar></ss-avatar-news-bar>
+      <ss-h-news-card fullCard></ss-h-news-card>
+      <ss-news-footer fullCard></ss-news-footer>
+    <!--</div>-->
+  </ion-card>
+  <!--</ion-list>-->
+
+  <!--个人信息页的新闻,无头像栏,满宽模式,注意fullCard不加一个块状元素限制的话会放飞自我-->
+  <div>
+    <ss-h-news-card fullCard></ss-h-news-card>
+    <ss-news-footer fullCard></ss-news-footer>
+  </div>
+  <!--个人信息页的新闻,无头像栏,卡片模式-->
+  <ss-h-news-card></ss-h-news-card>
+
+  <div class="quarter">
+    <ss-h-news-card [heightPercent]="75"></ss-h-news-card>
+    <div style="height: 25%;">
+      <ss-news-footer [occupyParent]="'fullHeight'"></ss-news-footer>
+    </div>
+  </div>
+  <ss-v-in-image-news-card></ss-v-in-image-news-card>
+
+  <div style="overflow: hidden;height: 50%;width: 100%;">
+    <ss-v-in-image-news-card [occupyParent]="'fullAll'" fullCard></ss-v-in-image-news-card>
+  </div>
+  <!--<div style="display: flex;flex-direction: column; height: 100%;">-->
+    <!--<div style="display: flex;flex: 1;">-->
+      <!--<ss-v-out-image-news-card fullCard [occupyParent]="'fullWidth'"></ss-v-out-image-news-card>-->
+    <!--</div>-->
+    <!--<ss-news-footer fullCard style="margin-bottom: 10px;"></ss-news-footer>-->
+  <!--</div>-->
+</ion-content>

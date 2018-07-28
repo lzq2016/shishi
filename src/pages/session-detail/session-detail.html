@@ -1,0 +1,32 @@
+<ion-header>
+  <!--<ion-navbar>-->
+    <!--<ion-title *ngIf="session">{{session.name}}</ion-title>-->
+  <!--</ion-navbar>-->
+  <div class="header-container">
+    <span (click)="goBack()"></span>
+    <div>
+      <slc [loved]="love?'loved':'notLove'" (slcClick)="onSLCClick($event)"></slc>
+    </div>
+  </div>
+</ion-header>
+
+<ion-content (tap)="listenDoubleTap()">
+  <img src="assets/img/test/lion.jpg" alt="加载失败" style="width: 100%;">
+  <h2>{{detail.title}}</h2>
+  <h6>{{detail.source}}</h6>
+  <p>{{detail.content}}</p>
+  <!--<div *ngIf="session">-->
+    <!--<h1>{{session.name}}</h1>-->
+    <!--<h4 *ngFor="let speaker of session?.speakers">-->
+      <!--{{speaker.name}}-->
+    <!--</h4>-->
+    <!--<p>-->
+      <!--{{session.timeStart}} - {{session.timeEnd}}-->
+    <!--</p>-->
+    <!--<p>{{session.location}}</p>-->
+    <!--<p>{{session.description}}</p>-->
+  <!--</div>-->
+</ion-content>
+
+<div [@darken]="isSharing||isCommenting?'dark':'light'"
+  style="height: 100%;width: 100%;position: absolute;top: 0;left: 0;background-color: rgba(0,0,0,.4);z-index: 10;"></div>

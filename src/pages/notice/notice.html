@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>消息</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-list no-border class="notice-list">
+        <ion-item *ngFor="let item of items" (click)="itemSelected(item.page)">
+            <ion-avatar item-start>
+                <button ion-button icon-left [ngStyle]="{'background-color': item.color}">
+                    <ion-icon item-start [name]="item.icon"></ion-icon>
+                </button>
+            </ion-avatar>
+            <div>
+                <div>{{item.title}}</div>
+                <!-- <p *ngIf="item.info">{{item.info}}</p> -->
+            </div>
+            <ion-avatar item-end>
+                <button ion-button clear icon-only>
+                    <ion-icon name="arrow-forward" class="arrow"></ion-icon>
+                </button>
+            </ion-avatar>
+        </ion-item>
+    </ion-list>
+</ion-content>
