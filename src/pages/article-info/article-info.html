@@ -28,7 +28,7 @@
         <img style="width:100%;" [src]="info.imgurl">
     </div>
     <div class="acticle-scroll">
-        <p class="scroll-text" [innerHTML]="info.text">
+        <p class="scroll-text" [innerHTML]="info.text | safeHtml">
     </div>
     <div class="acticle-reply">
         <div *ngFor="let item of user" style="padding-top:10px;padding-bottom:10px;border-bottom:1px solid #DEDEDE;">

@@ -1,5 +1,15 @@
 page-notice {
-
+  .redPoint:after{
+    position: absolute;
+    top:50%;
+    margin-top: -3px;
+    margin-left: 10px;
+    content: ' ';
+    height: 6px;
+    width: 6px;
+    border-radius: 3px;
+    background-color: #EF7771;
+    }
   .notice-list {
 
     ion-item {

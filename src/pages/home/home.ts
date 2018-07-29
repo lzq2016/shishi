@@ -15,6 +15,16 @@ import {RecordInfoPage} from '../record-info/record-info';
 import {ConferenceData} from '../../providers/conference-data';
 import {UserData} from '../../providers/user-data';
 // import {DiaryDetailPage} from '../diary/diary-detail'
+import { Tab1 } from './tab1-page/tab1-page';
+import { Tab2 } from './tab2-page/tab2-page';
+import { Tab3 } from './tab3-page/tab3-page';
+import { Tab4 } from './tab4-page/tab4-page';
+import { Tab5 } from './tab4-page/tab4-page';
+import { Tab6 } from './tab4-page/tab4-page';
+import { Tab7 } from './tab4-page/tab4-page';
+import { Tab8 } from './tab4-page/tab4-page';
+import { Tab9 } from './tab4-page/tab4-page';
+import { Tab10 } from './tab4-page/tab4-page';
 
 
 @Component({
@@ -33,6 +43,16 @@ export class HomePage implements OnInit{
   url: string = '';
   enabled: boolean = true;
   host:string = "";
+  tab1: any;
+  tab2: any;
+  tab3: any;
+  tab4: any;
+  tab5: any;
+  tab6: any;
+  tab7: any;
+  tab8: any;
+  tab9: any;
+  tab10: any;
   constructor(public alertCtrl: AlertController,
               public app: App,
               public loadingCtrl: LoadingController,
@@ -44,6 +64,16 @@ export class HomePage implements OnInit{
               public user: UserData) {
     this.host = ServiceConfig.getUrl();
     this.checkAppVersion();
+    this.tab1 = Tab1;
+    this.tab2 = Tab2;
+    this.tab3 = Tab3;
+    this.tab4 = Tab4;
+    this.tab5 = Tab5;
+    this.tab6 = Tab6;
+    this.tab7 = Tab7;
+    this.tab8 = Tab8;
+    this.tab9 = Tab9;
+    this.tab10 = Tab10;
   }
 
   ngOnInit(){

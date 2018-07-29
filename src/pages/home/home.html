@@ -1,4 +1,17 @@
 <ion-content>
+    <!-- <ion-tabs>
+        <ion-tab tabTitle="推荐" [root]="tab1"></ion-tab>
+        <ion-tab tabTitle="热门" [root]="tab2"></ion-tab>
+        <ion-tab tabTitle="关注" [root]="tab3"></ion-tab>
+        <ion-tab tabTitle="分类" [root]="tab4"></ion-tab>
+        <ion-tab tabTitle="分类" [root]="tab5"></ion-tab>
+        <ion-tab tabTitle="分类" [root]="tab6"></ion-tab>
+        <ion-tab tabTitle="分类" [root]="tab7"></ion-tab>
+        <ion-tab tabTitle="分类" [root]="tab8"></ion-tab>
+        <ion-tab tabTitle="分类" [root]="tab9"></ion-tab>
+        <ion-tab tabTitle="分类" [root]="tab10"></ion-tab>
+    </ion-tabs> -->
+
     <div class="slide-wrap" [style.height]="slideH">
         <ion-slides pager loop="true">
             <ion-slide *ngFor="let item of slideList" (click)="slideDetail(item.content_type,item.object_id)">
@@ -8,42 +21,10 @@
                     <div class="slide-text card-subtitle" padding-left padding-right>{{item.subTitle}}</div>
                 </ion-card>
             </ion-slide>
-            <!--<ion-slide>-->
-            <!--<ion-card class="ss-full-card">-->
-            <!--&lt;!&ndash;<img src="assets/img/speakers/card-madison.png"/>&ndash;&gt;-->
-            <!--<img class="image-box" [ngStyle]="{'background-image': 'url(' + 'assets/img/speakers/card-madison.png' + ')'}"/>-->
-            <!--<div class="slide-text card-title">São Paulo</div>-->
-            <!--<div class="slide-text card-subtitle">41 Listings</div>-->
-            <!--</ion-card>-->
-            <!--</ion-slide>-->
-            <!--<ion-slide>-->
-            <!--<ion-card class="ss-full-card">-->
-            <!--&lt;!&ndash;<img src="assets/img/speakers/bear.jpg"/>&ndash;&gt;-->
-            <!--<img class="image-box" [ngStyle]="{'background-image': 'url(' + 'assets/img/speakers/bear.jpg' + ')'}"/>-->
-            <!--<div class="slide-text card-title">São Paulo</div>-->
-            <!--<div class="slide-text card-subtitle">41 Listings</div>-->
-            <!--</ion-card>-->
-            <!--</ion-slide>-->
         </ion-slides>
     </div>
     <!--日记列表-->
     <ion-list class="diary-list">
-        <!-- <ion-item class="slideItem">
-            <div class="titleInfo">你可能感兴趣的用户</div>
-            <div class="slideCard interestedCard">
-                <div class="slideContent" *ngFor="let interested of interestedList;let i = index;">
-                    <ion-card>
-                        <ion-card-content>
-                            <ion-icon name="ios-close" (click)="deleteInterested(i)"></ion-icon>
-                            <img [src]="url + interested.avatar">
-                            <div class="title">{{interested.username}}</div>
-                            <div class="info">{{interested.follower_count}}粉丝</div>
-                            <button ion-button outline (click)="followUser(interested)">{{interested.interested ? '已关注' : '关注'}}</button>
-                        </ion-card-content>
-                    </ion-card>
-                </div>
-            </div>
-        </ion-item> -->
         <div *ngFor="let diary of diaryList">
             <ion-item class="topicItem" *ngIf="diary.content_type == 'topic'" (click)="goTopicDetail(diary.object_id)">
                 <div class="image-box" [ngStyle]="{'background-image': 'url(' +  diary.image_set[0] + ')'}">
@@ -78,32 +59,11 @@
                             <span class="userTime">{{diary?.created_at.substring(5,10)}}</span>
                         </div>
                     </ion-item>
-                    <!--<img src="{{item?.cover}}">-->
                     <ion-card-content>
                         <h2 style="color: #000;font-weight: 600;padding-left:16px;padding-right:16px;">{{diary?.title}}</h2>
                         <p class="content" style="font-size: 14px!important;color: #484848!important;padding-left:16px;padding-right:16px;">{{diary?.prefetch_content}}</p>
                     </ion-card-content>
                     <ss-comment-attachments *ngIf="diary?.image_set" [attachments]="diary.image_set"></ss-comment-attachments>
-                    <!-- <ion-row style="border-top: 1px solid #f3f3f3">
-                        <ion-col>
-                            <button ion-button icon-left clear block class="bottom-btn">
-                                <ion-icon name="md-heart-outline"></ion-icon>
-                                <span>{{diary.like_count}}</span>
-                            </button>
-                        </ion-col>
-                        <ion-col>
-                            <button ion-button icon-left clear block class="bottom-btn">
-                                <ion-icon name="ios-chatbubbles-outline"></ion-icon>
-                                <span>{{diary.comment_count}}</span>
-                            </button>
-                        </ion-col>
-                        <ion-col>
-                            <button ion-button icon-left clear block class="bottom-btn">
-                                <ion-icon name="ios-star-outline"></ion-icon>
-                                <span>{{diary.collect_count}}</span>
-                            </button>
-                        </ion-col>
-                    </ion-row> -->
                 </ion-card>
             </div>
         </div>
