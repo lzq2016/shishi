@@ -4,7 +4,7 @@
     </ion-navbar>
 </ion-header>
 <ion-content padding>
-    <ion-list *ngIf="hasData">
+    <!-- <ion-list *ngIf="hasData">
         <ion-item *ngFor="let item of items">
             <ion-grid>
                 <ion-row>
@@ -15,6 +15,40 @@
                         <p class="contentText"><span class="contentName" (click)="goMe(item.userId)">{{item.name}}</span><span>喜欢了你的{{item.type}}</span><span (click)="goContent
 (item)" class="contentTitle">《{{item.title}}》</span></p>
                         <p class="timeText">{{item.time}}</p>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
+    </ion-list> -->
+    <ion-list *ngIf="hasData">
+        <ion-item *ngFor="let item of items">
+            <ion-grid>
+                <ion-row>
+                    <ion-col col-1>
+                        <ion-avatar item-start>
+                            <img [src]="item.avatar">
+                        </ion-avatar>
+                    </ion-col>
+                    <ion-col col-11>
+                        <ion-row>
+                            <p class="contentText">
+                                <span class="contentName" (click)="goMe(item.userId)">{{item.name}}</span>
+                                <span class="contenttip"> 赞了你的{{item.type}}</span>
+                            </p>
+                        </ion-row>
+                        <ion-row>
+                            <p class="contentText">
+                                <span (click)="goContent
+                (item)" class="contentTitle">《{{item.title}}》</span>
+                            </p>
+                        </ion-row>
+                        <!-- <p class="contentText">
+                            <span class="contentName" (click)="goMe(item.userId)">{{item.name}}</span>
+                            <span class="contenttip"> 赞了你的{{item.type}}</span>
+                            <span (click)="goContent
+    (item)" class="contentTitle">《{{item.title}}》</span>
+                        </p>
+                        <p class="timeText">{{item.time}}</p> -->
                     </ion-col>
                 </ion-row>
             </ion-grid>

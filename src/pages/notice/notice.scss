@@ -1,4 +1,11 @@
 page-notice {
+  .iconWrap{
+    width: 60px;
+    vertical-align: middle;
+  }
+  .titleWrap{
+    display: inline-block;
+  }
   .redPoint:after{
     position: absolute;
     top:50%;

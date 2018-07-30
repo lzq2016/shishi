@@ -55,6 +55,7 @@ export class GetlikePage implements OnInit, OnDestroy {
               title:item.action_object.title,
               id:item.action_object.id,
               en_type:item.action_object_content_type,
+              avatar:item.actor.avatar,
               time:that.format(item.timestamp)
             }
             that.items.push(obj);
@@ -102,6 +103,7 @@ export class GetlikePage implements OnInit, OnDestroy {
             id:item.action_object.id,
             en_type:item.action_object_content_type,
             title:item.action_object.title,
+            avatar:item.actor.avatar,
             time:that.format(item.timestamp)
           }
           that.items.push(obj);

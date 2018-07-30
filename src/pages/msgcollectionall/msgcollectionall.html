@@ -4,6 +4,10 @@
     </ion-navbar>
 </ion-header>
 <ion-content padding>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content pullingIcon="circles" refreshingSpinner="circles">
+        </ion-refresher-content>
+    </ion-refresher>
     <ion-list *ngIf="hasData">
         <ion-item *ngFor="let item of items">
             <ion-grid>

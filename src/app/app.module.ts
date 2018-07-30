@@ -95,6 +95,7 @@ import {Tab7} from '../pages/home/tab4-page/tab4-page'
 import {Tab8} from '../pages/home/tab4-page/tab4-page'
 import {Tab9} from '../pages/home/tab4-page/tab4-page'
 import {Tab10} from '../pages/home/tab4-page/tab4-page'
+import {testPage} from '../pages/test/test'
 import {DiaryDetailPage} from '../pages/diary/diary-detail'
 import { FileTransfer } from '@ionic-native/file-transfer';
 import { SafeHtmlPipe } from '../pipe/safehtml/safehtml';
@@ -183,6 +184,7 @@ export class myHammerConfig extends HammerGestureConfig {
     Tab8,
     Tab9,
     Tab10,
+    testPage,
     DiaryDetailPage,
     OccupyParentDirective,
     FullCardDirective,
@@ -273,6 +275,7 @@ export class myHammerConfig extends HammerGestureConfig {
     Tab8,
     Tab9,
     Tab10,
+    testPage,
     ResetPasswordPage,
     VerificationPage,
     SettingPage,

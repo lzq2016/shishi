@@ -14,35 +14,30 @@ import {MsgnoticePage} from '../msgnotice/msgnotice';
 export class NoticePage {
   items = [
     {
-      icon: 'heart',
-      color: '#FD7F8E',
+      src:'assets/img/getlike.png',
       page:"getlike",
       title: '获赞'
     },
     {
-      icon: 'bookmark',
-      color: '#9EDDFD',
       page:"msgcollection",
-      title: '收藏'
+      title: '收藏',
+      src:'assets/img/collection.png',
     },
     {
-      icon: 'chatboxes',
-      color: '#B0E680',
       page:"msgcomment",
-      title: '评论'
+      title: '评论',
+      src:'assets/img/comment.png',
     },
     {
-      icon: 'people',
-      color: '#A6E8C7',
       page:"attention",
-      title: '关注'
+      title: '关注',
+      src:'assets/img/attention.png',
     },
     {
-      icon: 'alert',
-      color: '#FDD89D',
       page:"notice",
       title: '通知消息',
-      info: '和清华学霸在一起'
+      info: '和清华学霸在一起',
+      src:'assets/img/notice.png',
     }
   ]
 

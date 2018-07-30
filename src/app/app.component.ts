@@ -11,6 +11,7 @@ import {TutorialPage} from '../pages/tutorial/tutorial'
 import {SchedulePage} from '../pages/schedule/schedule'
 import {SpeakerListPage} from '../pages/speaker-list/speaker-list'
 import {SupportPage} from '../pages/support/support'
+// import {testPage} from '../pages/test/test'
 import {ConferenceData} from '../providers/conference-data'
 import {UserData} from '../providers/user-data'
 import {NoticePage} from '../pages/notice/notice'
@@ -101,7 +102,9 @@ export class ConferenceApp {
         });
       }
     });
-
+    // that.rootPage = testPage
+    // that.platformReady()
+    
     // this.storage.get('token')
     // .then((data) => {
     //   console.log("token data:" + data);

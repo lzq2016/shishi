@@ -6,16 +6,20 @@
 <ion-content>
     <ion-list no-border class="notice-list">
         <ion-item *ngFor="let item of items" (click)="itemSelected(item.page)">
-            <ion-avatar item-start>
+            <!-- <ion-avatar item-start>
                 <button ion-button icon-left [ngStyle]="{'background-color': item.color}">
                     <ion-icon item-start [name]="item.icon"></ion-icon>
                 </button>
-            </ion-avatar>
+            </ion-avatar> -->
             <div>
-                <div class="redPoint">{{item.title}}</div>
-                <div ></div>
-                <!-- <p *ngIf="item.info">{{item.info}}</p> -->
+                    <img [src]="item.src" class="iconWrap">
+                    <span style="vertical-align: middle;" class="redPoint">{{item.title}}</span>
             </div>
+            
+            <!-- <div class="titleWrap">
+                <div class="redPoint">{{item.title}}</div>
+                <p *ngIf="item.info">{{item.info}}</p>
+            </div> -->
             <ion-avatar item-end>
                 <button ion-button clear icon-only>
                     <ion-icon name="arrow-forward" class="arrow"></ion-icon>
