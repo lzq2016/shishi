@@ -83,38 +83,38 @@ export class ConferenceApp {
     // confData.load()
     let that = this
     this.splashScreen.show()
-    this.storage.get('appFirstIn')
-    .then((data) => {
-      console.log("appFirstIn data:" + data);
-      if (data == null) {
-        that.rootPage = GuidePage
-        that.platformReady()
-      }else {
-        that.storage.get('token')
-        .then((data) => {
-          console.log("token data:" + data);
-          if (data) {
-            that.rootPage = TabsPage
-          }else {
-            that.rootPage = LoginPage
-          }
-          that.platformReady()
-        });
-      }
-    });
+    // this.storage.get('appFirstIn')
+    // .then((data) => {
+    //   console.log("appFirstIn data:" + data);
+    //   if (data == null) {
+    //     that.rootPage = GuidePage
+    //     that.platformReady()
+    //   }else {
+    //     that.storage.get('token')
+    //     .then((data) => {
+    //       console.log("token data:" + data);
+    //       if (data) {
+    //         that.rootPage = TabsPage
+    //       }else {
+    //         that.rootPage = LoginPage
+    //       }
+    //       that.platformReady()
+    //     });
+    //   }
+    // });
     // that.rootPage = testPage
     // that.platformReady()
-    
-    // this.storage.get('token')
-    // .then((data) => {
-    //   console.log("token data:" + data);
-    //   if (data) {
-    //     this.rootPage = TabsPage
-    //   }else {
-    //     this.rootPage = LoginPage
-    //   }
-    //   this.platformReady()
-    // });
+
+    this.storage.get('token')
+    .then((data) => {
+      console.log("token data:" + data);
+      if (data) {
+        this.rootPage = TabsPage
+      }else {
+        this.rootPage = LoginPage
+      }
+      this.platformReady()
+    });
 
     // decide which menu items should be hidden by current login status stored in local storage
     // this.userData.hasLoggedIn().then(hasLoggedIn => {

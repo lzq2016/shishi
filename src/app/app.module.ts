@@ -4,6 +4,7 @@ import {NgModule, ErrorHandler} from '@angular/core';
 import {IonicApp, IonicModule, IonicErrorHandler,Slides} from 'ionic-angular';
 import {InAppBrowser} from '@ionic-native/in-app-browser';
 import {ImagePicker} from '@ionic-native/image-picker';
+import { Keyboard } from '@ionic-native/keyboard';
 import {Camera} from '@ionic-native/camera';
 import { StatusBar } from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
@@ -292,6 +293,7 @@ export class myHammerConfig extends HammerGestureConfig {
     CONSTARGS,
     FlowCardStreamService,
     ImagePicker,
+    Keyboard,
     Camera,
     HttpClient,
     FileTransfer,

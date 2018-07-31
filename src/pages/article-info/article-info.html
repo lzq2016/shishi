@@ -44,22 +44,53 @@
                     </div>
                     <p class="friend">好友</p>
                 </div>
-                <div>
+                <!-- <div>
                     <span class="reply-text">
                     <ion-icon ios="ios-thumbs-up" md="md-thumbs-up" style="color:#FF1A36;" *ngIf="item.commentZan"></ion-icon>
                     <ion-icon ios="ios-thumbs-up-outline" md="ios-thumbs-up-outline" (click)="commentZan(item.id)" *ngIf="!item.commentZan"></ion-icon>&nbsp;{{item.zan}}&nbsp;&nbsp;</span>
-                    <!-- <span class="reply-text"><ion-icon ios="ios-thumbs-down-outline" md="ios-thumbs-down-outline"></ion-icon>{{item.fou}}</span> -->
+                    <span class="reply-text"><ion-icon ios="ios-thumbs-down-outline" md="ios-thumbs-down-outline"></ion-icon>{{item.fou}}</span>
                     <span class="reply-text"><ion-icon ios="ios-chatbubbles-outline" md="ios-chatbubbles-outline"></ion-icon>&nbsp;{{item.info}}</span>
-                </div>
+                </div> -->
             </div>
-            <div>
+            <div style="position: relative;padding-left: 46px;">
                 <p (click)="commentDetail(item.id)" class="replycontent">{{item.reply}}</p>
                 <div class="mainimg">
                     <div *ngFor="let img of item.plimg" class="imgdiv">
                         <img [src]="img">
                     </div>
                 </div>
+                <div class="commentWrap">
+                    <img src="assets/img/comment1.png" class="commentImg" (click)="addComment(item.id)">
+                    <img src="assets/img/zan.png" class="zanImg" (click)="commentZan(item.id)" *ngIf="!item.commentZan">
+                    <img src="assets/img/zan1.png" class="zanImg" *ngIf="item.commentZan" >
+                    <span class="zanNum">{{item.zan}}</span>
+                </div>
             </div>
+            <!-- <div *ngFor="let addzan of item.addZan" style="margin-left:45px;padding-top:10px;border-top:1px solid rgb(236, 234, 234);">
+                <div class="reply-user" style="margin-top: 5px;">
+                    <div class="reply-head">
+                        <div class="reply-head-img" style="width: 40px;height: 40px;">
+                            <img src="{{addzan.user.avatar}}" (click)="goMe(addzan.user.id)">
+                        </div>
+                        <div class="reply-info">
+                            <div (click)="goMe(addzan.user.id)" class="name">{{addzan.user.userName}}</div>
+                            <p class="time">16:32</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="position: relative;">
+                    <p class="replycontent">{{addzan.content}}</p>
+                    <div class="mainimg">
+                        <div *ngFor="let img of addzan.img" class="imgdiv">
+                            <img [src]="img">
+                        </div>
+                    </div>
+                    <div class="commentWrap">
+                        <img src="assets/img/zan.png" class="zanImg">
+                        <span class="zanNum">{{item.zan}}</span>
+                    </div>
+                </div>
+            </div> -->
         </div>
         <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
             <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载中...">
@@ -69,7 +100,8 @@
     <div class="article-wrp">
         <div class="article-btn">
             <button ion-button round color="ss-primary" (click)="makeComment()">
-                <ion-icon ios="ios-create-outline" md="ios-create-outline"></ion-icon><span>说说我的想法</span>
+                <ion-icon ios="ios-create-outline" md="ios-create-outline"></ion-icon>
+                <span>说说我的想法</span>
             </button>
         </div>
     </div>
