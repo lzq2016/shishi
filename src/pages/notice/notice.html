@@ -13,7 +13,8 @@
             </ion-avatar> -->
             <div>
                     <img [src]="item.src" class="iconWrap">
-                    <span style="vertical-align: middle;" class="redPoint">{{item.title}}</span>
+                    <span style="vertical-align: middle;" class="redPoint" *ngIf="item.new">{{item.title}}</span>
+                    <span style="vertical-align: middle;" *ngIf="!item.new">{{item.title}}</span>
             </div>
             
             <!-- <div class="titleWrap">

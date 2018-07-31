@@ -38,9 +38,11 @@
                         <img src="{{item.userImg}}" (click)="goMe(item.userId)">
                     </div>
                     <div class="reply-info">
-                        <div (click)="goMe(item.userId)">{{item.userName}}</div>
+                        <div (click)="goMe(item.userId)" class="name">{{item.userName}}</div>
+                        <p class="time">16:32</p>
                         <!-- <div class='reply-pp' [ngStyle]="{'background-color':item.sex === 0 ? '#ff3399' : '#488aff' }">{{item.pp}}匹配</div> -->
                     </div>
+                    <p class="friend">好友</p>
                 </div>
                 <div>
                     <span class="reply-text">
@@ -51,7 +53,7 @@
                 </div>
             </div>
             <div>
-                <p (click)="commentDetail(item.id)">{{item.reply}}</p>
+                <p (click)="commentDetail(item.id)" class="replycontent">{{item.reply}}</p>
                 <div class="mainimg">
                     <div *ngFor="let img of item.plimg" class="imgdiv">
                         <img [src]="img">

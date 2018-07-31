@@ -1,8 +1,8 @@
 {
   "name": "godlike",
-  "app_id": "30157f57",
-  "type": "ionic-angular",
   "integrations": {
     "cordova": {}
-  }
+  },
+  "type": "ionic-angular",
+  "pro_id": "30157f57"
 }

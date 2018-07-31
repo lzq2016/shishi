@@ -24,17 +24,19 @@
         <ion-item *ngFor="let item of items">
             <ion-grid>
                 <ion-row>
-                    <ion-col col-1>
-                        <ion-avatar item-start>
-                            <img [src]="item.avatar">
+                    <ion-col col-2>
+                        <ion-avatar item-start (click)="goMe(item.userId)">
+                            <!-- <img [src]="item.avatar"> -->
+                            <img src="assets/img/guide3.jpg">
                         </ion-avatar>
                     </ion-col>
-                    <ion-col col-11>
-                        <ion-row>
+                    <ion-col col-10>
+                        <ion-row style="margin-top: 5px;" justify-content-between>
                             <p class="contentText">
                                 <span class="contentName" (click)="goMe(item.userId)">{{item.name}}</span>
                                 <span class="contenttip"> 赞了你的{{item.type}}</span>
                             </p>
+                            <p class="timeText">{{item.time}}</p>
                         </ion-row>
                         <ion-row>
                             <p class="contentText">
