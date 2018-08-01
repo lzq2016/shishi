@@ -5,7 +5,7 @@
 </ion-header>
 <ion-content>
     <ion-list no-border class="notice-list">
-        <ion-item *ngFor="let item of items" (click)="itemSelected(item.page)">
+        <ion-item *ngFor="let item of items" (click)="itemSelected(item.page)" style="height: 60px;">
             <!-- <ion-avatar item-start>
                 <button ion-button icon-left [ngStyle]="{'background-color': item.color}">
                     <ion-icon item-start [name]="item.icon"></ion-icon>

@@ -86,16 +86,6 @@ import {CommentDetailPage} from '../pages/comment/comment-detail'
 import {CommentAttachmentsComponent} from '../components/comment/comment-attachments'
 import { TimelineComponent,TimelineTimeComponent,TimelineItemComponent } from '../components/timeline/timeline';
 import {HomePage} from '../pages/home/home'
-import {Tab1} from '../pages/home/tab1-page/tab1-page'
-import {Tab2} from '../pages/home/tab2-page/tab2-page'
-import {Tab3} from '../pages/home/tab3-page/tab3-page'
-import {Tab4} from '../pages/home/tab4-page/tab4-page'
-import {Tab5} from '../pages/home/tab4-page/tab4-page'
-import {Tab6} from '../pages/home/tab4-page/tab4-page'
-import {Tab7} from '../pages/home/tab4-page/tab4-page'
-import {Tab8} from '../pages/home/tab4-page/tab4-page'
-import {Tab9} from '../pages/home/tab4-page/tab4-page'
-import {Tab10} from '../pages/home/tab4-page/tab4-page'
 import {testPage} from '../pages/test/test'
 import {DiaryDetailPage} from '../pages/diary/diary-detail'
 import { FileTransfer } from '@ionic-native/file-transfer';
@@ -175,16 +165,6 @@ export class myHammerConfig extends HammerGestureConfig {
     PublishCommentPage,
     CommentDetailPage,
     HomePage,
-    Tab1,
-    Tab2,
-    Tab3,
-    Tab4,
-    Tab5,
-    Tab6,
-    Tab7,
-    Tab8,
-    Tab9,
-    Tab10,
     testPage,
     DiaryDetailPage,
     OccupyParentDirective,
@@ -266,16 +246,6 @@ export class myHammerConfig extends HammerGestureConfig {
     PublishCommentPage,
     CommentDetailPage,
     HomePage,
-    Tab1,
-    Tab2,
-    Tab3,
-    Tab4,
-    Tab5,
-    Tab6,
-    Tab7,
-    Tab8,
-    Tab9,
-    Tab10,
     testPage,
     ResetPasswordPage,
     VerificationPage,
