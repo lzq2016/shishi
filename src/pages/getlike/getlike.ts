@@ -143,8 +143,9 @@ export class GetlikePage implements OnInit, OnDestroy {
 
   dateDiff(timestamp) {
     // 补全为13位
-    timestamp = Date.parse(new Date(timestamp))/1000;
-    var arrTimestamp = (timestamp + '').split('');
+    // timestamp = Date.parse(new Date(timestamp))/1000;
+    timestamp = (new Date(timestamp)).valueOf()/1000;
+    let arrTimestamp:any = (timestamp + '').split('');
     for (var start = 0; start < 13; start++) {
         if (!arrTimestamp[start]) {
             arrTimestamp[start] = '0';
@@ -155,7 +156,7 @@ export class GetlikePage implements OnInit, OnDestroy {
     var minute = 1000 * 60;
     var hour = minute * 60;
     var day = hour * 24;
-    var halfamonth = day * 15;
+    // var halfamonth = day * 15;
     var month = day * 30;
     var now = new Date().getTime();
     var diffValue = now - timestamp;
@@ -180,7 +181,7 @@ export class GetlikePage implements OnInit, OnDestroy {
         return value;
     };
 
-    // 使用
+    // 使用 
     if (monthC > 12) {
         // 超过1年，直接显示年月日
         return (function () {
@@ -188,15 +189,15 @@ export class GetlikePage implements OnInit, OnDestroy {
             return date.getFullYear() + '年' + zero(date.getMonth() + 1) + '月' + zero(date.getDate()) + '日';
         })();
     } else if (monthC >= 1) {
-        return parseInt(monthC) + "月前";
+        return parseInt(String(monthC)) + "月前";
     } else if (weekC >= 1) {
-        return parseInt(weekC) + "周前";
+        return parseInt(String(weekC)) + "周前";
     } else if (dayC >= 1) {
-        return parseInt(dayC) + "天前";
+        return parseInt(String(dayC)) + "天前";
     } else if (hourC >= 1) {
-        return parseInt(hourC) + "小时前";
+        return parseInt(String(hourC)) + "小时前";
     } else if (minC >= 1) {
-        return parseInt(minC) + "分钟前";
+        return parseInt(String(minC)) + "分钟前";
     }
     return '刚刚';
   };

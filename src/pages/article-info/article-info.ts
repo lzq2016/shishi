@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams, ToastController } from 'ionic-angular';
-import { Keyboard } from '@ionic-native/keyboard';
+// import { Keyboard } from '@ionic-native/keyboard';
 import { HttpClient } from '../../providers/httpClient';
 import { ServiceConfig } from '../../providers/service.config';
 import { CommentInfoPage } from '../comment-info/comment-info';
@@ -31,7 +31,8 @@ export class ArticleInfoPage implements OnInit {
     public navParams: NavParams,
     public http: HttpClient,
     public toastCtrl: ToastController,
-    private keyboard: Keyboard) {
+    // private keyboard: Keyboard
+    ) {
   }
 
   ionViewDidLoad() {
@@ -76,21 +77,24 @@ export class ArticleInfoPage implements OnInit {
         pl["userId"] = data.results[i].user.id;
         pl["reply"] = data.results[i].content;
         pl["commentZan"] = false;
+        pl["addZanAction"] = false;
+        pl["addZanContent"] = '';
+        pl["addZan"] = [];
         let imgArr = new Array();
         for (let q = 0; q < data.results[i].image_set.length; q++) {
           imgArr.push(data.results[i].image_set[q].image);
         }
         pl["plimg"] = imgArr;
-        // that.http.get("/api/v1/comment/" + data.results[i].id, function (data) {
-        //   console.dir(data);
-        //   pl["addZan"] = data;
-        //   let imgArr1 = new Array();
-        //   for (let q = 0; q < data.results[i].image_set.length; q++) {
-        //     imgArr1.push(data.results[i].image_set[q].image);
-        //   }
-        //   pl["addZan"]["img"] = imgArr1;
-        // });
-        that.user.push(pl);
+        that.http.get("/api/v1/comment/" + data.results[i].id + "/reply/", function (data1) {
+          console.dir(data1);
+          if(data1.results && data1.results.length){
+            for(let item of data1.results){
+              item['commentZan'] = false;
+              pl["addZan"].push(item);
+            }
+          }
+          that.user.push(pl);
+        });
       }
       if (data.next) {
         that.commentNextPage = data.next;
@@ -118,6 +122,8 @@ export class ArticleInfoPage implements OnInit {
           pl["userId"] = data.results[i].user.id;
           pl["reply"] = data.results[i].content;
           pl["commentZan"] = false;
+          pl["addZanAction"] = false;
+          pl["addZanContent"] = '';
           let imgArr = new Array();
           for (let q = 0; q < data.results[i].image_set.length; q++) {
             imgArr.push(data.results[i].image_set[q].image);
@@ -210,11 +216,33 @@ export class ArticleInfoPage implements OnInit {
     }
   }
 
-  addComment(id) {
- 
-    this.keyboard.show();
+  addComment(index,id) {
+    console.log(id);
+    console.log(index);
+    this.user[index].addZanAction = true;
   }
 
+  submitAddZan(index,id){
+    let that = this
+    this.http.post("/api/v1/comment/" + id + "/reply/ ", { content: that.user[index].addZanContent}, function (data) {
+      if (data) {
+        console.log(data);
+        let toast = that.toastCtrl.create({
+          message: '发布成功',
+          duration: 2000,
+          position: 'middle'
+        });
+        toast.present();
+      } else {
+        let toast = that.toastCtrl.create({
+          message: data.detail,
+          duration: 2000,
+          position: 'middle'
+        });
+        toast.present();
+      } 
+    });
+  }
   commentZan(id) {
     let that = this
     this.http.post("/api/v1/like/", { content_type: "comment", object_id: id }, function (data) {
@@ -222,6 +250,7 @@ export class ArticleInfoPage implements OnInit {
         for (let i = 0; i < that.user.length; i++) {
           if (that.user[i].id == id) {
             that.user[i].commentZan = true;
+            that.user[i].zan += 1;
           }
         }
         let toast = that.toastCtrl.create({
@@ -251,6 +280,39 @@ export class ArticleInfoPage implements OnInit {
         });
         toast.present();
       }
-    });
+    })
   }
+    addCommentZan(index,id) {
+      let that = this;
+      this.http.post("/api/v1/like/", { content_type: "comment", object_id: id }, function (data) {
+        debugger;
+        if (data.success) {
+          for (let i = 0; i < that.user[index].length; i++) {
+            if (that.user[index][i].id == id) {
+              that.user[index][i].commentZan = true;
+              that.user[index][i].like_count += 1;
+            }
+          }
+          let toast = that.toastCtrl.create({
+            message: '点赞成功',
+            duration: 2000,
+            position: 'middle'
+          });
+          toast.present();
+        } else if (data.detail == "你已经赞过了") {
+          for (let i = 0; i < that.user[index]["addZan"].length; i++) {
+            if (that.user[index]["addZan"][i].id == id) {
+              that.user[index]["addZan"][i].commentZan = true;
+            }
+          }
+          let toast = that.toastCtrl.create({
+            message: data.detail,
+            duration: 2000,
+            position: 'middle'
+          });
+          toast.present();
+        }
+      });
+    }
+  
 }

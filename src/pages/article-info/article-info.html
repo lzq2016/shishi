@@ -31,7 +31,7 @@
         <p class="scroll-text" [innerHTML]="info.text | safeHtml">
     </div>
     <div class="acticle-reply">
-        <div *ngFor="let item of user" style="padding-top:10px;padding-bottom:10px;border-bottom:1px solid #DEDEDE;">
+        <div *ngFor="let item of user;index as i;" style="padding-top:10px;padding-bottom:10px;border-bottom:1px solid #DEDEDE;">
             <div class="reply-user">
                 <div class="reply-head">
                     <div class="reply-head-img">
@@ -60,13 +60,13 @@
                     </div>
                 </div>
                 <div class="commentWrap">
-                    <img src="assets/img/comment1.png" class="commentImg" (click)="addComment(item.id)">
+                    <img src="assets/img/comment1.png" class="commentImg" (click)="addComment(i,item.id)">
                     <img src="assets/img/zan.png" class="zanImg" (click)="commentZan(item.id)" *ngIf="!item.commentZan">
                     <img src="assets/img/zan1.png" class="zanImg" *ngIf="item.commentZan" >
                     <span class="zanNum">{{item.zan}}</span>
                 </div>
             </div>
-            <!-- <div *ngFor="let addzan of item.addZan" style="margin-left:45px;padding-top:10px;border-top:1px solid rgb(236, 234, 234);">
+            <div *ngFor="let addzan of item.addZan" style="margin-left:45px;padding-top:10px;border-top:1px solid rgb(236, 234, 234);">
                 <div class="reply-user" style="margin-top: 5px;">
                     <div class="reply-head">
                         <div class="reply-head-img" style="width: 40px;height: 40px;">
@@ -86,11 +86,23 @@
                         </div>
                     </div>
                     <div class="commentWrap">
-                        <img src="assets/img/zan.png" class="zanImg">
-                        <span class="zanNum">{{item.zan}}</span>
+                        <img src="assets/img/zan1.png" class="zanImg" *ngIf="addzan.commentZan" >
+                        <img src="assets/img/zan.png" class="zanImg" *ngIf="!addzan.commentZan" (click)="addCommentZan(i,addzan.id)">
+                        <span class="zanNum">{{addzan.like_count}}</span>
                     </div>
                 </div>
-            </div> -->
+            </div>
+            <div style="margin-left:45px;border-top:1px solid rgb(236, 234, 234);" *ngIf="item.addZanAction">
+                <div style="overflow: hidden;margin-top: 10px;">
+                    <div class="reply-head-img" style="width: 40px;height: 40px;float: left;">
+                        <img src="assets/img/guide1.jpg">
+                    </div>
+                    <ion-textarea placeholder="Enter a description" [(ngModel)]="item.addZanContent" style="border: 1px solid rgb(236, 234, 234);border-radius: 3px;float: right;width: 80%;"></ion-textarea>
+                </div>
+                <div style="overflow: hidden;">
+                    <p style="font-size: 14px;color: #fff;background-color:#EF7A7A;width: 40px;height: 25px;line-height: 25px;text-align: center;float: right;border-radius: 3px;" (click)="submitAddZan(i,item.id)">发布</p>
+                </div>
+            </div>
         </div>
         <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
             <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载中...">

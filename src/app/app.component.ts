@@ -6,7 +6,7 @@ import {AccountPage} from '../pages/account/account'
 import {LoginPage} from '../pages/login/login'
 import {SignupPage} from '../pages/signup/signup'
 import {TabsPage} from '../pages/tabs-page/tabs-page'
-import {GuidePage} from '../pages/guide/guide'
+// import {GuidePage} from '../pages/guide/guide'
 import {TutorialPage} from '../pages/tutorial/tutorial'
 import {SchedulePage} from '../pages/schedule/schedule'
 import {SpeakerListPage} from '../pages/speaker-list/speaker-list'
@@ -81,7 +81,7 @@ export class ConferenceApp {
 
     // load the conference data
     // confData.load()
-    let that = this
+    // let that = this
     this.splashScreen.show()
     // this.storage.get('appFirstIn')
     // .then((data) => {
