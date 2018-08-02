@@ -30,7 +30,7 @@
     <div class="acticle-scroll">
         <p class="scroll-text" [innerHTML]="info.text | safeHtml">
     </div>
-    <div class="acticle-reply">
+    <div class="acticle-reply" style="padding-bottom: 55px;">
         <div *ngFor="let item of user;index as i;" style="padding-top:10px;padding-bottom:10px;border-bottom:1px solid #DEDEDE;">
             <div class="reply-user">
                 <div class="reply-head">
@@ -109,12 +109,22 @@
             </ion-infinite-scroll-content>
         </ion-infinite-scroll>
     </div>
-    <div class="article-wrp">
+    <!-- <div class="article-wrp">
         <div class="article-btn">
             <button ion-button round color="ss-primary" (click)="makeComment()">
                 <ion-icon ios="ios-create-outline" md="ios-create-outline"></ion-icon>
                 <span>说说我的想法</span>
             </button>
         </div>
+    </div> -->
+    <div style="overflow: hidden;position: fixed;bottom: 0;left: 0;width: 100%;background-color: #fff;height: 50px;padding-top: 10px;padding-bottom: 10px;border-top: 1px solid #EAEAEA;">
+        <div style="float: left;width: 50%;display: inline-block;border-right:1px solid #EAEAEA;height: 30px;line-height: 30px;text-align: center;">
+            <img src="assets/img/comment1.png" style="width: 21px;height: 21px;vertical-align: middle">
+            <span style="font-size: 14px;color: #9F9F9F;margin-left: 5px;vertical-align: middle;">评论</span>
+        </div>
+        <div style="float:right;width: 50%;display: inline-block;line-height: 30px;text-align: center;">
+            <img src="assets/img/zan.png" style="width: 21px;height: 21px;vertical-align: middle;">
+            <span style="font-size: 14px;color: #9F9F9F;vertical-align: middle;margin-left: 5px;">赞</span>            
+         </div>
     </div>
 </ion-content>
