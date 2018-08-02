@@ -61,9 +61,13 @@ export class ArticleInfoPage implements OnInit {
       that.hasCollected = data.has_collected;
       that.hasZan = data.has_liked;
     });
+    this.getComment();
+  }
 
+  getComment(){
     //获取评论列表
-    this.http.get("api/v1/comment?content_type=" + that.type + "&object_id=" + id, function (data) {
+    let that = this;
+    this.http.get("api/v1/comment?content_type=" + that.type + "&object_id=" + that.globalId, function (data) {
       console.log(data);
       for (let i = 0; i < data.results.length; i++) {
         let pl = {};
@@ -124,12 +128,22 @@ export class ArticleInfoPage implements OnInit {
           pl["commentZan"] = false;
           pl["addZanAction"] = false;
           pl["addZanContent"] = '';
+          pl["addZan"] = [];
           let imgArr = new Array();
           for (let q = 0; q < data.results[i].image_set.length; q++) {
             imgArr.push(data.results[i].image_set[q].image);
           }
           pl["plimg"] = imgArr;
+          that.http.get("/api/v1/comment/" + data.results[i].id + "/reply/", function (data1) {
+          console.dir(data1);
+          if(data1.results && data1.results.length){
+            for(let item of data1.results){
+              item['commentZan'] = false;
+              pl["addZan"].push(item);
+            }
+          }
           that.user.push(pl);
+        });
         }
         if (data.next) {
           that.commentNextPage = data.next;
@@ -227,6 +241,9 @@ export class ArticleInfoPage implements OnInit {
     this.http.post("/api/v1/comment/" + id + "/reply/ ", { content: that.user[index].addZanContent}, function (data) {
       if (data) {
         console.log(data);
+        // that.user[index].addZanAction = true;
+        that.user.length = 0;
+        that.getComment();
         let toast = that.toastCtrl.create({
           message: '发布成功',
           duration: 2000,
@@ -285,14 +302,14 @@ export class ArticleInfoPage implements OnInit {
     addCommentZan(index,id) {
       let that = this;
       this.http.post("/api/v1/like/", { content_type: "comment", object_id: id }, function (data) {
-        debugger;
         if (data.success) {
-          for (let i = 0; i < that.user[index].length; i++) {
-            if (that.user[index][i].id == id) {
-              that.user[index][i].commentZan = true;
-              that.user[index][i].like_count += 1;
+          for (let i = 0; i < that.user[index]["addZan"].length; i++) {
+            if (that.user[index]["addZan"][i].id == id) {
+              that.user[index]["addZan"][i].commentZan = true;
+              that.user[index]["addZan"][i].like_count += 1;
             }
           }
+          debugger;
           let toast = that.toastCtrl.create({
             message: '点赞成功',
             duration: 2000,

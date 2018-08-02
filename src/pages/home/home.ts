@@ -33,7 +33,15 @@ export class HomePage implements OnInit{
   url: string = '';
   enabled: boolean = true;
   host:string = "";
-
+  testImg:any = ["https://shishifiles.oss-cn-beijing.aliyuncs.com/media%2FDiaryImage%2F2018%2F06%2F08%2Fb20c718da-4f8d-41fc-a3be-adcafcf0dbe4r_750w_750h_ss1.jpg",
+  "https://shishifiles.oss-cn-beijing.aliyuncs.com/media%2FDiaryImage%2F2018%2F06%2F08%2Fb1ca99c65-96bc-42e6-969c-612d8e7817c9r_750w_750h_ss1.jpg",
+  "https://shishifiles.oss-cn-beijing.aliyuncs.com/media%2FDiaryImage%2F2018%2F06%2F08%2Fbe5cfcbe6-cf81-4087-80fe-ad394b45c0b1r_750w_750h_ss1.jpg",
+  "https://shishifiles.oss-cn-beijing.aliyuncs.com/media%2FDiaryImage%2F2018%2F06%2F08%2Fb8a27fe1b-7b58-4163-8691-fd44d0c4cb05r_750w_750h_ss1.jpg",
+  "https://shishifiles.oss-cn-beijing.aliyuncs.com/media%2FDiaryImage%2F2018%2F06%2F08%2Fb3e48904a-93a8-477b-b0ab-a0d3a14fcda9r_750w_750h_ss1.jpg",
+  "https://shishifiles.oss-cn-beijing.aliyuncs.com/media%2FDiaryImage%2F2018%2F06%2F08%2Fb3e48904a-93a8-477b-b0ab-a0d3a14fcda9r_750w_750h_ss1.jpg",
+  "https://shishifiles.oss-cn-beijing.aliyuncs.com/media%2FDiaryImage%2F2018%2F06%2F08%2Fb3e48904a-93a8-477b-b0ab-a0d3a14fcda9r_750w_750h_ss1.jpg",
+  "https://shishifiles.oss-cn-beijing.aliyuncs.com/media%2FDiaryImage%2F2018%2F06%2F08%2Fb3e48904a-93a8-477b-b0ab-a0d3a14fcda9r_750w_750h_ss1.jpg"];
+  testImg1:any = ["https://shishifiles.oss-cn-beijing.aliyuncs.com/media%2FDiaryImage%2F2018%2F06%2F08%2Fb20c718da-4f8d-41fc-a3be-adcafcf0dbe4r_750w_750h_ss1.jpg"]; 
   constructor(public alertCtrl: AlertController,
               public app: App,
               public loadingCtrl: LoadingController,

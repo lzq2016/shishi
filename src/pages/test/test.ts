@@ -9,14 +9,36 @@ import {NavController, NavParams,Slides} from 'ionic-angular'
 export class testPage {
   @ViewChild('slider') slider: Slides;
   @ViewChild("segments") segments;
-  page: any;
-
+  page = {
+    pageNum:0,
+    pageString:'0',
+  };
+  tabs = {
+    tabsIndex:[{
+      tabslabel:'测试1',
+      tabsValue:'0',
+    },{
+      tabslabel:'测试2',
+      tabsValue:'1',
+    },{
+      tabslabel:'测试3',
+      tabsValue:'2',
+    },{
+      tabslabel:'测试4',
+      tabsValue:'3',
+    },{
+      tabslabel:'测试5',
+      tabsValue:'4',
+    },{
+      tabslabel:'测试6',
+      tabsValue:'5',
+    }]
+  };
   constructor(public navCtrl: NavController,
               public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    this.page = 1;
     this.centerScroll();
   }
 
@@ -29,7 +51,8 @@ export class testPage {
   // On slide changed
   slideChanged() {
     let currentIndex = this.slider.getActiveIndex();
-    this.page = currentIndex;
+    this.page.pageNum = currentIndex;
+    this.page.pageString = String(currentIndex);
     this.centerScroll();
   }
 
@@ -39,7 +62,7 @@ export class testPage {
       return;
 
     let sizeLeft = this.sizeLeft();
-    let sizeCurrent = this.segments.nativeElement.children[this.page].clientWidth;
+    let sizeCurrent = this.segments.nativeElement.children[this.page.pageNum].clientWidth;
     let result = sizeLeft - (window.innerWidth / 2) + (sizeCurrent/2) ;
 
     result = (result > 0) ? result : 0;
@@ -49,7 +72,7 @@ export class testPage {
   // Get size start to current
   sizeLeft(){
     let size = 0;
-    for(let i = 0; i < this.page; i++){
+    for(let i = 0; i < this.page.pageNum; i++){
       size+= this.segments.nativeElement.children[i].clientWidth;
     }
     return size;
