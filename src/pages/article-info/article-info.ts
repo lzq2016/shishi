@@ -84,6 +84,7 @@ export class ArticleInfoPage implements OnInit {
         pl["addZanAction"] = false;
         pl["addZanContent"] = '';
         pl["addZan"] = [];
+        pl["time"] = that.format(data.results[i].updated_at);
         let imgArr = new Array();
         for (let q = 0; q < data.results[i].image_set.length; q++) {
           imgArr.push(data.results[i].image_set[q].image);
@@ -94,6 +95,7 @@ export class ArticleInfoPage implements OnInit {
           if(data1.results && data1.results.length){
             for(let item of data1.results){
               item['commentZan'] = false;
+              item['time'] = that.format(item.updated_at);
               pl["addZan"].push(item);
             }
           }
@@ -129,6 +131,7 @@ export class ArticleInfoPage implements OnInit {
           pl["addZanAction"] = false;
           pl["addZanContent"] = '';
           pl["addZan"] = [];
+          pl["time"] = that.format(data.results[i].updated_at);
           let imgArr = new Array();
           for (let q = 0; q < data.results[i].image_set.length; q++) {
             imgArr.push(data.results[i].image_set[q].image);
@@ -138,6 +141,7 @@ export class ArticleInfoPage implements OnInit {
           console.dir(data1);
           if(data1.results && data1.results.length){
             for(let item of data1.results){
+              item['time'] = that.format(item.updated_at);
               item['commentZan'] = false;
               pl["addZan"].push(item);
             }
@@ -331,5 +335,28 @@ export class ArticleInfoPage implements OnInit {
         }
       });
     }
+
+  format(timestamp) {
+    let date = new Date(timestamp);
+    let fmt = "hh:mm";
+     let o = { 
+        "M+" : date.getMonth()+1,                 //月份 
+        "d+" : date.getDate(),                    //日 
+        "h+" : date.getHours(),                   //小时 
+        "m+" : date.getMinutes(),                 //分 
+        "s+" : date.getSeconds(),                 //秒 
+        "q+" : Math.floor((date.getMonth()+3)/3), //季度 
+        "S"  : date.getMilliseconds()             //毫秒 
+    }; 
+    if(/(y+)/.test(fmt)) {
+            fmt=fmt.replace(RegExp.$1, (date.getFullYear()+"").substr(4 - RegExp.$1.length)); 
+    }
+     for(var k in o) {
+        if(new RegExp("("+ k +")").test(fmt)){
+             fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
+         }
+     }
+    return fmt; 
+  }
   
 }

@@ -1,19 +1,20 @@
 page-article-info {
-    video{
-        width:100%;
+    video {
+        width: 100%;
     }
-    .commentWrap{
+    .commentWrap {
         position: absolute;
         bottom: 0;
         right: 0;
     }
-    .commentImg{
-        width: 25px;
+    .commentImg {
+        width: 17px;
     }
-    .zanImg{
-        width: 28px;
+    .zanImg {
+        width: 18px;
+        margin-left: 10px;
     }
-    .zanNum{
+    .zanNum {
         font-size: 14px;
         color: #8C8C8C;
         position: absolute;
@@ -49,47 +50,48 @@ page-article-info {
         line-height: 50px;
         vertical-align: middle;
     }
-    .reply-head .friend{
-        width:35px;
-        height:15px;
-        color:#F5ADAD;
-        border:1px solid #F5ADAD;
-        line-height:15px;
-        font-size:12px;
-        text-align:center;
-        border-radius:3px;
-        margin:0;
-        margin-top:8px;
-        margin-left:10px;
-
+    .reply-head .friend {
+        width: 35px;
+        height: 15px;
+        color: #F5ADAD;
+        border: 1px solid #F5ADAD;
+        line-height: 15px;
+        font-size: 12px;
+        text-align: center;
+        border-radius: 3px;
+        margin: 0;
+        margin-top: 8px;
+        margin-left: 10px;
     }
     .reply-head-img {
         margin-right: 10px;
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
         overflow: hidden
     }
     .reply-info {
         flex: 1;
     }
-    .reply-info .name{
-        font-size:14px;
-        height:14px;
-        line-height:14px;
-        margin-top:9px;
-        color:#707070;
+    .reply-info .name {
+        font-size: 14px;
+        height: 14px;
+        line-height: 14px;
+        margin-top: 9px;
+        color: #707070;
     }
-    .reply-info .time{
-        font-size:12px;
-        height:12px;
-        line-height:12px;
-        color:#DBDBDB;
-        margin:0;
-        margin-top:5px;
+    .reply-info .time {
+        font-size: 12px;
+        height: 12px;
+        line-height: 12px;
+        color: #DBDBDB;
+        margin: 0;
+        margin-top: 5px;
     }
-    .replycontent{
-        color:#9B9B9B;
+    .replycontent {
+        color: #9B9B9B;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
     .reply-pp {
         margin-top: 5px;
