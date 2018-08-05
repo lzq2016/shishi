@@ -1,8 +1,11 @@
-<ion-header>
-    <ion-navbar>
-        <ion-title>日记详情</ion-title>
-    </ion-navbar>
-</ion-header>
+
+    <ion-header>
+        <ion-navbar>
+            <ion-title>日记详情</ion-title>
+        </ion-navbar>
+    </ion-header>
+
+
 <ion-content (pan)="test($event)">
     <ion-slides style="height:auto;" pager="true">
         <ion-slide *ngFor="let item of info.image_set">

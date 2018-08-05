@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>热榜</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <div [style.height]="slideH">
+        <ion-slides pager loop="true">
+            <ion-slide>
+                <img src="assets/img/guide1.jpg">
+            </ion-slide>
+            <ion-slide>
+                <img src="assets/img/guide1.jpg">
+            </ion-slide>
+            <ion-slide>
+                <img src="assets/img/guide1.jpg">
+            </ion-slide>
+        </ion-slides>
+    </div>
+    <ion-tabs tabsPlacement="top">
+        <ion-tab [root]="articlehotlist"></ion-tab>
+        <ion-tab [root]="topichotlist"></ion-tab>
+        <ion-tab [root]="peoplehotlist"></ion-tab>
+        <ion-tab [root]="videohotlist"></ion-tab>
+    </ion-tabs>
+</ion-content>

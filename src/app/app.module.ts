@@ -28,6 +28,7 @@ import {NoticePage} from '../pages/notice/notice';
 import {BookmarkPage} from '../pages/bookmark/bookmark';
 import {NodataPage} from '../pages/nodata/nodata';
 import {GetlikePage} from '../pages/getlike/getlike';
+import {HotListPage} from '../pages/hotlist/hotlist';
 import {AttentionPage} from '../pages/attention/attention';
 import {MsgcommentPage} from '../pages/msgcomment/msgcomment';
 import {MsgcollectionPage} from '../pages/msgcollection/msgcollection';
@@ -172,7 +173,8 @@ export class myHammerConfig extends HammerGestureConfig {
     NoLineCutDirective,
     DownHalfDirective,
     EditZindexDirective,
-    SafeHtmlPipe
+    SafeHtmlPipe,
+    HotListPage
   ],
   imports: [
     BrowserModule,
@@ -251,6 +253,7 @@ export class myHammerConfig extends HammerGestureConfig {
     VerificationPage,
     SettingPage,
     DiaryDetailPage,
+    HotListPage,
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},

@@ -3,7 +3,8 @@ import {NavController, NavParams} from 'ionic-angular'
 import {AboutPage} from '../about/about'
 import {MapPage} from '../map/map'
 // import {SchedulePage} from '../schedule/schedule'
-import {SpeakerListPage} from '../speaker-list/speaker-list'
+// import {SpeakerListPage} from '../speaker-list/speaker-list'
+import {HotListPage} from '../hotlist/hotlist'
 import {PublishDiaryPage} from '../diary/publish-diary'
 import {NoticePage} from '../notice/notice'
 import {ProfilePage} from '../profile/profile'
@@ -16,7 +17,7 @@ import {HomePage} from '../home/home'
 export class TabsPage {
   // set the root pages for each tab
   tab1Root: any = HomePage
-  tab2Root: any = SpeakerListPage
+  tab2Root: any = HotListPage
   tab3Root: any = ''
   tab4Root: any = MapPage
   noticePage: any = NoticePage
