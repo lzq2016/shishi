@@ -4,7 +4,7 @@
     </ion-navbar>
 </ion-header>
 <ion-content>
-    <div [style.height]="slideH">
+    <div class="slidersWrap">
         <ion-slides pager loop="true">
             <ion-slide>
                 <img src="assets/img/guide1.jpg">
@@ -17,10 +17,10 @@
             </ion-slide>
         </ion-slides>
     </div>
-    <ion-tabs tabsPlacement="top">
-        <ion-tab [root]="articlehotlist"></ion-tab>
-        <ion-tab [root]="topichotlist"></ion-tab>
-        <ion-tab [root]="peoplehotlist"></ion-tab>
-        <ion-tab [root]="videohotlist"></ion-tab>
+    <ion-tabs tabsPlacement="top" mode="md">
+        <ion-tab [root]="articlehotlist" tabTitle="文章"></ion-tab>
+        <ion-tab [root]="topichotlist" tabTitle="话题"></ion-tab>
+        <ion-tab [root]="peoplehotlist" tabTitle="人物"></ion-tab>
+        <ion-tab [root]="videohotlist" tabTitle="视频"></ion-tab>
     </ion-tabs>
 </ion-content>

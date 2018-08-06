@@ -91,6 +91,10 @@ import {testPage} from '../pages/test/test'
 import {DiaryDetailPage} from '../pages/diary/diary-detail'
 import { FileTransfer } from '@ionic-native/file-transfer';
 import { SafeHtmlPipe } from '../pipe/safehtml/safehtml';
+import {ArticleHotListPage} from '../pages/hotlist/articlehotlist/articlehotlist';
+import {TopicHotListPage} from '../pages/hotlist/topichotlist/topichotlist';
+import {PeopleHotListPage} from '../pages/hotlist/peoplehotlist/peoplehotlist';
+import {VideoHotListPage} from '../pages/hotlist/videohotlist/videohotlist';
 
 export class myHammerConfig extends HammerGestureConfig {
   overrides = <any>{
@@ -174,7 +178,11 @@ export class myHammerConfig extends HammerGestureConfig {
     DownHalfDirective,
     EditZindexDirective,
     SafeHtmlPipe,
-    HotListPage
+    HotListPage,
+    ArticleHotListPage,
+    TopicHotListPage,
+    PeopleHotListPage,
+    VideoHotListPage,
   ],
   imports: [
     BrowserModule,
@@ -254,6 +262,10 @@ export class myHammerConfig extends HammerGestureConfig {
     SettingPage,
     DiaryDetailPage,
     HotListPage,
+    ArticleHotListPage,
+    TopicHotListPage,
+    PeopleHotListPage,
+    VideoHotListPage,
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},

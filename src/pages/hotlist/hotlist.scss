@@ -1,3 +1,16 @@
 page-hotlist {
-   
+    .slidersWrap {
+        height: 30%;
+    }
+    ion-tabs {
+        height: 70%;
+        top: 30%;
+    }
+    .tabs-md .tabbar {
+        background: #fff;
+    }
+    .tabs-md .tab-button[aria-selected=true] {
+        color: #A3A3A3;
+        border-bottom: 2px solid #CACACA;
+    }
 }

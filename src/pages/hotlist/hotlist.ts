@@ -1,8 +1,8 @@
 import {Component,OnInit,OnDestroy} from '@angular/core'
 import {ArticleHotListPage} from './articlehotlist/articlehotlist';
-import {TopicHotList} from './topichotlist/topichotlist';
-import {PeopleHotList} from './peoplehotlist/peoplehotlist';
-import {videoHotList} from './videohotlist/videohotlist';
+import {TopicHotListPage} from './topichotlist/topichotlist';
+import {PeopleHotListPage} from './peoplehotlist/peoplehotlist';
+import {VideoHotListPage} from './videohotlist/videohotlist';
 
 @Component({
   selector: 'page-hotlist',
@@ -10,10 +10,10 @@ import {videoHotList} from './videohotlist/videohotlist';
 })
 export class HotListPage implements OnInit, OnDestroy {
   slideH = screen.width * 0.5 + 'px'
-  articlehotlist = ArticleHotList
-  topichotlist = TopicHotList
-  peoplehotlist = PeopleHotList
-  videohotlist = videoHotList
+  articlehotlist = ArticleHotListPage
+  topichotlist = TopicHotListPage
+  peoplehotlist = PeopleHotListPage
+  videohotlist = VideoHotListPage
   constructor() {
   }
 

@@ -1,10 +1,10 @@
 import {Component,OnInit,OnDestroy} from '@angular/core'
 
 @Component({
-  selector: 'page-topichotlist',
-  templateUrl: 'topichotlist.html',
+  selector: 'page-articlehotlist',
+  templateUrl: 'articlehotlist.html',
 })
-export class TopicHotListPage implements OnInit, OnDestroy {
+export class ArticleHotListPage implements OnInit, OnDestroy {
 
   constructor() {
   }
