@@ -87,6 +87,9 @@ import {CommentDetailPage} from '../pages/comment/comment-detail'
 import {CommentAttachmentsComponent} from '../components/comment/comment-attachments'
 import { TimelineComponent,TimelineTimeComponent,TimelineItemComponent } from '../components/timeline/timeline';
 import {HomePage} from '../pages/home/home'
+import {ArticleComponent} from '../pages/home/article/article'
+import {DiaryComponent} from '../pages/home/diary/diary'
+import {MarkPage} from '../pages/home/mark/mark'
 import {testPage} from '../pages/test/test'
 import {DiaryDetailPage} from '../pages/diary/diary-detail'
 import { FileTransfer } from '@ionic-native/file-transfer';
@@ -170,6 +173,9 @@ export class myHammerConfig extends HammerGestureConfig {
     PublishCommentPage,
     CommentDetailPage,
     HomePage,
+    ArticleComponent,
+    DiaryComponent,
+    MarkPage,
     testPage,
     DiaryDetailPage,
     OccupyParentDirective,
@@ -256,6 +262,9 @@ export class myHammerConfig extends HammerGestureConfig {
     PublishCommentPage,
     CommentDetailPage,
     HomePage,
+    ArticleComponent,
+    DiaryComponent,
+    MarkPage,
     testPage,
     ResetPasswordPage,
     VerificationPage,
