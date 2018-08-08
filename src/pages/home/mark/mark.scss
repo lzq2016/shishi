@@ -1,3 +1,29 @@
-page-mark {
-  
+mark {
+  .mark{
+    display: inline-block;
+    font-size: 14px;
+    color: #8E8E8E;
+    background: #EDEDED;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 3px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+  }
+  .markWrap{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .markType{
+    margin: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #CFCFCF;
+    font-size: 13px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
 }
