@@ -5,33 +5,11 @@
 </ion-header>
 <ion-content>
     <p class="markType">我的分类</p>
-    <div class="markWrap">
-        <span class="mark">推荐</span>
-        <span class="mark">推荐</span>
-        <span class="mark">推荐</span>
-        <span class="mark">推荐</span>
-        <span class="mark">推荐</span>
-        <span class="mark">推荐</span>
-        <span class="mark">推荐</span>
-        <span class="mark">推荐</span>
-        <span class="mark">推荐</span>
-        <span class="mark">推荐</span>
-        <span class="mark">推荐</span>
-        <span class="mark">推荐</span>
+    <div class="markWrap" [sortablejs]="normalList1" [sortablejsOptions]="normalOptions">
+        <span class="mark" *ngFor="let item of myType">{{item}}</span>
     </div>
     <p class="markType">街舞</p>
-    <div class="markWrap">
-        <span class="mark">推荐</span>
-        <span class="mark">推荐</span>
-        <span class="mark">推荐</span>
-        <span class="mark">推荐</span>
-        <span class="mark">推荐</span>
-        <span class="mark">推荐</span>
-        <span class="mark">推荐</span>
-        <span class="mark">推荐</span>
-        <span class="mark">推荐</span>
-        <span class="mark">推荐</span>
-        <span class="mark">推荐</span>
-        <span class="mark">推荐</span>
+    <div class="markWrap" [sortablejs]="normalList1" [sortablejsOptions]="normalOptions">
+        <span class="mark" *ngFor="let item of type1">{{item}}</span>
     </div>
 </ion-content>

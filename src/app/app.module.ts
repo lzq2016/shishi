@@ -98,6 +98,7 @@ import {ArticleHotListPage} from '../pages/hotlist/articlehotlist/articlehotlist
 import {TopicHotListPage} from '../pages/hotlist/topichotlist/topichotlist';
 import {PeopleHotListPage} from '../pages/hotlist/peoplehotlist/peoplehotlist';
 import {VideoHotListPage} from '../pages/hotlist/videohotlist/videohotlist';
+import { SortablejsModule } from 'angular-sortablejs';
 
 export class myHammerConfig extends HammerGestureConfig {
   overrides = <any>{
@@ -194,6 +195,7 @@ export class myHammerConfig extends HammerGestureConfig {
     BrowserModule,
     BrowserAnimationsModule,
     HttpModule,
+    SortablejsModule,
     IonicModule.forRoot(ConferenceApp, {}, {
       links: [
         {component: TabsPage, name: 'TabsPage', segment: 'tabs-page'},
