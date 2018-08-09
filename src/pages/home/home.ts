@@ -49,7 +49,7 @@ export class HomePage implements OnInit {
     tabsValue: '5',
   }]
 
-  tabContentCache = {}
+  tabContentCache = [];
 
   slideH = screen.width * 0.7 + 'px'
   slideList: any = []
@@ -85,15 +85,15 @@ export class HomePage implements OnInit {
   }
 
   ngOnInit() {
-    this.initTabContentCache();
+    // this.initTabContentCache();
     this.getHomefeedList();
   }
 
-  initTabContentCache(){
-    for(let i = 0;i<this.tabs.length;i++){
-      this.tabContentCache[this.tabs[i].tabsValue] = {};
-    }
-  }
+  // initTabContentCache(){
+  //   for(let i = 0;i<this.tabs.length;i++){
+  //     this.tabContentCache[this.tabs[i].tabsValue] = {};
+  //   }
+  // }
 
   checkAppVersion() {
     let self = this;
@@ -138,12 +138,12 @@ export class HomePage implements OnInit {
   getHomefeedList() {
     let self = this;
     let obj = {};
-    self.http.get(ServiceConfig.SLIDE, function (data) {
+    self.http.get(ServiceConfig.SLIDE, function (data1) {
       // self.slideList = data;
-      obj['slideList'] = data;
-      self.http.get(ServiceConfig.HOMEFEED + '?page=' + self.pageNumber, function (data) {
-        self.next = data.next;
-        if (data.next == '' || data.next == null) {
+      obj['slideList'] = data1;
+      self.http.get(ServiceConfig.HOMEFEED + '?page=' + self.pageNumber, function (data2) {
+        self.next = data2.next;
+        if (data2.next == '' || data2.next == null) {
           self.enabled = false;
         } else {
           self.enabled = true;
@@ -152,7 +152,8 @@ export class HomePage implements OnInit {
         //   self.diaryList.push(d);
         //   obj['feedList'] = d;
         // }
-        // self.tabContentCache.push(obj);
+        obj['feedList'] = data2.results;
+        self.tabContentCache.push(obj);
       });
     });
   }

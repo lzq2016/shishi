@@ -6,10 +6,10 @@
     </ion-segment>
     <img src="assets/img/guide1.jpg" style="width: 20px;height: 20px;vertical-align: middle;" (click)="goTabSelect()">
     <ion-slides #slider (ionSlideDidChange)="slideChanged()">
-        <ion-slide style="display: block;text-align: left;" >
+        <ion-slide style="display: block;text-align: left;" *ngFor="let items of tabContentCache">
             <div class="slide-wrap" [style.height]="slideH">
                 <ion-slides pager loop="true">
-                    <ion-slide *ngFor="let item of slideList" (click)="slideDetail(item.content_type,item.object_id)">
+                    <ion-slide *ngFor="let item of items.slideList" (click)="slideDetail(item.content_type,item.object_id)">
                         <ion-card class="ss-full-card">
                             <img class="image-box" [ngStyle]="{'background-image': 'url(' + item.image + ')'}" />
                             <div class="slide-text card-title" padding-left padding-right>{{item.title}}</div>
@@ -18,8 +18,10 @@
                     </ion-slide>
                 </ion-slides>
             </div>
-            <article></article>
-            <diary></diary>
+            <div *ngFor="let item of items.feedList">
+                <article *ngIf="item.content_type == 'blog'" [articleInfo]="item"></article>
+                <!-- <diary></diary> -->
+            </div>
         </ion-slide>
         <!-- <ion-slide>
             <h1>Tab 2</h1>

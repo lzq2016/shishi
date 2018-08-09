@@ -1,37 +1,35 @@
-<div>
-    <div style="overflow: hidden;padding-left:15px;padding-right: 15px;">
-        <div style="float:left;width: 36px;height: 36px;border-radius: 50%;display: inline-block;overflow: hidden;">
-            <img src="assets/img/guide3.jpg" style="width: 40px;height: 40px;">
+<div style="margin-top: 10px;">
+    <div class="titleWrap">
+        <div class="avatarWrap">
+            <img [src]="articleInfo.avatar" style="width: 40px;height: 40px;">
         </div>
-        <span style="float:left;font-size: 14px;color: #A1A1A1;margin-top: 9px;margin-left: 10px;">做一个好学生</span>
-        <span style="float:right;font-size: 13px;color: #A1A1A1;margin-top: 9px;">3分钟前</span>
+        <span class="name">{{articleInfo.username}}</span>
+        <span class="time">{{articleInfo.created_at | timeFormat1}}</span>
     </div>
-    <div style="width: 100%;height: 18rem;background-size: cover;background-position: 50% 50%;background-image: url('https://shishifiles.oss-cn-beijing.aliyuncs.com/media%2FTopic%2F2018%2F06%2F08%2Fbfea13c9e-b29f-4d7f-8096-e56dfb6d5dd5r_750w_750h_ss1.jpg')">
-        <div style="color: #fff;width: 80%;height: 10rem;word-break: break-all;word-wrap: break-word;white-space: normal;font-size: 2.5rem;
-            text-align: center;">
-            <div>#周末放送 | 房东的猫：美好不是奢侈，平淡亦可如诗#</div>
+    <div class="imgWrap" [ngStyle]="{'background-image': 'url(' +  articleInfo.image_set[0] + ')'}">
+        <div class="imgText">
+            <div>#{{articleInfo.title}}#</div>
         </div>
     </div>
-    <div style="padding-left: 15px;padding-right: 15px;font-size: 13px;color: #A1A1A1;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;
-        -webkit-line-clamp: 2;-webkit-box-orient: vertical;margin-top: 5px;">
-        第一眼见到是在微博无意间看到了小黑当时还不认识他只是觉得长的也太舒服了吧，很干净清新的感觉～ 后来无意间听到了《云烟成雨》一瞬间就被疯狂的吸粉啦！真的不要太好听了。很温柔的声音。很耐听～ 过后对房东的猫从此一发不可收拾～
+    <div class="contentWrap">
+        {{articleInfo.prefetch_content}}
     </div>
-    <div style="padding-left: 15px;padding-right: 15px;margin-top: 10px;">
+    <div class="dataWrap">
         <div style="float: left;">
-            <img src="assets/img/fire.png" style="width: 15px;height: 18px;    vertical-align: middle;">
-            <span style="color: #A1A1A1;font-size: 12px;margin-left: 2px;    vertical-align: middle;">22</span>
+            <img src="assets/img/fire.png" class="fireImg">
+            <span class="fireText">22</span>
         </div>
         <div style="float: right;">
-            <img src="assets/img/likehome.png" style="width: 16px;height: 16px;    vertical-align: middle;">
-            <span style="color: #A1A1A1;font-size: 12px;margin-left: 2px;vertical-align: middle;">32</span>
+            <img src="assets/img/likehome.png" class="collectImg">
+            <span class="collectText">{{articleInfo.collect_count}}</span>
         </div>
         <div style="float: right;">
-            <img src="assets/img/commenthome.png" style="width: 16px;height: 16px;    vertical-align: middle;">
-            <span style="color: #A1A1A1;font-size: 12px;margin-left: 2px;margin-right: 10px;vertical-align: middle;">32</span>
+            <img src="assets/img/commenthome.png" class="commentImg">
+            <span class="commentText">{{articleInfo.comment_count}}</span>
         </div>
         <div style="float: right;">
-            <img src="assets/img/zanhome.png" style="width: 16px;height: 16px;    vertical-align: middle;">
-            <span style="color: #A1A1A1;font-size: 12px;margin-left: 2px;margin-right: 10px;vertical-align: middle;">32</span>
+            <img src="assets/img/zanhome.png" class="zanImg">
+            <span class="zanText">{{articleInfo.like_count}}</span>
         </div>
     </div>
 </div>

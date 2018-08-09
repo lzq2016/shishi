@@ -1,3 +1,121 @@
 article {
-  
+  .titleWrap{
+    overflow: hidden;
+    padding-left:15px;
+    padding-right: 15px;
+    margin-bottom: 5px;
+  }
+  .avatarWrap{
+    float:left;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: inline-block;
+    overflow: hidden;
+  }
+  .name{
+    float:left;
+    font-size: 14px;
+    color: #A1A1A1;
+    margin-top: 9px;
+    margin-left: 10px;
+  }
+  .time{
+    float:right;
+    font-size: 13px;
+    color: #A1A1A1;
+    margin-top: 9px;
+  }
+  .imgWrap{
+    width: 100%;
+    height: 18rem;
+    background-size: cover;
+    background-position: 50% 50%;
+    position: relative;
+  }
+  .imgText{
+    color: #fff;
+    width: 80%;
+    height: 10rem;
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: normal;
+    font-size: 2.5rem;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+  }
+  .contentWrap{
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 13px;
+    color: #A1A1A1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    margin-top: 8px;
+  }
+  .dataWrap{
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 10px;
+    overflow: hidden;
+    border-bottom: 1px solid #DADADA;
+    padding-bottom: 10px;
+  }
+  .fireImg{
+    width: 15px;
+    height: 18px;
+    vertical-align: middle;
+  }
+  .fireText{
+    color: #A1A1A1;
+    font-size: 12px;
+    margin-left: 2px;
+    vertical-align: middle;
+  }
+  .collectImg{
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+  }
+  .collectImg{
+    color: #A1A1A1;
+    font-size: 12px;
+    margin-left: 2px;
+    vertical-align: middle;
+  }
+  .collectText{
+    color: #A1A1A1;
+    font-size: 12px;
+    margin-left: 2px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  .commentImg{
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+  }
+  .commentText{
+    color: #A1A1A1;
+    font-size: 12px;
+    margin-left: 2px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  .zanImg{
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+  }
+  .zanText{
+    color: #A1A1A1;
+    font-size: 12px;
+    margin-left: 2px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
 }

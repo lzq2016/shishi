@@ -94,6 +94,7 @@ import {testPage} from '../pages/test/test'
 import {DiaryDetailPage} from '../pages/diary/diary-detail'
 import { FileTransfer } from '@ionic-native/file-transfer';
 import { SafeHtmlPipe } from '../pipe/safehtml/safehtml';
+import { TimeFormat1Pipe } from '../pipe/timeformat1/timeformat1';
 import {ArticleHotListPage} from '../pages/hotlist/articlehotlist/articlehotlist';
 import {TopicHotListPage} from '../pages/hotlist/topichotlist/topichotlist';
 import {PeopleHotListPage} from '../pages/hotlist/peoplehotlist/peoplehotlist';
@@ -185,6 +186,7 @@ export class myHammerConfig extends HammerGestureConfig {
     DownHalfDirective,
     EditZindexDirective,
     SafeHtmlPipe,
+    TimeFormat1Pipe,
     HotListPage,
     ArticleHotListPage,
     TopicHotListPage,

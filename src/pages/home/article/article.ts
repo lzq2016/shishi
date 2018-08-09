@@ -9,7 +9,7 @@ import {Component, Input} from '@angular/core';
 })
 export class ArticleComponent {
 
-  @Input() attachments: any = [];
+  @Input() articleInfo: any = {};
   
   constructor() {
   }
