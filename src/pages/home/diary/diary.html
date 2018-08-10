@@ -1,16 +1,16 @@
-<div>
+<div style="margin-top: 10px;">
     <div class="titleWrap">
         <div class="avatarWrap">
-            <img src="assets/img/guide3.jpg" style="width: 40px;height: 40px;">
+            <img [src]="diaryInfo.avatar" style="width: 40px;height: 40px;">
         </div>
-        <span class="name">做一个好学生</span>
-        <span class="time">3分钟前</span>
+        <span class="name">{{diaryInfo.username}}</span>
+        <span class="time">{{diaryInfo.created_at | timeFormat1}}</span>
     </div>
     <div class="contentWrap">
-        <p class="title">歌单分享 | 和我一样爱陈粒的举手♥️</p>
-        <p class="content">456</p>
+        <p class="title">{{diaryInfo.title}}</p>
+        <p class="content">{{diaryInfo.prefetch_content}}</p>
     </div>
-    <!-- <ss-comment-attachments *ngIf="testImg1.length" [attachments]="testImg1"></ss-comment-attachments> -->
+    <ss-comment-attachments class="imgsWrap" *ngIf="diaryInfo.image_set.length" [attachments]="diaryInfo.image_set"></ss-comment-attachments>
     <div class="dataWrap">
         <div style="float: left;">
             <img src="assets/img/fire.png" class="fireImg">
@@ -18,15 +18,15 @@
         </div>
         <div style="float: right;">
             <img src="assets/img/likehome.png" class="collectImg">
-            <span class="collectText">32</span>
+            <span class="collectText">{{diaryInfo.collect_count}}</span>
         </div>
         <div style="float: right;">
             <img src="assets/img/commenthome.png" class="commentImg">
-            <span class="commentText">32</span>
+            <span class="commentText">{{diaryInfo.comment_count}}</span>
         </div>
         <div style="float: right;">
             <img src="assets/img/zanhome.png" class="zanImg">
-            <span class="zanText">32</span>
+            <span class="zanText">{{diaryInfo.like_count}}</span>
         </div>
     </div>
 </div>

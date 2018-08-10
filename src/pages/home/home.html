@@ -20,7 +20,7 @@
             </div>
             <div *ngFor="let item of items.feedList">
                 <article *ngIf="item.content_type == 'blog'" [articleInfo]="item"></article>
-                <!-- <diary></diary> -->
+                <diary *ngIf="item.content_type == 'diary'" [diaryInfo]="item"></diary>
             </div>
         </ion-slide>
         <!-- <ion-slide>

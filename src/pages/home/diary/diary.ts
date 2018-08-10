@@ -6,7 +6,7 @@ import {Component, Input} from '@angular/core';
 })
 export class DiaryComponent {
 
-  @Input() attachments: any = [];
+  @Input() diaryInfo: any = [];
   
   constructor() {
   }

@@ -27,20 +27,20 @@
 
   <meta name="viewport" content="width=device-width">
   
-  <title>DanmuPlayer/glyphicons-halflings-regular.eot at master · chiruom/DanmuPlayer</title>
-    <meta name="description" content="Html5弹幕视频播放器插件">
+  <title>BulletPlayer/bulletPlayer.min.css at master · gundam1993/BulletPlayer</title>
+    <meta name="description" content="A HTML5 danmaku video player">
     <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
   <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
   <meta property="fb:app_id" content="1401488693436528">
 
     
-    <meta property="og:image" content="https://avatars1.githubusercontent.com/u/8535270?s=400&amp;v=4" /><meta property="og:site_name" content="GitHub" /><meta property="og:type" content="object" /><meta property="og:title" content="chiruom/DanmuPlayer" /><meta property="og:url" content="https://github.com/chiruom/DanmuPlayer" /><meta property="og:description" content="DanmuPlayer - Html5弹幕视频播放器插件" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/13927122?s=400&amp;v=4" /><meta property="og:site_name" content="GitHub" /><meta property="og:type" content="object" /><meta property="og:title" content="gundam1993/BulletPlayer" /><meta property="og:url" content="https://github.com/gundam1993/BulletPlayer" /><meta property="og:description" content="BulletPlayer - A HTML5 danmaku video player" />
 
   <link rel="assets" href="https://assets-cdn.github.com/">
-  <link rel="web-socket" href="wss://live.github.com/_sockets/VjI6MzAxNTUxNDc4OjBjZDcxMDE0NzI1MTlmZjJmYzQ3MjVlNzM0MTE2MDllOWJmZjc0NzAwMzIwZTViZDgzNjBiNWM0N2M2MWZkZTU=--1cca1f882d5b4d32f0a2ba14532b44a0db212418">
+  <link rel="web-socket" href="wss://live.github.com/_sockets/VjI6MjY2ODYyNTk4OjljZmIxMWE5ZmNhYmMxN2UyYjViOGJlYmRmMTc0ZDI1ZTYxMWUxOGVmNzI2OTJjNTlmMzQ4Zjk2YzNiODM3NTg=--cdd7e99ea15f129fb4975bf9e8954d5687025381">
   <meta name="pjax-timeout" content="1000">
   <link rel="sudo-modal" href="/sessions/sudo_modal">
-  <meta name="request-id" content="6927:53CA:14F170C:1DE3009:5B6D7CF8" data-pjax-transient>
+  <meta name="request-id" content="FC09:58AA:1BECA79:3829732:5B6DB33D" data-pjax-transient>
 
 
   
@@ -52,7 +52,7 @@
   <meta name="google-site-verification" content="GXs5KoUUkNCoaAZn7wPN-t01Pywp9M3sEjnt_3_ZWPc">
     <meta name="google-analytics" content="UA-3769691-2">
 
-<meta name="octolytics-host" content="collector.githubapp.com" /><meta name="octolytics-app-id" content="github" /><meta name="octolytics-event-url" content="https://collector.githubapp.com/github-external/browser_event" /><meta name="octolytics-dimension-request_id" content="6927:53CA:14F170C:1DE3009:5B6D7CF8" /><meta name="octolytics-dimension-region_edge" content="ap-southeast-1" /><meta name="octolytics-dimension-region_render" content="iad" /><meta name="octolytics-actor-id" content="19236005" /><meta name="octolytics-actor-login" content="lzq2016" /><meta name="octolytics-actor-hash" content="c1da4d3753ad3c05c410ec696e9dfa677e1800874b43f1d160ed758ad829013b" />
+<meta name="octolytics-host" content="collector.githubapp.com" /><meta name="octolytics-app-id" content="github" /><meta name="octolytics-event-url" content="https://collector.githubapp.com/github-external/browser_event" /><meta name="octolytics-dimension-request_id" content="FC09:58AA:1BECA79:3829732:5B6DB33D" /><meta name="octolytics-dimension-region_edge" content="iad" /><meta name="octolytics-dimension-region_render" content="iad" /><meta name="octolytics-actor-id" content="19236005" /><meta name="octolytics-actor-login" content="lzq2016" /><meta name="octolytics-actor-hash" content="c1da4d3753ad3c05c410ec696e9dfa677e1800874b43f1d160ed758ad829013b" />
 <meta name="analytics-location" content="/&lt;user-name&gt;/&lt;repo-name&gt;/blob/show" data-pjax-transient="true" />
 
 
@@ -68,23 +68,23 @@
     <meta name="user-login" content="lzq2016">
 
       <meta name="expected-hostname" content="github.com">
-    <meta name="js-proxy-site-detection-payload" content="YzJkNTM5Yzc1YjUyMmY1ZWQ1OTE0NjI2ODkxZjRjZTQ0YzMzYTllZTIzMmI5ZWQ1MjY2NTc5ZWQzN2U1ODQwMXx7InJlbW90ZV9hZGRyZXNzIjoiMjE5LjE0MS4xNjYuMTEwIiwicmVxdWVzdF9pZCI6IjY5Mjc6NTNDQToxNEYxNzBDOjFERTMwMDk6NUI2RDdDRjgiLCJ0aW1lc3RhbXAiOjE1MzM5MDIwNzMsImhvc3QiOiJnaXRodWIuY29tIn0=">
+    <meta name="js-proxy-site-detection-payload" content="YzQ0Y2Y0NDU5NjU3NTQ2ODA0MWMxOGY4YjU5MjZhOWExNzNkY2VjYWE1MDljMDkyNGE1NzJjNWY1YzAxODJiN3x7InJlbW90ZV9hZGRyZXNzIjoiMTIzLjExOC4xNzMuMTczIiwicmVxdWVzdF9pZCI6IkZDMDk6NThBQToxQkVDQTc5OjM4Mjk3MzI6NUI2REIzM0QiLCJ0aW1lc3RhbXAiOjE1MzM5MTU5OTgsImhvc3QiOiJnaXRodWIuY29tIn0=">
 
     <meta name="enabled-features" content="DASHBOARD_V2_LAYOUT_OPT_IN,EXPLORE_DISCOVER_REPOSITORIES,UNIVERSE_BANNER,FREE_TRIALS,MARKETPLACE_INSIGHTS,MARKETPLACE_PLAN_RESTRICTION_EDITOR,MARKETPLACE_SEARCH,MARKETPLACE_INSIGHTS_CONVERSION_PERCENTAGES,MARKETPLACE_RETARGETING">
 
-  <meta name="html-safe-nonce" content="28dafb7fa3cd6581f04e24e0b941776498084b16">
+  <meta name="html-safe-nonce" content="1574103c5f1321e9f05f07b2da647ed64ae4d419">
 
   <meta http-equiv="x-pjax-version" content="e00c5220e15626fefbe0e86e5f81806c">
   
 
-      <link href="https://github.com/chiruom/DanmuPlayer/commits/master.atom" rel="alternate" title="Recent Commits to DanmuPlayer:master" type="application/atom+xml">
+      <link href="https://github.com/gundam1993/BulletPlayer/commits/master.atom" rel="alternate" title="Recent Commits to BulletPlayer:master" type="application/atom+xml">
 
-  <meta name="go-import" content="github.com/chiruom/DanmuPlayer git https://github.com/chiruom/DanmuPlayer.git">
+  <meta name="go-import" content="github.com/gundam1993/BulletPlayer git https://github.com/gundam1993/BulletPlayer.git">
 
-  <meta name="octolytics-dimension-user_id" content="8535270" /><meta name="octolytics-dimension-user_login" content="chiruom" /><meta name="octolytics-dimension-repository_id" content="33227768" /><meta name="octolytics-dimension-repository_nwo" content="chiruom/DanmuPlayer" /><meta name="octolytics-dimension-repository_public" content="true" /><meta name="octolytics-dimension-repository_is_fork" content="false" /><meta name="octolytics-dimension-repository_network_root_id" content="33227768" /><meta name="octolytics-dimension-repository_network_root_nwo" content="chiruom/DanmuPlayer" /><meta name="octolytics-dimension-repository_explore_github_marketplace_ci_cta_shown" content="false" />
+  <meta name="octolytics-dimension-user_id" content="13927122" /><meta name="octolytics-dimension-user_login" content="gundam1993" /><meta name="octolytics-dimension-repository_id" content="60849982" /><meta name="octolytics-dimension-repository_nwo" content="gundam1993/BulletPlayer" /><meta name="octolytics-dimension-repository_public" content="true" /><meta name="octolytics-dimension-repository_is_fork" content="false" /><meta name="octolytics-dimension-repository_network_root_id" content="60849982" /><meta name="octolytics-dimension-repository_network_root_nwo" content="gundam1993/BulletPlayer" /><meta name="octolytics-dimension-repository_explore_github_marketplace_ci_cta_shown" content="false" />
 
 
-    <link rel="canonical" href="https://github.com/chiruom/DanmuPlayer/blob/master/dist/fonts/glyphicons-halflings-regular.eot" data-pjax-transient>
+    <link rel="canonical" href="https://github.com/gundam1993/BulletPlayer/blob/master/bulletV2/bulletPlayer.min.css" data-pjax-transient>
 
 
   <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
@@ -139,7 +139,7 @@
   aria-expanded="true"
 >
   <div class="position-relative">
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="js-site-search-form" data-scope-type="Repository" data-scope-id="33227768" data-scoped-search-url="/chiruom/DanmuPlayer/search" data-unscoped-search-url="/search" action="/chiruom/DanmuPlayer/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="js-site-search-form" data-scope-type="Repository" data-scope-id="60849982" data-scoped-search-url="/gundam1993/BulletPlayer/search" data-unscoped-search-url="/search" action="/gundam1993/BulletPlayer/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
       <label class="form-control header-search-wrapper header-search-wrapper-jump-to position-relative d-flex flex-justify-between flex-items-center js-chromeless-input-container">
         <input type="text"
           class="form-control header-search-input jump-to-field js-jump-to-field js-site-search-focus js-site-search-field is-clearable"
@@ -152,7 +152,7 @@
           autocapitalize="off"
           aria-autocomplete="list"
           aria-controls="jump-to-results"
-          data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations#csrf-token=yZ4U2k2XsSQBiWuvgCPEXxsgJFLvYx38bk1Z8hbqHAcfjCqR5ZaWePACcBJh4KyFZwW/ZQo0C7rfIoi9J/xw+w=="
+          data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations#csrf-token=0G/BKzzRjukfWYWbhrK+CRxvM3lVow1x/Wyk1KM0ZHISlaBEeVaEIO6FG6niQUNAEwxoIjnOLyN3rgYU/4LZCw=="
           spellcheck="false"
           autocomplete="off"
           >
@@ -269,9 +269,9 @@
 
   <div class="dropdown-divider"></div>
   <div class="dropdown-header">
-    <span title="chiruom/DanmuPlayer">This repository</span>
+    <span title="gundam1993/BulletPlayer">This repository</span>
   </div>
-    <a role="menuitem" class="dropdown-item" href="/chiruom/DanmuPlayer/issues/new" data-ga-click="Header, create new issue">
+    <a role="menuitem" class="dropdown-item" href="/gundam1993/BulletPlayer/issues/new" data-ga-click="Header, create new issue">
       New issue
     </a>
 
@@ -300,7 +300,7 @@
           <li><a role="menuitem" class="dropdown-item" href="https://help.github.com" data-ga-click="Header, go to help, text:help">Help</a></li>
           <li><a role="menuitem" class="dropdown-item" href="/settings/profile" data-ga-click="Header, go to settings, icon:settings">Settings</a></li>
           <li>
-            <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="logout-form" action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="hcku6BIRri6Aul/WIo3bk+14YNMFpHOdFg5iyMvx+GoxgaAohF2ok1Ahen57aqaRP9gUJseTws7EQ8ZfGjdWTw==" />
+            <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="logout-form" action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="0qJtz9UOFmYpkl2Bdi9mTQDFiHOQNIgzp7y1//L7nN30MRH0/1V/8n47PnhOlJb4O2i8/j3Tp9GalC0bBBZ0/w==" />
               <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout" role="menuitem">
                 Sign out
               </button>
@@ -313,7 +313,7 @@
 
 
 
-        <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="sr-only right-0" action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="REynT+mp8wuNwhkGu8q7/gdhH+GfyX/zPzH+gKAsbI7wBCmPf+X1tl1ZPK7iLcb81cFrFF3+zqDtfFoXcerCqw==" />
+        <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="sr-only right-0" action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="QXyMySr53sZQIYzRZR6ds0A5fBZ0nqATEiJDLLNhUfBn7/DyAKK3UgeI7yhdpW0Ge5RIm9l5j/EvCtvIRYy50g==" />
           <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
             Sign out
           </button>
@@ -351,10 +351,10 @@
 
       <ul class="pagehead-actions">
   <li>
-        <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-autosubmit="true" data-remote="true" class="js-social-container" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="hm2+iB8L4PEz0l2TTB+WBWqM3j22B7yrKqLwgesfO8CACNRUQUmtOd4fqlY51jl6i8iJazvM6Jlcdgkjf0AlCA==" />      <input type="hidden" name="repository_id" id="repository_id" value="33227768" class="form-control" />
+        <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-autosubmit="true" data-remote="true" class="js-social-container" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="6CO/Pl5JNyZE6+ZztT863cLgPPvbz3S4oCSPP1CGOvvtb9kOW62/1g37dtfTrO8Uh9HjOv3BwIABCmpca2EVqw==" />      <input type="hidden" name="repository_id" id="repository_id" value="60849982" class="form-control" />
 
         <div class="select-menu js-menu-container js-select-menu">
-          <a href="/chiruom/DanmuPlayer/subscription"
+          <a href="/gundam1993/BulletPlayer/subscription"
             class="btn btn-sm btn-with-count select-menu-button js-menu-target"
             role="button"
             aria-haspopup="true"
@@ -367,9 +367,9 @@
             </span>
           </a>
           <a class="social-count js-social-count"
-            href="/chiruom/DanmuPlayer/watchers"
-            aria-label="41 users are watching this repository">
-            41
+            href="/gundam1993/BulletPlayer/watchers"
+            aria-label="1 user is watching this repository">
+            1
           </a>
 
         <div class="select-menu-modal-holder">
@@ -431,63 +431,63 @@
   <li>
     
   <div class="js-toggler-container js-social-container starring-container ">
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="starred js-social-form" action="/chiruom/DanmuPlayer/unstar" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="/rdJy9i33D3eRDygvb2Ygv28eV8DgkWeUrstXcKA/i7oDX5Fapg3sC3T4PEVvNPdMxmX+Ubms7exSYyW02sN8g==" />
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="starred js-social-form" action="/gundam1993/BulletPlayer/unstar" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="YPFYlPoby6+/HRIiZt2ZBexAKBWD62VfVM38jvpYT5V1YWg2cV+Bpfb4MYCcqHx8+xT297oMSsf0bE7QVjc0Ig==" />
       <input type="hidden" name="context" value="repository"></input>
       <button
         type="submit"
         class="btn btn-sm btn-with-count js-toggler-target"
-        aria-label="Unstar this repository" title="Unstar chiruom/DanmuPlayer"
+        aria-label="Unstar this repository" title="Unstar gundam1993/BulletPlayer"
         data-ga-click="Repository, click unstar button, action:blob#show; text:Unstar">
         <svg class="octicon octicon-star v-align-text-bottom" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"/></svg>
         Unstar
       </button>
-        <a class="social-count js-social-count" href="/chiruom/DanmuPlayer/stargazers"
-           aria-label="390 users starred this repository">
-          390
+        <a class="social-count js-social-count" href="/gundam1993/BulletPlayer/stargazers"
+           aria-label="2 users starred this repository">
+          2
         </a>
 </form>
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="unstarred js-social-form" action="/chiruom/DanmuPlayer/star" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="6OXowGeOR+M9M25gLU9xY15TQPjVsIYQwCfpSbP9gHIDwiYVnX4KftbRnrYF5BEoeNgcyMajfeccXW0NWsVNRg==" />
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="unstarred js-social-form" action="/gundam1993/BulletPlayer/star" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="hDyJlY2dF6826uTBAbvsNW+jfe5qyRE36spakwktdYIUeuQiK5Qrud6r5aqanmSFq7ckOFcNU1QduOQxqh/omQ==" />
       <input type="hidden" name="context" value="repository"></input>
       <button
         type="submit"
         class="btn btn-sm btn-with-count js-toggler-target"
-        aria-label="Star this repository" title="Star chiruom/DanmuPlayer"
+        aria-label="Star this repository" title="Star gundam1993/BulletPlayer"
         data-ga-click="Repository, click star button, action:blob#show; text:Star">
         <svg class="octicon octicon-star v-align-text-bottom" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"/></svg>
         Star
       </button>
-        <a class="social-count js-social-count" href="/chiruom/DanmuPlayer/stargazers"
-           aria-label="390 users starred this repository">
-          390
+        <a class="social-count js-social-count" href="/gundam1993/BulletPlayer/stargazers"
+           aria-label="2 users starred this repository">
+          2
         </a>
 </form>  </div>
 
   </li>
 
   <li>
-          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="btn-with-count" action="/chiruom/DanmuPlayer/fork" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="GJEJi35sGLeTj0waKzNtekS0VlHsGyvDFaqRsU5k0fsHqIPBRYXoL5MYFX0QKtruWH0DlbFNBPzNciFhxlXwvg==" />
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="btn-with-count" action="/gundam1993/BulletPlayer/fork" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="1Je1fDJAzYEPgtzx9VB0fOPYQ/SMGfRaf6Fl+KB0xH81YWWMW+pq2TkddB1DkYqdWIaQ5SYccQ41rblUbAn1eQ==" />
             <button
                 type="submit"
                 class="btn btn-sm btn-with-count"
                 data-ga-click="Repository, show fork modal, action:blob#show; text:Fork"
-                title="Fork your own copy of chiruom/DanmuPlayer to your account"
-                aria-label="Fork your own copy of chiruom/DanmuPlayer to your account">
+                title="Fork your own copy of gundam1993/BulletPlayer to your account"
+                aria-label="Fork your own copy of gundam1993/BulletPlayer to your account">
               <svg class="octicon octicon-repo-forked v-align-text-bottom" viewBox="0 0 10 16" version="1.1" width="10" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 0 0-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V6.5l3 3v1.78A1.993 1.993 0 0 0 5 15a1.993 1.993 0 0 0 1-3.72V9.5l3-3V4.72A1.993 1.993 0 0 0 8 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
               Fork
             </button>
 </form>
-    <a href="/chiruom/DanmuPlayer/network/members" class="social-count"
-       aria-label="151 users forked this repository">
-      151
+    <a href="/gundam1993/BulletPlayer/network/members" class="social-count"
+       aria-label="0 users forked this repository">
+      0
     </a>
   </li>
 </ul>
 
       <h1 class="public ">
   <svg class="octicon octicon-repo" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"/></svg>
-  <span class="author" itemprop="author"><a class="url fn" rel="author" href="/chiruom">chiruom</a></span><!--
+  <span class="author" itemprop="author"><a class="url fn" rel="author" href="/gundam1993">gundam1993</a></span><!--
 --><span class="path-divider">/</span><!--
---><strong itemprop="name"><a data-pjax="#js-repo-pjax-container" href="/chiruom/DanmuPlayer">DanmuPlayer</a></strong>
+--><strong itemprop="name"><a data-pjax="#js-repo-pjax-container" href="/gundam1993/BulletPlayer">BulletPlayer</a></strong>
 
 </h1>
 
@@ -500,40 +500,40 @@
      data-pjax="#js-repo-pjax-container">
 
   <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
-    <a class="js-selected-navigation-item selected reponav-item" itemprop="url" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches repo_packages /chiruom/DanmuPlayer" href="/chiruom/DanmuPlayer">
+    <a class="js-selected-navigation-item selected reponav-item" itemprop="url" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches repo_packages /gundam1993/BulletPlayer" href="/gundam1993/BulletPlayer">
       <svg class="octicon octicon-code" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M9.5 3L8 4.5 11.5 8 8 11.5 9.5 13 14 8 9.5 3zm-5 0L0 8l4.5 5L6 11.5 2.5 8 6 4.5 4.5 3z"/></svg>
       <span itemprop="name">Code</span>
       <meta itemprop="position" content="1">
 </a>  </span>
 
     <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
-      <a itemprop="url" data-hotkey="g i" class="js-selected-navigation-item reponav-item" data-selected-links="repo_issues repo_labels repo_milestones /chiruom/DanmuPlayer/issues" href="/chiruom/DanmuPlayer/issues">
+      <a itemprop="url" data-hotkey="g i" class="js-selected-navigation-item reponav-item" data-selected-links="repo_issues repo_labels repo_milestones /gundam1993/BulletPlayer/issues" href="/gundam1993/BulletPlayer/issues">
         <svg class="octicon octicon-issue-opened" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"/></svg>
         <span itemprop="name">Issues</span>
-        <span class="Counter">14</span>
+        <span class="Counter">0</span>
         <meta itemprop="position" content="2">
 </a>    </span>
 
   <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
-    <a data-hotkey="g p" itemprop="url" class="js-selected-navigation-item reponav-item" data-selected-links="repo_pulls checks /chiruom/DanmuPlayer/pulls" href="/chiruom/DanmuPlayer/pulls">
+    <a data-hotkey="g p" itemprop="url" class="js-selected-navigation-item reponav-item" data-selected-links="repo_pulls checks /gundam1993/BulletPlayer/pulls" href="/gundam1993/BulletPlayer/pulls">
       <svg class="octicon octicon-git-pull-request" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M11 11.28V5c-.03-.78-.34-1.47-.94-2.06C9.46 2.35 8.78 2.03 8 2H7V0L4 3l3 3V4h1c.27.02.48.11.69.31.21.2.3.42.31.69v6.28A1.993 1.993 0 0 0 10 15a1.993 1.993 0 0 0 1-3.72zm-1 2.92c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zM4 3c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v6.56A1.993 1.993 0 0 0 2 15a1.993 1.993 0 0 0 1-3.72V4.72c.59-.34 1-.98 1-1.72zm-.8 10c0 .66-.55 1.2-1.2 1.2-.65 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
       <span itemprop="name">Pull requests</span>
-      <span class="Counter">2</span>
+      <span class="Counter">0</span>
       <meta itemprop="position" content="3">
 </a>  </span>
 
-    <a data-hotkey="g b" class="js-selected-navigation-item reponav-item" data-selected-links="repo_projects new_repo_project repo_project /chiruom/DanmuPlayer/projects" href="/chiruom/DanmuPlayer/projects">
+    <a data-hotkey="g b" class="js-selected-navigation-item reponav-item" data-selected-links="repo_projects new_repo_project repo_project /gundam1993/BulletPlayer/projects" href="/gundam1993/BulletPlayer/projects">
       <svg class="octicon octicon-project" viewBox="0 0 15 16" version="1.1" width="15" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1z"/></svg>
       Projects
       <span class="Counter" >0</span>
 </a>
 
-    <a class="js-selected-navigation-item reponav-item" data-hotkey="g w" data-selected-links="repo_wiki /chiruom/DanmuPlayer/wiki" href="/chiruom/DanmuPlayer/wiki">
+    <a class="js-selected-navigation-item reponav-item" data-hotkey="g w" data-selected-links="repo_wiki /gundam1993/BulletPlayer/wiki" href="/gundam1993/BulletPlayer/wiki">
       <svg class="octicon octicon-book" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M3 5h4v1H3V5zm0 3h4V7H3v1zm0 2h4V9H3v1zm11-5h-4v1h4V5zm0 2h-4v1h4V7zm0 2h-4v1h4V9zm2-6v9c0 .55-.45 1-1 1H9.5l-1 1-1-1H2c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h5.5l1 1 1-1H15c.55 0 1 .45 1 1zm-8 .5L7.5 3H2v9h6V3.5zm7-.5H9.5l-.5.5V12h6V3z"/></svg>
       Wiki
 </a>
 
-  <a class="js-selected-navigation-item reponav-item" data-selected-links="repo_graphs repo_contributors dependency_graph pulse /chiruom/DanmuPlayer/pulse" href="/chiruom/DanmuPlayer/pulse">
+  <a class="js-selected-navigation-item reponav-item" data-selected-links="repo_graphs repo_contributors dependency_graph pulse /gundam1993/BulletPlayer/pulse" href="/gundam1993/BulletPlayer/pulse">
     <svg class="octicon octicon-graph" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16 14v1H0V0h1v14h15zM5 13H3V8h2v5zm4 0H7V3h2v10zm4 0h-2V6h2v7z"/></svg>
     Insights
 </a>
@@ -547,9 +547,9 @@
   <div class="repository-content ">
 
     
-  <a class="d-none js-permalink-shortcut" data-hotkey="y" href="/chiruom/DanmuPlayer/blob/174db80e831d5c88ca5946228a47136d4f1ad5aa/dist/fonts/glyphicons-halflings-regular.eot">Permalink</a>
+  <a class="d-none js-permalink-shortcut" data-hotkey="y" href="/gundam1993/BulletPlayer/blob/5985d2849216809efc633201c2e768c905ac8052/bulletV2/bulletPlayer.min.css">Permalink</a>
 
-  <!-- blob contrib key: blob_contributors:v21:f81035086cc951345a8166b987176d5c -->
+  <!-- blob contrib key: blob_contributors:v21:cba71c7b8a82f0fe2efaaa06675f5c1f -->
 
   
 
@@ -592,8 +592,18 @@
         <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
 
 
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/gundam1993/BulletPlayer/blob/gh-pages/bulletV2/bulletPlayer.min.css"
+               data-name="gh-pages"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text">
+                gh-pages
+              </span>
+            </a>
             <a class="select-menu-item js-navigation-item js-navigation-open selected"
-               href="/chiruom/DanmuPlayer/blob/master/dist/fonts/glyphicons-halflings-regular.eot"
+               href="/gundam1993/BulletPlayer/blob/master/bulletV2/bulletPlayer.min.css"
                data-name="master"
                data-skip-pjax="true"
                rel="nofollow">
@@ -621,7 +631,7 @@
 </div>
 
     <div class="BtnGroup float-right">
-      <a href="/chiruom/DanmuPlayer/find/master"
+      <a href="/gundam1993/BulletPlayer/find/master"
             class="js-pjax-capture-input btn btn-sm BtnGroup-item"
             data-pjax
             data-hotkey="t">
@@ -632,12 +642,12 @@
       </clipboard-copy>
     </div>
     <div id="blob-path" class="breadcrumb">
-      <span class="repo-root js-repo-root"><span class="js-path-segment"><a data-pjax="true" href="/chiruom/DanmuPlayer"><span>DanmuPlayer</span></a></span></span><span class="separator">/</span><span class="js-path-segment"><a data-pjax="true" href="/chiruom/DanmuPlayer/tree/master/dist"><span>dist</span></a></span><span class="separator">/</span><span class="js-path-segment"><a data-pjax="true" href="/chiruom/DanmuPlayer/tree/master/dist/fonts"><span>fonts</span></a></span><span class="separator">/</span><strong class="final-path">glyphicons-halflings-regular.eot</strong>
+      <span class="repo-root js-repo-root"><span class="js-path-segment"><a data-pjax="true" href="/gundam1993/BulletPlayer"><span>BulletPlayer</span></a></span></span><span class="separator">/</span><span class="js-path-segment"><a data-pjax="true" href="/gundam1993/BulletPlayer/tree/master/bulletV2"><span>bulletV2</span></a></span><span class="separator">/</span><strong class="final-path">bulletPlayer.min.css</strong>
     </div>
   </div>
 
 
-  <include-fragment src="/chiruom/DanmuPlayer/contributors/master/dist/fonts/glyphicons-halflings-regular.eot" class="commit-tease commit-loader">
+  <include-fragment src="/gundam1993/BulletPlayer/contributors/master/bulletV2/bulletPlayer.min.css" class="commit-tease commit-loader">
     <div>
       Fetching contributors&hellip;
     </div>
@@ -654,18 +664,25 @@
   <div class="file-actions">
 
     <div class="BtnGroup">
-      <a id="raw-url" class="btn btn-sm BtnGroup-item" href="/chiruom/DanmuPlayer/raw/master/dist/fonts/glyphicons-halflings-regular.eot">Download</a>
-      <a rel="nofollow" class="btn btn-sm BtnGroup-item" href="/chiruom/DanmuPlayer/commits/master/dist/fonts/glyphicons-halflings-regular.eot">History</a>
+      <a id="raw-url" class="btn btn-sm BtnGroup-item" href="/gundam1993/BulletPlayer/raw/master/bulletV2/bulletPlayer.min.css">Raw</a>
+        <a class="btn btn-sm js-update-url-with-hash BtnGroup-item" data-hotkey="b" href="/gundam1993/BulletPlayer/blame/master/bulletV2/bulletPlayer.min.css">Blame</a>
+      <a rel="nofollow" class="btn btn-sm BtnGroup-item" href="/gundam1993/BulletPlayer/commits/master/bulletV2/bulletPlayer.min.css">History</a>
     </div>
 
         <a class="btn-octicon tooltipped tooltipped-nw"
-           href="x-github-client://openRepo/https://github.com/chiruom/DanmuPlayer?branch=master&amp;filepath=dist%2Ffonts%2Fglyphicons-halflings-regular.eot"
+           href="x-github-client://openRepo/https://github.com/gundam1993/BulletPlayer?branch=master&amp;filepath=bulletV2%2FbulletPlayer.min.css"
            aria-label="Open this file in GitHub Desktop"
            data-ga-click="Repository, open with desktop, type:windows">
             <svg class="octicon octicon-device-desktop" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M15 2H1c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h5.34c-.25.61-.86 1.39-2.34 2h8c-1.48-.61-2.09-1.39-2.34-2H15c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm0 9H1V3h14v8z"/></svg>
         </a>
 
-        <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form" action="/chiruom/DanmuPlayer/delete/master/dist/fonts/glyphicons-halflings-regular.eot" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="3fPLNrMz5tykLyhlRBaCxakJS07kWkFXHel02ZGPoLcsSsbaQwTx41CWDe/3XIfPhLZe5No40yRNbg1wD6l7Vg==" />
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form js-update-url-with-hash" action="/gundam1993/BulletPlayer/edit/master/bulletV2/bulletPlayer.min.css" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="d6VAeH5i9T+oPKzb3SO+4Vl/4d3dKBie217gqfiqVhT/AVIuULdDfE4dWcbrp8ULtzB+rGYQn4TgI325MS/qKA==" />
+            <button class="btn-octicon tooltipped tooltipped-nw" type="submit"
+              aria-label="Fork this project and edit the file" data-hotkey="e" data-disable-with>
+              <svg class="octicon octicon-pencil" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M0 12v3h3l8-8-3-3-8 8zm3 2H1v-2h1v1h1v1zm10.3-9.3L12 6 9 3l1.3-1.3a.996.996 0 0 1 1.41 0l1.59 1.59c.39.39.39 1.02 0 1.41z"/></svg>
+            </button>
+</form>
+        <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form" action="/gundam1993/BulletPlayer/delete/master/bulletV2/bulletPlayer.min.css" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="XI42VmQ7iLI0ar4JOLdC5azjy8XjsU2+1SaeA3eIXpKxVjiS/9oymRk/E8qJvu4BEo9rQMzNu0rUGTKodPyWTg==" />
           <button class="btn-octicon btn-octicon-danger tooltipped tooltipped-nw" type="submit"
             aria-label="Fork this project and delete the file" data-disable-with>
             <svg class="octicon octicon-trashcan" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M11 2H9c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1H2c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1v9c0 .55.45 1 1 1h7c.55 0 1-.45 1-1V5c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm-1 12H3V5h1v8h1V5h1v8h1V5h1v8h1V5h1v9zm1-10H2V3h9v1z"/></svg>
@@ -673,16 +690,36 @@
 </form>  </div>
 
   <div class="file-info">
-    3.29 KB
+      1 lines (1 sloc)
+      <span class="file-info-divider"></span>
+    12.5 KB
   </div>
 </div>
 
     
 
-  <div itemprop="text" class="blob-wrapper data type-text">
-      <div class="image">
-          <a href="/chiruom/DanmuPlayer/blob/master/dist/fonts/glyphicons-halflings-regular.eot?raw=true">View Raw</a>
-      </div>
+  <div itemprop="text" class="blob-wrapper data type-css">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tr>
+        <td id="L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="LC1" class="blob-code blob-code-inner js-file-line">@font-face{font-family:iconfont;src:url(//at.alicdn.com/t/font_1465652874_542997.eot);src:url(//at.alicdn.com/t/font_1465652874_542997.eot?#iefix) format(&#39;embedded-opentype&#39;),url(&#39;data:application/x-font-woff;charset=utf-8;base64,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&#39;) format(&#39;woff&#39;),url(//at.alicdn.com/t/font_1465652874_542997.ttf) format(&#39;truetype&#39;),url(//at.alicdn.com/t/font_1465652874_542997.svg#iconfont) format(&#39;svg&#39;);src:url(//at.alicdn.com/t/font_1465652874_542997.eot)\9}.iconfont{font-family:iconfont!important;font-size:30px;font-style:normal;-webkit-font-smoothing:antialiased;-webkit-text-stroke-width:.2px;-moz-osx-font-smoothing:grayscale}.icon-send:before{content:&quot;\e60c&quot;}.icon-fullscreenexit:before{content:&quot;\e601&quot;}.icon-fullscreen:before{content:&quot;\e602&quot;}.icon-pause:before{content:&quot;\e603&quot;}.icon-playarrow:before{content:&quot;\e604&quot;}.icon-volumedown:before{content:&quot;\e605&quot;}.icon-volumemute:before{content:&quot;\e606&quot;}.icon-volumeoff:before{content:&quot;\e607&quot;}.icon-volumeup:before{content:&quot;\e608&quot;}.icon-loop:before{content:&quot;\e609&quot;}.icon-settings:before{content:&quot;\e60a&quot;}.icon-icon:before{content:&quot;\e60b&quot;}#BPlayer{margin:auto;position:relative;height:100%;width:100%;overflow:hidden;background-color:#000}#BPlayer-videoArea{background-color:#000;height:100%;width:100%}#BPlayer-video{display:block;z-index:1;width:100%;height:100%}#BPlayer-controler{width:100%;height:45px;position:absolute;bottom:0;left:0;z-index:3;box-sizing:border-box;padding:0 20px;transition:transform .3s ease-in-out}.BPlayer-controler-hide{transform:translateY(100%)}.BPlayer-Btn{height:40px;width:40px;float:left;text-align:center;line-height:100%;vertical-align:middle;color:#BBB;margin:5px 0 0 10px;cursor:pointer;transition:color .2s ease-in-out}.BPlayer-Btn:hover{color:#FFF}#BPlayer-playBtn i{display:block;margin:8px 0}#BPlayer-volumeControler{height:45px;width:65px;float:left;overflow:hidden;transition:all .1s ease-in-out}#BPlayer-volumeControler:hover{width:120px;transition:all .3s ease-in-out}#BPlayer-volumeBtn{width:45px;text-align:left}#BPlayer-volumeBtn i{display:block;margin:8px 0}#BPlayer-volumeBar-container{display:inline-block;margin:0 8px 0 -5px;vertical-align:middle;height:100%;cursor:pointer;position:relative}#BPlayer-volumeControler:hover&gt;#BPlayer-volumeBar-container{width:55px}#BPlayer-volumeBar{height:3px;width:0;background-color:#DDD;position:absolute;top:20px;left:0;transition:all .3s ease-in-out}#BPlayer-volumeControler:hover #BPlayer-volumeBar{width:55px;transition:all .3s ease-in-out}#BPlayer-volumeBar-inner{height:3px;width:0;max-width:100%;background-color:#AB3B3A;position:absolute;top:0;left:0}.BPlayer-thumb{display:block;height:12px;width:8px;background-color:#BBB;position:absolute;top:-3.5px;left:0;transition:all .3s ease-in-out;transform:scale(0)}#BPlayer-volume-thumb{transition:all .3s ease-in-out}#BPlayer-volumeControler:hover .BPlayer-thumb{transform:scale(1);transition:transform .3s ease-in-out}#BPlayer-danmukuBtn{float:right;margin:5px 0 0 0}#BPlayer-danmukuBtn i{display:block;margin:8px 0}#BPlayer-fullscreenBtn{float:right;margin:5px 10px 0 0}#BPlayer-fullscreenBtn i{display:block;margin:8px 0}#BPlayer:-webkit-full-screen{width:100%;height:100%}#BPlayer-loopBtn{float:right;margin:5px 0 0 0}#BPlayer-loopBtn i{display:block;margin:8px 0}#BPlayer-playBar{height:3px;background-color:rgba(50,50,50,.5);cursor:pointer;position:relative}#BPlayer-playBar-loaded{height:3px;background-color:rgba(255,255,255,.5);position:absolute;top:0;left:0}#BPlayer-playBar-played{height:3px;width:0;max-width:100%;background-color:#AB3B3A;position:absolute;top:0;left:0}#BPlayer-play-thumb{position:relative;top:-4.5px}#BPlayer-playBar:hover .BPlayer-thumb{transform:scale(1);transition:transform .3s ease-in-out}#BPlayer-timer{font-size:14px;color:#FFF;float:left;margin-top:14px}#BPlayer-timer span{margin:0 5px}#BPlayer-danmuku-controler{width:50%;height:40px;position:absolute;right:50%;bottom:55px;background-color:rgba(0,0,0,.5);border-radius:5px;transition:transform .3s ease-in-out}.BPlayer-danmuku-controler-hide{transform:translate(50%,250%)}.BPlayer-danmuku-controler-show{transform:translate(50%,0)}#BPlayer-danmuku-style{width:40px;height:40px;color:#FFF;opacity:.8;position:absolute;top:0;left:5px;cursor:pointer;transition:color .2s ease-in-out}#BPlayer-danmuku-style i{display:block;margin:5px 0}#BPlayer-danmuku-input{height:20px;line-height:20px;font-size:18px;width:75%;position:absolute;top:0;left:50%;transform:translateX(-50%);background-color:transparent;border:none;outline:0;text-align:center;color:#FFF;margin-top:10px}#BPlayer-danmuku-shooter{width:40px;height:40px;color:#CCC;opacity:.8;position:absolute;top:0;right:0;cursor:pointer;transition:color .3s ease-in-out}#BPlayer-danmuku-shooter:hover{color:#FFF;transition:color .3s ease-in-out}#BPlayer-danmuku-shooter i{display:block;margin:5px 0}#BPlayer-danmuku-styleMenu{width:380px;background-color:rgba(0,0,0,.8);border-radius:5px;position:absolute;left:50%;bottom:50px;padding:15px 10px;transition:transform .3s ease-in-out}.BPlayer-danmuku-styleMenu-hide{transform:translate(-50%,250%)}.BPlayer-danmuku-styleMenu-show{transform:translate(-50%,0)}#BPlayer-danmuku-PositionMenu{width:100%;text-align:center;color:#FFF;font-size:16px}#BPlayer-danmuku-PositionMenu&gt;span{display:block;line-height:22px;margin-bottom:4px}.hidden-input{opacity:0;position:absolute;z-index:-1}.BPlayer-danmuku-Position+span{display:inline-block;width:50px;height:50px;border-radius:4px;margin:0 15px 0 15px;line-height:50px;border:2px solid #333;color:#333;cursor:pointer;text-align:center;justify-content:center}.BPlayer-danmuku-Position+span:hover{border:2px solid #FFF;color:#FFF}.BPlayer-danmuku-Position:checked+span{border:2px solid #AB3B3A;color:#AB3B3A}#BPlayer-danmuku-ColorMenu{width:100%;padding-top:10px;align-content:center;color:#FFF;text-align:center;font-size:16px}#BPlayer-danmuku-ColorMenu&gt;span{display:block;line-height:22px;margin-bottom:4px}.BPlayer-danmuku-Color+span{display:inline-block;width:30px;height:30px;line-height:30px;border-radius:4px;border:2px solid #333;cursor:pointer;text-align:center;justify-content:center}.BPlayer-danmuku-Color+span:hover{border:2px solid #FFF}.BPlayer-danmuku-Color:checked+span{border:2px solid #AB3B3A}#BPlayer-danmuku-OpacityMenu{width:100%;padding-top:10px;align-content:center;color:#FFF;text-align:center;font-size:16px}#BPlayer-danmuku-OpacityMenu&gt;span{display:block;line-height:22px;margin-bottom:4px}#BPlayer-danmuku-opacity{width:200px;height:4px;background-color:#DDD;cursor:pointer;position:relative;margin:10px auto}#BPlayer-danmuku-opacity-chosen{height:4px;width:75%;position:absolute;top:0;left:0;background-color:#AB3B3A}#BPlayer-danmuku-opacity-thumb{transition:all .3s ease-in-out;transform:scale(1) translateX(-50%);left:100%}#BPlayer-danmukuArea{width:100%;height:100%;position:absolute;top:0;left:0;overflow:hidden}.BPlayer-danmuku-items{position:absolute;font-size:25px;font-family:Arial;font-weight:700;text-align:center;height:26px;cursor:default;white-space:nowrap;font-weight:bolder;text-shadow:.5px .5px .5px rgba(0,0,0,.5)}</td>
+      </tr>
+</table>
+
+  <details class="details-reset details-overlay BlobToolbar position-absolute js-file-line-actions dropdown d-none" aria-hidden="true">
+    <summary class="btn-octicon ml-0 px-2 p-0 bg-white border border-gray-dark rounded-1" aria-label="Inline file action toolbar">
+      <svg class="octicon octicon-kebab-horizontal" viewBox="0 0 13 16" version="1.1" width="13" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M1.5 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM13 7.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/></svg>
+    </summary>
+    <details-menu>
+      <ul class="BlobToolbar-dropdown dropdown-menu dropdown-menu-se mt-2">
+        <li><clipboard-copy role="menuitem" class="dropdown-item" id="js-copy-lines" style="cursor:pointer;" data-original-text="Copy lines">Copy lines</clipboard-copy></li>
+        <li><clipboard-copy role="menuitem" class="dropdown-item" id="js-copy-permalink" style="cursor:pointer;" data-original-text="Copy permalink">Copy permalink</clipboard-copy></li>
+        <li><a class="dropdown-item js-update-url-with-hash" id="js-view-git-blame" role="menuitem" href="/gundam1993/BulletPlayer/blame/5985d2849216809efc633201c2e768c905ac8052/bulletV2/bulletPlayer.min.css">View git blame</a></li>
+          <li><a class="dropdown-item" id="js-new-issue" role="menuitem" href="/gundam1993/BulletPlayer/issues/new">Open new issue</a></li>
+      </ul>
+    </details-menu>
+  </details>
+
   </div>
 
   </div>
@@ -710,7 +747,7 @@
 <div class="footer container-lg px-3" role="contentinfo">
   <div class="position-relative d-flex flex-justify-between pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
     <ul class="list-style-none d-flex flex-wrap ">
-      <li class="mr-3">&copy; 2018 <span title="0.30909s from unicorn-796cdb4b5d-jbhv2">GitHub</span>, Inc.</li>
+      <li class="mr-3">&copy; 2018 <span title="0.50109s from unicorn-5974d94c9c-d9sq5">GitHub</span>, Inc.</li>
         <li class="mr-3"><a data-ga-click="Footer, go to terms, text:terms" href="https://github.com/site/terms">Terms</a></li>
         <li class="mr-3"><a data-ga-click="Footer, go to privacy, text:privacy" href="https://github.com/site/privacy">Privacy</a></li>
         <li class="mr-3"><a href="https://help.github.com/articles/github-security/" data-ga-click="Footer, go to security, text:security">Security</a></li>

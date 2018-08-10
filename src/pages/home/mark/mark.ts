@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import { SortablejsOptions } from 'angular-sortablejs';
-
+// import * as $ from 'jquery';
 @Component({
   selector: 'mark',
   templateUrl: 'mark.html'
@@ -17,15 +17,7 @@ export class MarkPage {
 };
   
   constructor() {
-    $("#danmup").danmuplayer({
-
-      src:"shsn.mp4",       //视频源
-
-      width:800,      //视频宽度
-
-      height:445      //视频高度
-
-    });
+    // var obj = new BulletPlayer("#player");
   }
 
   
