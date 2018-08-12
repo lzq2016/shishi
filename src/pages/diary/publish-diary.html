@@ -1,20 +1,21 @@
 <ion-header>
     <ion-navbar>
         <ion-title>发布笔记</ion-title>
-        <!-- <ion-buttons end>
-            <button ion-button clear (click)="saveDraft()">
-                存草稿
+        <ion-buttons end>
+            <button ion-button clear (click)="onPublishDiary(targetForm)" style="color: #F0C3C8;font-size: 16px;">
+                发布
             </button>
-        </ion-buttons> -->
+        </ion-buttons>
     </ion-navbar>
 </ion-header>
 <ion-content>
     <form #targetForm="ngForm" novalidate>
         <ion-list>
-            <ion-item>
-                <ion-input [(ngModel)]="diary.title" placeholder="添加标题" maxlength="30" name="title" type="text" #title="ngModel" spellcheck="false" autocapitalize="off" required>
+            <ion-item style="padding-right: 16px;border-bottom: 1px solid #dedede;">
+                <ion-input [(ngModel)]="diary.title" placeholder="添加标题" maxlength="30" name="title" type="text" #title="ngModel" spellcheck="false"
+                    autocapitalize="off" required>
                 </ion-input>
-                <span ion-text item-end color="primary">{{30 - (diary.title?.length > 30 ? 30 : diary.title?.length)}}</span>
+                <span ion-text item-end style="color: #F0C3C8;">{{30 - (diary.title?.length > 30 ? 30 : diary.title?.length)}}</span>
             </ion-item>
             <div ion-text *ngIf="title.invalid && submitted === true" color="danger" padding-left>
                 <div *ngIf="title.errors.required">
@@ -24,8 +25,9 @@
                     标题最多30个字
                 </div>
             </div>
-            <ion-item>
-                <ion-textarea class="diary-content" [(ngModel)]="diary.content" placeholder="说说你的心得吧~" name="content" type="text" #content="ngModel" required></ion-textarea>
+            <ion-item style="padding-right: 16px;">
+                <ion-textarea class="diary-content" [(ngModel)]="diary.content" placeholder="说说你的心得吧~" name="content" type="text" #content="ngModel"
+                    required></ion-textarea>
             </ion-item>
             <p ion-text [hidden]="content.valid || submitted == false" color="danger" padding-left>
                 笔记内容必填
@@ -37,12 +39,21 @@
                     <ion-thumbnail item-start class="">
                         <div class="content">
                             <img class="image-box" [ngStyle]="{'background-image': 'url(' + item?.url + ')'}" *ngIf="item?.url">
-                            <div *ngIf="!item?.url" class="avatar">
-                                <img src="../../assets/img/appicon.png" />
+                            <div class="avatar" *ngIf="!item?.url" style="background-image:url(assets/img/newLogo.jpg)">
                             </div>
                         </div>
                     </ion-thumbnail>
                 </ion-col>
+                <!-- <ion-col col-4 class="big-box">
+                    <ion-thumbnail item-start class="">
+                        <div class="content">
+                            <img class="image-box" style="background-image:url(../../assets/img/newLogo.jpg)">
+                            <div class="avatar" style="background-image:url(assets/img/newLogo.jpg)">
+                            </div>
+                        </div>
+                    </ion-thumbnail>
+                </ion-col> -->
+
                 <ion-col col-4 class="big-box">
                     <div class="content">
                         <button ion-button icon-only block clear class="getPicButton" (click)="getPics()">
@@ -52,12 +63,47 @@
                 </ion-col>
             </ion-row>
         </ion-grid>
-        <ion-row responsive-sm>
+
+        <!-- <ion-row responsive-sm>
             <ion-col>
                 <button ion-button block (click)="onPublishDiary(targetForm)">发布
                     <ion-icon style="margin-left: 5px" name="md-arrow-forward"></ion-icon>
                 </button>
             </ion-col>
-        </ion-row>
+        </ion-row> -->
+        <div style="border-top: 1px solid #dedede;border-bottom: 1px solid #dedede;margin-left: 16px;margin-right: 16px;padding-top: 10px;padding-bottom: 10px;">
+            <div style="overflow: hidden;" (click)="goDiaryMark()">
+                <span style="color: #8B8B8B;font-size: 14px;float: float:left;">标签</span>
+                <img src="assets/img/arrowright.png" style="width: 7px;height: 13px;float: right;margin-top: 2px;">
+            </div>
+            <div style="margin-top: 10px;">
+                <span style="font-size: 15x;color: #979797;display: inline-block;background: #D8D8D8;padding: 5px 10px;border-radius: 3px;margin-right: 5px;margin-bottom: 5px;">演唱会</span>
+                <span style="font-size: 15x;color: #979797;display: inline-block;background: #D8D8D8;padding: 5px 10px;border-radius: 3px;margin-right: 5px;margin-bottom: 5px;">演唱会</span>
+                <span style="font-size: 15x;color: #979797;display: inline-block;background: #D8D8D8;padding: 5px 10px;border-radius: 3px;margin-right: 5px;margin-bottom: 5px;">演唱会</span>
+                <span style="font-size: 15x;color: #979797;display: inline-block;background: #D8D8D8;padding: 5px 10px;border-radius: 3px;margin-right: 5px;margin-bottom: 5px;">演唱会</span>
+                <span style="font-size: 15x;color: #979797;display: inline-block;background: #D8D8D8;padding: 5px 10px;border-radius: 3px;margin-right: 5px;margin-bottom: 5px;">演唱会</span>
+                <span style="font-size: 15x;color: #979797;display: inline-block;background: #D8D8D8;padding: 5px 10px;border-radius: 3px;margin-right: 5px;margin-bottom: 5px;">演唱会</span>
+                <span style="font-size: 15x;color: #979797;display: inline-block;background: #D8D8D8;padding: 5px 10px;border-radius: 3px;margin-right: 5px;margin-bottom: 5px;">演唱会</span>
+                <span style="font-size: 15x;color: #979797;display: inline-block;background: #D8D8D8;padding: 5px 10px;border-radius: 3px;margin-right: 5px;margin-bottom: 5px;">演唱会</span>
+                <span style="font-size: 15x;color: #979797;display: inline-block;background: #D8D8D8;padding: 5px 10px;border-radius: 3px;margin-right: 5px;margin-bottom: 5px;">演唱会</span>
+            </div>
+        </div>
+        <div style="border-bottom: 1px solid #dedede;margin-left: 16px;margin-right: 16px;padding-top: 10px;padding-bottom: 10px;margin-bottom: 30px;">
+            <div style="overflow: hidden;" (click)="goDiaryArticle()">
+                <span style="color: #8B8B8B;font-size: 14px;float: float:left;">话题</span>
+                <img src="assets/img/arrowright.png" style="width: 7px;height: 13px;float: right;margin-top: 2px;">
+            </div>
+            <div style="margin-top: 10px;">
+                <span style="font-size: 15x;color: #DB999B;margin-right: 5px;margin-bottom: 5px;">#演唱会</span>
+                <span style="font-size: 15x;color: #DB999B;margin-right: 5px;margin-bottom: 5px;">#演唱会</span>
+                <span style="font-size: 15x;color: #DB999B;margin-right: 5px;margin-bottom: 5px;">#演唱会</span>
+                <span style="font-size: 15x;color: #DB999B;margin-right: 5px;margin-bottom: 5px;">#演唱会</span>
+                <span style="font-size: 15x;color: #DB999B;margin-right: 5px;margin-bottom: 5px;">#演唱会</span>
+                <span style="font-size: 15x;color: #DB999B;margin-right: 5px;margin-bottom: 5px;">#演唱会</span>
+                <span style="font-size: 15x;color: #DB999B;margin-right: 5px;margin-bottom: 5px;">#演唱会</span>
+                <span style="font-size: 15x;color: #DB999B;margin-right: 5px;margin-bottom: 5px;">#演唱会</span>
+
+            </div>
+        </div>
     </form>
 </ion-content>

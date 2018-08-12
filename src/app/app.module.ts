@@ -92,6 +92,8 @@ import {DiaryComponent} from '../pages/home/diary/diary'
 import {MarkPage} from '../pages/home/mark/mark'
 import {testPage} from '../pages/test/test'
 import {DiaryDetailPage} from '../pages/diary/diary-detail'
+import {DiaryMarkPage} from '../pages/diarymark/diarymark'
+import {DiaryArticlePage} from '../pages/diaryarticle/diaryarticle'
 import { FileTransfer } from '@ionic-native/file-transfer';
 import { SafeHtmlPipe } from '../pipe/safehtml/safehtml';
 import { TimeFormat1Pipe } from '../pipe/timeformat1/timeformat1';
@@ -192,6 +194,8 @@ export class myHammerConfig extends HammerGestureConfig {
     TopicHotListPage,
     PeopleHotListPage,
     VideoHotListPage,
+    DiaryMarkPage,
+    DiaryArticlePage,
   ],
   imports: [
     BrowserModule,
@@ -279,6 +283,8 @@ export class myHammerConfig extends HammerGestureConfig {
     TopicHotListPage,
     PeopleHotListPage,
     VideoHotListPage,
+    DiaryMarkPage,
+    DiaryArticlePage,
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},

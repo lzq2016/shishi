@@ -30,7 +30,7 @@ export class HttpClient {
       }
       return this.http.post(url, JSON.stringify(paramObj), new RequestOptions({headers: headers}))
         .map(res => res.json()).catch(this.handleError).subscribe(data => {
-            cb(data);
+              cb(data);
           }, err => {
             cb(err);
             this.handleSubscribeError(err);
@@ -93,7 +93,7 @@ export class HttpClient {
         }
       }
       return this.http.get(url, {headers}).map(res => res.json()).catch(this.handleError).subscribe(data => {
-        cb(data);
+          cb(data);
       }, err => {
         this.handleSubscribeError(err);
       });

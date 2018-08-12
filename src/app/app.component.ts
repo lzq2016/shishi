@@ -17,6 +17,8 @@ import {UserData} from '../providers/user-data'
 import {NoticePage} from '../pages/notice/notice'
 import {ProfilePage} from '../pages/profile/profile'
 import { StatusBar } from '@ionic-native/status-bar';
+import { HttpClient } from '../providers/httpClient';
+// import { ServiceConfig } from '../providers/service.config';
 
 export interface PageInterface {
   title: string;
@@ -65,7 +67,8 @@ export class ConferenceApp {
     public confData: ConferenceData,
     public storage: Storage,
     public splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    public http: HttpClient,
   ) {
 
     // Check if the user has already seen the tutorial
@@ -108,6 +111,17 @@ export class ConferenceApp {
     this.storage.get('token')
     .then((data) => {
       console.log("token data:" + data);
+      // if(data){
+      //   this.http.get(ServiceConfig.SLIDE, function (data1) {
+      //     if(data1.detail == 'Signature has expired.'){
+      //       this.rootPage = LoginPage;
+      //     }else{
+      //       this.rootPage = TabsPage
+      //     }
+      //   });
+      // }else{
+      //   this.rootPage = LoginPage;
+      // }
       if (data) {
         this.rootPage = TabsPage
       }else {

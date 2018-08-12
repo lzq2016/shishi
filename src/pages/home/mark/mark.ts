@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import { SortablejsOptions } from 'angular-sortablejs';
-// import * as $ from 'jquery';
+
+
 @Component({
   selector: 'mark',
   templateUrl: 'mark.html'
@@ -17,7 +18,7 @@ export class MarkPage {
 };
   
   constructor() {
-    // var obj = new BulletPlayer("#player");
+  
   }
 
   
