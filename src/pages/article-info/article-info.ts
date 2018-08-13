@@ -22,7 +22,7 @@ export class ArticleInfoPage implements OnInit {
   private requrl: string;
   commentNextPage: string = ""
   globalId: number = 0
-  type: string = ""
+  // type: string = ""
   contentId: number = 0
   hasCollected: boolean = false
   hasZan: boolean = false
@@ -44,14 +44,15 @@ export class ArticleInfoPage implements OnInit {
     let that = this;
     this.requrl = ServiceConfig.getUrl();
     let id = this.navParams.get('id');
-    this.type = this.navParams.get('type');
+    // this.type = this.navParams.get('type');
     this.globalId = this.navParams.get('id');
     let DetailUrl = "";
-    if (this.type == "blog") {
-      DetailUrl = "api/v1/blog/" + id + "/";
-    } else if (this.type == "topic") {
-      DetailUrl = "api/v1/topic/" + id + "/";
-    }
+    DetailUrl = "api/v1/blog/" + id + "/";
+    // if (this.type == "blog") {
+    //   DetailUrl = "api/v1/blog/" + id + "/";
+    // } else if (this.type == "topic") {
+    //   DetailUrl = "api/v1/topic/" + id + "/";
+    // }
     //获取文章详情
     this.http.get(DetailUrl, function (data) {
       that.info.imgurl = data.cover;
@@ -67,7 +68,7 @@ export class ArticleInfoPage implements OnInit {
   getComment(){
     //获取评论列表
     let that = this;
-    this.http.get("api/v1/comment?content_type=" + that.type + "&object_id=" + that.globalId, function (data) {
+    this.http.get("api/v1/comment?content_type=blog&object_id=" + that.globalId, function (data) {
       console.log(data);
       for (let i = 0; i < data.results.length; i++) {
         let pl = {};
@@ -164,13 +165,13 @@ export class ArticleInfoPage implements OnInit {
     console.log(id)
     let that = this
     if (id) {
-      this.navCtrl.push(CommentInfoPage, { id: id, type: that.type })
+      this.navCtrl.push(CommentInfoPage, { id: id, type: 'blog' })
     }
   }
 
   collection() {
     let that = this
-    this.http.post("/api/v1/collect/", { content_type: that.type, object_id: that.globalId }, function (data) {
+    this.http.post("/api/v1/collect/", { content_type: 'blog', object_id: that.globalId }, function (data) {
       if (data.success) {
         console.log(data)
         that.hasCollected = true
@@ -193,7 +194,7 @@ export class ArticleInfoPage implements OnInit {
   }
   like() {
     let that = this
-    this.http.post("/api/v1/like/", { content_type: that.type, object_id: that.globalId }, function (data) {
+    this.http.post("/api/v1/like/", { content_type: 'blog', object_id: that.globalId }, function (data) {
       if (data.success) {
         that.hasZan = true
         let toast = that.toastCtrl.create({
@@ -224,7 +225,7 @@ export class ArticleInfoPage implements OnInit {
 
   makeComment() {
     let that = this
-    this.navCtrl.push(PublishCommentPage, { id: that.contentId, content_type: that.type, type: "comment" });
+    this.navCtrl.push(PublishCommentPage, { id: that.contentId, content_type: 'blog', type: "comment" });
   }
 
   goMe(userId) {

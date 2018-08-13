@@ -1,4 +1,6 @@
 import {Component, Input} from '@angular/core';
+import {NavController} from 'ionic-angular';
+import { RecordInfoPage } from '../../record-info/record-info';
 
 @Component({
   selector: 'diary',
@@ -8,9 +10,12 @@ export class DiaryComponent {
 
   @Input() diaryInfo: any = [];
   
-  constructor() {
+  constructor(public navCtrl: NavController) {
   }
 
+  goDiaryDetail() {
+    this.navCtrl.push(RecordInfoPage, { id: this.diaryInfo.object_id });
+  }
   
 
 }

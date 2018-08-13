@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core'
 import { NavController, NavParams, ViewController } from 'ionic-angular'
-import { HttpClient } from '../../providers/httpClient';
 
 
 @Component({
@@ -13,7 +12,6 @@ export class DiaryMarkPage implements OnInit, OnDestroy {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    private httpClient: HttpClient,
     public viewCtrl: ViewController) {
     console.log('UserId', navParams.get('userId'));
   }

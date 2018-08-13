@@ -39,6 +39,7 @@ import {UploadavatarPage} from '../pages/uploadavatar/uploadavatar';
 import {ArticleInfoPage} from '../pages/article-info/article-info';
 import {CommentInfoPage} from '../pages/comment-info/comment-info';
 import {RecordInfoPage} from '../pages/record-info/record-info';
+import {VideoDetailPage} from '../pages/videodetail/videodetail';
 import {ProfilePage} from '../pages/profile/profile';
 import {TipsPage} from '../pages/tips/tips';
 
@@ -89,6 +90,7 @@ import { TimelineComponent,TimelineTimeComponent,TimelineItemComponent } from '.
 import {HomePage} from '../pages/home/home'
 import {ArticleComponent} from '../pages/home/article/article'
 import {DiaryComponent} from '../pages/home/diary/diary'
+import {VideoComponent} from '../pages/home/video/video'
 import {MarkPage} from '../pages/home/mark/mark'
 import {testPage} from '../pages/test/test'
 import {DiaryDetailPage} from '../pages/diary/diary-detail'
@@ -196,6 +198,8 @@ export class myHammerConfig extends HammerGestureConfig {
     VideoHotListPage,
     DiaryMarkPage,
     DiaryArticlePage,
+    VideoComponent,
+    VideoDetailPage,
   ],
   imports: [
     BrowserModule,
@@ -272,6 +276,7 @@ export class myHammerConfig extends HammerGestureConfig {
     HomePage,
     ArticleComponent,
     DiaryComponent,
+    VideoComponent,
     MarkPage,
     testPage,
     ResetPasswordPage,
@@ -285,6 +290,7 @@ export class myHammerConfig extends HammerGestureConfig {
     VideoHotListPage,
     DiaryMarkPage,
     DiaryArticlePage,
+    VideoDetailPage,
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},
