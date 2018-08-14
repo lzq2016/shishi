@@ -37,16 +37,15 @@ import {MsgnoticePage} from '../pages/msgnotice/msgnotice';
 import {GuidePage} from '../pages/guide/guide';
 import {UploadavatarPage} from '../pages/uploadavatar/uploadavatar';
 import {ArticleInfoPage} from '../pages/article-info/article-info';
+import {CommentComponent} from '../pages/article-info/comment/comment';
 import {CommentInfoPage} from '../pages/comment-info/comment-info';
 import {RecordInfoPage} from '../pages/record-info/record-info';
 import {VideoDetailPage} from '../pages/videodetail/videodetail';
 import {ProfilePage} from '../pages/profile/profile';
 import {TipsPage} from '../pages/tips/tips';
-
 import {SettingPage} from '../pages/setting/setting';
 import {ResetPasswordPage} from '../pages/resetPassword/resetPassword';
 import {VerificationPage} from '../pages/verification/verification';
-
 import {ConferenceData} from '../providers/conference-data';
 import {UserData} from '../providers/user-data';
 import {HttpClient} from '../providers/httpClient';
@@ -200,6 +199,7 @@ export class myHammerConfig extends HammerGestureConfig {
     DiaryArticlePage,
     VideoComponent,
     VideoDetailPage,
+    CommentComponent,
   ],
   imports: [
     BrowserModule,
@@ -291,6 +291,7 @@ export class myHammerConfig extends HammerGestureConfig {
     DiaryMarkPage,
     DiaryArticlePage,
     VideoDetailPage,
+    CommentComponent,
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},

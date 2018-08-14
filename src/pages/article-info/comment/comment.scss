@@ -1,0 +1,89 @@
+comment {
+  .acticle-reply {
+    padding: 20px;
+}
+.reply-user {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  line-height: 50px;
+}
+.reply-head {
+  display: flex;
+  flex-direction: row;
+  line-height: 50px;
+  vertical-align: middle;
+}
+.reply-head .friend {
+  width: 35px;
+  height: 15px;
+  color: #F5ADAD;
+  border: 1px solid #F5ADAD;
+  line-height: 15px;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 3px;
+  margin: 0;
+  margin-top: 8px;
+  margin-left: 10px;
+}
+.reply-head-img {
+  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden
+}
+.reply-info {
+  flex: 1;
+}
+.reply-info .name {
+  font-size: 14px;
+  height: 14px;
+  line-height: 14px;
+  margin-top: 9px;
+  color: #707070;
+}
+.reply-info .time {
+  font-size: 12px;
+  height: 12px;
+  line-height: 12px;
+  color: #DBDBDB;
+  margin: 0;
+  margin-top: 5px;
+}
+.replycontent {
+  color: #9B9B9B;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.mainimg {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.commentWrap {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.commentImg {
+  width: 17px;
+}
+.zanImg {
+  width: 18px;
+  margin-left: 10px;
+}
+.zanNum {
+  font-size: 14px;
+  color: #8C8C8C;
+  position: absolute;
+  bottom: 25px;
+  right: 6px;
+}
+.imgdiv {
+  width: 32.8%;
+}
+}

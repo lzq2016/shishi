@@ -62,7 +62,7 @@ export class ArticleInfoPage implements OnInit {
       that.hasCollected = data.has_collected;
       that.hasZan = data.has_liked;
     });
-    this.getComment();
+    // this.getComment();
   }
 
   getComment(){
@@ -163,7 +163,6 @@ export class ArticleInfoPage implements OnInit {
   }
   commentDetail(id) {
     console.log(id)
-    let that = this
     if (id) {
       this.navCtrl.push(CommentInfoPage, { id: id, type: 'blog' })
     }
