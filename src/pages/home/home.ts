@@ -176,7 +176,7 @@ export class HomePage implements OnInit {
   }
 
   goTabSelect(){
-    this.navCtrl.push(MarkPage);
+    this.navCtrl.push(MarkPage,{id:1});
   }
 
   goTopicDetail(id) {

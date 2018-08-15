@@ -12,8 +12,8 @@
                 <p class="friend">好友</p>
             </div>
         </div>
-        <!-- <div style="position: relative;padding-left: 46px;">
-            <p (click)="commentDetail(item.id)" class="replycontent">{{item.reply}}</p>
+        <div style="position: relative;padding-left: 46px;">
+            <p class="replycontent">{{item.reply}}</p>
             <div class="mainimg">
                 <ss-comment-attachments *ngIf="item.plimg.length" [attachments]="item.plimg" [bigImage]="true" style="width: 100%;"></ss-comment-attachments>
             </div>
@@ -23,8 +23,8 @@
                 <img src="assets/img/zan1.png" class="zanImg" *ngIf="item.commentZan">
                 <span class="zanNum">{{item.zan}}</span>
             </div>
-        </div> -->
-        <!-- <div *ngFor="let addzan of item.addZan" style="margin-left:45px;padding-top:10px;border-top:1px solid rgb(236, 234, 234);">
+        </div>
+        <div *ngFor="let addzan of item.addZan" style="margin-left:45px;padding-top:10px;border-top:1px solid rgb(236, 234, 234);">
             <div class="reply-user" style="margin-top: 5px;">
                 <div class="reply-head">
                     <div class="reply-head-img" style="width: 35px;height: 35px;">
@@ -55,12 +55,15 @@
                 <div class="reply-head-img" style="width: 40px;height: 40px;float: left;">
                     <img src="assets/img/guide1.jpg">
                 </div>
-                <ion-textarea placeholder="Enter a description" [(ngModel)]="item.addZanContent" style="border: 1px solid rgb(236, 234, 234);border-radius: 3px;float: right;width: 80%;"></ion-textarea>
+                <ion-textarea placeholder="请输入追评内容" [(ngModel)]="item.addZanContent" style="border: 1px solid rgb(236, 234, 234);border-radius: 3px;float: right;width: 80%;"></ion-textarea>
             </div>
             <div style="overflow: hidden;">
-                <p style="font-size: 14px;color: #fff;background-color:#EF7A7A;width: 40px;height: 25px;line-height: 25px;text-align: center;float: right;border-radius: 3px;"
-                    (click)="submitAddZan(i,item.id)">发布</p>
+                <p style="font-size: 14px;color: #fff;background-color:#EF7A7A;width: 40px;height: 25px;line-height: 25px;text-align: center;float: right;border-radius: 3px;" (click)="submitAddZan(i,item.id)">发布</p>
             </div>
-        </div> -->
+        </div>
     </div>
 </div>
+<ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载中...">
+    </ion-infinite-scroll-content>
+</ion-infinite-scroll>
