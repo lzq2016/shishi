@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component,OnInit} from '@angular/core';
 import { SortablejsOptions } from 'angular-sortablejs';
 import {Storage} from '@ionic/storage';
 import { HttpClient } from '../../../providers/httpClient';
@@ -8,7 +8,7 @@ import { NavParams, ToastController,NavController } from 'ionic-angular';
   selector: 'mark',
   templateUrl: 'mark.html'
 })
-export class MarkPage {
+export class MarkPage implements OnInit {
 
   myType = [
     {
@@ -19,6 +19,54 @@ export class MarkPage {
       name:"歌剧",
       code:"b"
     },
+    {
+      name:"舞剧",
+      code:"c"
+    },
+    {
+      name:"话剧",
+      code:"d"
+    },
+    {
+      name:"戏曲",
+      code:"e"
+    },
+    {
+      name:"街舞",
+      code:"f"
+    },
+    {
+      name:"拉丁舞",
+      code:"g"
+    },
+    {
+      name:"摩登舞",
+      code:"h"
+    },
+    {
+      name:"芭蕾舞",
+      code:"i"
+    },
+    {
+      name:"民族古典舞",
+      code:"j"
+    },
+    {
+      name:"小型现场",
+      code:"k"
+    },
+    {
+      name:"音乐会",
+      code:"l"
+    },
+    {
+      name:"音乐节",
+      code:"m"
+    },
+    {
+      name:"演唱会",
+      code:"n"
+    }
   ];
   type1 = [
     {
@@ -93,6 +141,17 @@ export class MarkPage {
     public navCtrl: NavController) {
   
   }
+  ngOnInit() {
+    this.storage.get('tabsList').then(data => {
+      if (data != '' && data != null && data != undefined) {
+        let tabList = JSON.parse(data);
+        this.myType.length = 0;
+        for(let i=0;i<tabList.length;i++){
+          this.myType.push(tabList[i]);
+        }
+      }
+    });
+  }
 
   finishEdit(){
     let that = this;
@@ -109,6 +168,4 @@ export class MarkPage {
       that.navCtrl.pop();
     });
   }
-  
-
 }

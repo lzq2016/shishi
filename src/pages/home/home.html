@@ -6,7 +6,7 @@
     </ion-segment>
     <img src="assets/img/guide1.jpg" style="width: 20px;height: 20px;vertical-align: middle;" (click)="goTabSelect()">
     <ion-slides #slider (ionSlideDidChange)="slideChanged()">
-        <ion-slide style="display: block;text-align: left;" *ngFor="let items of tabContentCache">
+        <ion-slide style="display: block;text-align: left;" *ngFor="let items of tabContentCache; index as i">
             <div class="slide-wrap" [style.height]="slideH">
                 <ion-slides pager loop="true">
                     <ion-slide *ngFor="let item of items.slideList" (click)="slideDetail(item.content_type,item.object_id)">
@@ -23,6 +23,10 @@
                 <diary *ngIf="item.content_type == 'diary'" [diaryInfo]="item"></diary>
                 <!-- <homevideo></homevideo> -->
             </div>
+            <ion-infinite-scroll [enabled]="items.enabled" threshold="100px" (ionInfinite)="doInfinite($event,i)">
+                <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载中...">
+                </ion-infinite-scroll-content>
+            </ion-infinite-scroll>
         </ion-slide>
         <!-- <ion-slide>
             <h1>Tab 2</h1>

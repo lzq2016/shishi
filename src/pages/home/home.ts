@@ -1,20 +1,18 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import {
   AlertController,
-  App,
   ModalController,
   NavController,
   ToastController,
   LoadingController,
 } from 'ionic-angular';
 import { HttpClient } from '../../providers/httpClient';
+import {Storage} from '@ionic/storage';
 import { ServiceConfig } from '../../providers/service.config';
 import { Slides } from 'ionic-angular';
 import { ArticleInfoPage } from '../article-info/article-info'
 import { RecordInfoPage } from '../record-info/record-info';
 import { MarkPage } from './mark/mark';
-import { ConferenceData } from '../../providers/conference-data';
-import { UserData } from '../../providers/user-data';
 
 
 @Component({
@@ -30,52 +28,66 @@ export class HomePage implements OnInit {
     pageString: '0',
   };
   tabs = [{
-    tabslabel: '测试1',
+    tabslabel: '音乐剧',
     tabsValue: '0',
   }, {
-    tabslabel: '测试2',
+    tabslabel: '歌剧',
     tabsValue: '1',
   }, {
-    tabslabel: '测试3',
+    tabslabel: '舞剧',
     tabsValue: '2',
   }, {
-    tabslabel: '测试4',
+    tabslabel: '话剧',
     tabsValue: '3',
   }, {
-    tabslabel: '测试5',
+    tabslabel: '戏曲',
     tabsValue: '4',
   }, {
-    tabslabel: '测试6',
+    tabslabel: '街舞',
     tabsValue: '5',
+  }, {
+    tabslabel: '拉丁舞',
+    tabsValue: '6',
+  }, {
+    tabslabel: '摩登舞',
+    tabsValue: '7',
+  }, {
+    tabslabel: '芭蕾舞',
+    tabsValue: '8',
+  }, {
+    tabslabel: '民族古典舞',
+    tabsValue: '9',
+  }, {
+    tabslabel: '小型现场',
+    tabsValue: '10',
+  }, {
+    tabslabel: '音乐会',
+    tabsValue: '11',
+  }, {
+    tabslabel: '音乐节',
+    tabsValue: '12',
+  }, {
+    tabslabel: '演唱会',
+    tabsValue: '13',
   }]
 
   tabContentCache = [];
 
   slideH = screen.width * 0.7 + 'px'
-  slideList: any = []
-  diaryList: any = []
+  // slideList: any = []
+  // diaryList: any = []
   pageNumber: number = 1;
   next: string = '';
   enabled: boolean = true;
   host: string = "";
-  testImg: any = ["https://shishifiles.oss-cn-beijing.aliyuncs.com/media%2FDiaryImage%2F2018%2F06%2F08%2Fb20c718da-4f8d-41fc-a3be-adcafcf0dbe4r_750w_750h_ss1.jpg",
-    "https://shishifiles.oss-cn-beijing.aliyuncs.com/media%2FDiaryImage%2F2018%2F06%2F08%2Fb1ca99c65-96bc-42e6-969c-612d8e7817c9r_750w_750h_ss1.jpg",
-    "https://shishifiles.oss-cn-beijing.aliyuncs.com/media%2FDiaryImage%2F2018%2F06%2F08%2Fbe5cfcbe6-cf81-4087-80fe-ad394b45c0b1r_750w_750h_ss1.jpg",
-    "https://shishifiles.oss-cn-beijing.aliyuncs.com/media%2FDiaryImage%2F2018%2F06%2F08%2Fb8a27fe1b-7b58-4163-8691-fd44d0c4cb05r_750w_750h_ss1.jpg",
-    "https://shishifiles.oss-cn-beijing.aliyuncs.com/media%2FDiaryImage%2F2018%2F06%2F08%2Fb3e48904a-93a8-477b-b0ab-a0d3a14fcda9r_750w_750h_ss1.jpg",
-    "https://shishifiles.oss-cn-beijing.aliyuncs.com/media%2FDiaryImage%2F2018%2F06%2F08%2Fb3e48904a-93a8-477b-b0ab-a0d3a14fcda9r_750w_750h_ss1.jpg",
-    "https://shishifiles.oss-cn-beijing.aliyuncs.com/media%2FDiaryImage%2F2018%2F06%2F08%2Fb3e48904a-93a8-477b-b0ab-a0d3a14fcda9r_750w_750h_ss1.jpg",
-    "https://shishifiles.oss-cn-beijing.aliyuncs.com/media%2FDiaryImage%2F2018%2F06%2F08%2Fb3e48904a-93a8-477b-b0ab-a0d3a14fcda9r_750w_750h_ss1.jpg"];
-  testImg1: any = ["https://shishifiles.oss-cn-beijing.aliyuncs.com/media%2FDiaryImage%2F2018%2F06%2F08%2Fb20c718da-4f8d-41fc-a3be-adcafcf0dbe4r_750w_750h_ss1.jpg"];
+  
   constructor(public alertCtrl: AlertController,
-    public app: App,
     public loadingCtrl: LoadingController,
     public modalCtrl: ModalController,
     public navCtrl: NavController,
     public http: HttpClient,
     public toastCtrl: ToastController,
-    public confData: ConferenceData,
-    public user: UserData) {
+    public storage: Storage) {
     this.host = ServiceConfig.getUrl();
     this.checkAppVersion();
   }
@@ -85,15 +97,33 @@ export class HomePage implements OnInit {
   }
 
   ngOnInit() {
-    // this.initTabContentCache();
-    this.getHomefeedList();
+    this.storage.get('tabsList').then(data => {
+      if (data != '' && data != null && data != undefined) {
+        let tabList = JSON.parse(data);
+        this.tabs.length = 0;
+        for(let i=0;i<tabList.length;i++){
+          let obj = {};
+          obj["tabslabel"] = tabList[i].name;
+          obj["tabsValue"] = String(i);
+          this.tabs.push(obj);
+        }
+        this.initTabContentCache();
+        this.initHomefeedList();
+      }else{
+        this.initTabContentCache();
+        this.initHomefeedList();
+      }
+    });
   }
 
-  // initTabContentCache(){
-  //   for(let i = 0;i<this.tabs.length;i++){
-  //     this.tabContentCache[this.tabs[i].tabsValue] = {};
-  //   }
-  // }
+  initTabContentCache(){
+    for(let i = 0;i<this.tabs.length;i++){
+      this.tabContentCache[this.tabs[i].tabsValue] = {};
+      this.tabContentCache[this.tabs[i].tabsValue]["pageNumber"] = 1;
+      this.tabContentCache[this.tabs[i].tabsValue]["next"] = "";
+      this.tabContentCache[this.tabs[i].tabsValue]["enabled"] = true;
+    }
+  }
 
   checkAppVersion() {
     let self = this;
@@ -135,44 +165,67 @@ export class HomePage implements OnInit {
     }
   }
 
-  getHomefeedList() {
+  initHomefeedList() {
     let self = this;
-    let obj = {};
-    self.http.get(ServiceConfig.SLIDE, function (data1) {
-      // self.slideList = data;
-      obj['slideList'] = data1;
-      self.http.get(ServiceConfig.HOMEFEED + '?page=' + self.pageNumber, function (data2) {
-        self.next = data2.next;
-        if (data2.next == '' || data2.next == null) {
-          self.enabled = false;
-        } else {
-          self.enabled = true;
-        }
-        // for(let d of data.results) {
-        //   self.diaryList.push(d);
-        //   obj['feedList'] = d;
-        // }
-        obj['feedList'] = data2.results;
-        self.tabContentCache.push(obj);
+    for(let i=0;i<this.tabContentCache.length;i++){
+      self.http.get(ServiceConfig.SLIDE, function (data1) {
+        self.tabContentCache[i]['slideList'] = data1;
+        self.http.get(ServiceConfig.HOMETAGFEED + '?page=' + self.tabContentCache[i].pageNumber + '&tag_name=' + self.tabs[i].tabslabel, function (data2) {
+          self.tabContentCache[i].next = data2.next;
+          if (data2.next == '' || data2.next == null) {
+            self.tabContentCache[i].enabled = false;
+          } else {
+            self.tabContentCache[i].enabled = true;
+          }
+          // for(let d of data.results) {
+          //   self.diaryList.push(d);
+          //   obj['feedList'] = d;
+          // }
+          self.tabContentCache[i]['feedList'] = data2.results;
+        });
       });
+    }
+  }
+
+  getHomefeedList(index) {
+    let self = this;
+    self.http.get(ServiceConfig.HOMEFEED + '?page=' + self.tabContentCache[index].pageNumber + '&tag_name=' + self.tabs[index].tabslabel, function (data) {
+      self.tabContentCache[index].next = data.next;
+      if (data.next == '' || data.next == null) {
+        self.tabContentCache[index].enabled = false;
+      } else {
+        self.tabContentCache[index].enabled = true;
+      }
+      self.tabContentCache[index]['feedList'] = self.tabContentCache[index]['feedList'].concat(data.results);
     });
   }
 
-  doInfinite(infiniteScroll): Promise<any> {
-    return new Promise(resolve => {
-      setTimeout(() => {
-        if (this.next != '' && this.next != null && this.enabled) {
-          this.enabled = false;
-          this.pageNumber++;
-          this.getHomefeedList();
-          infiniteScroll.complete();
-          resolve();
-        } else {
-          resolve();
-          infiniteScroll.complete();
-        }
-      }, 500);
-    });
+  // doInfinite(infiniteScroll): Promise<any> {
+  //   return new Promise(resolve => {
+  //     setTimeout(() => {
+  //       if (this.next != '' && this.next != null && this.enabled) {
+  //         this.enabled = false;
+  //         this.pageNumber++;
+  //         this.getHomefeedList();
+  //         infiniteScroll.complete();
+  //         resolve();
+  //       } else {
+  //         resolve();
+  //         infiniteScroll.complete();
+  //       }
+  //     }, 500);
+  //   });
+  // }
+
+  doInfinite(infiniteScroll,index) {
+   if(this.tabContentCache[index].next != '' && this.tabContentCache[index].next != null && this.tabContentCache[index].enabled) {
+      this.tabContentCache[index].enabled = false;
+      this.tabContentCache[index].pageNumber++;
+      this.getHomefeedList(index);
+      infiniteScroll.complete();
+    } else {
+      infiniteScroll.complete();
+    }
   }
 
   goTabSelect(){

@@ -22,6 +22,7 @@ export class ServiceConfig {
     public static LOGOUT = "api/v1/entry/logout/"; //注销
     public static OPERATIONSELECTED = "api/v1/operation/selected/"; //精选
     public static HOMEFEED = "api/v1/feed/"; //首页feed流
+    public static HOMETAGFEED = "api/v1/feed/tag_feed/"; //首页tab feed流
     public static SLIDE = "api/v1/slide/"; //轮播
     public static ACTION = "api/v1/action/"; //某人动态
     public static GETUSERDETAIL = "api/v1/entry/"; //个人空间数据
