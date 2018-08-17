@@ -578,7 +578,23 @@ export class DiaryMarkPage implements OnInit, OnDestroy {
   }
 
   goDiaryPublish() {
-    let data = { 'foo': 'bar' };
+    let data = [];
+    let datacode = [];
+    for(let i=0;i<this.type1.length;i++){
+      if(this.type1[i].selected){
+        data.push(this.type1[i]);
+        datacode.push(this.type1[i].code);
+      }
+    }
+    Object.keys(this.type2).forEach(function(key){
+      for(let j=0;j<this.type2[key].length;j++){
+        if(datacode.indexOf(this.type2[key][j].code) > -1){
+
+        }else{
+          data.push(this.type2[key][j]);
+        }
+      }
+    });
     this.viewCtrl.dismiss(data);
   }
 
