@@ -2,7 +2,7 @@ import {Component,OnInit} from '@angular/core';
 import { SortablejsOptions } from 'angular-sortablejs';
 import {Storage} from '@ionic/storage';
 import { HttpClient } from '../../../providers/httpClient';
-import { NavParams, ToastController,NavController } from 'ionic-angular';
+import { NavParams,NavController,ViewController } from 'ionic-angular';
 
 @Component({
   selector: 'mark',
@@ -81,8 +81,8 @@ export class MarkPage implements OnInit {
     public storage: Storage,
     private httpClient: HttpClient,
     public navParams: NavParams,
-    public toastCtrl: ToastController,
-    public navCtrl: NavController) {
+    public navCtrl: NavController,
+    public viewCtrl: ViewController) {
   
   }
   ngOnInit() {
@@ -110,7 +110,8 @@ export class MarkPage implements OnInit {
         debugger;
     this.httpClient.post("api/v1/entry/" + id + "/update_user_tab", paramObj, function (data) {
       console.log(data);
-      that.navCtrl.pop();
+      // that.navCtrl.pop();
+      that.viewCtrl.dismiss(data);
     });
   }
 }

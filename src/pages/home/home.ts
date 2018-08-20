@@ -235,7 +235,13 @@ export class HomePage implements OnInit {
   }
 
   goTabSelect(){
-    this.navCtrl.push(MarkPage,{id:1});
+    // this.navCtrl.push(MarkPage,{id:1});
+    let profileModal = this.modalCtrl.create(MarkPage, { id:1 });
+    profileModal.onDidDismiss(data => {
+      console.log(data);
+      this.ngOnInit();
+    });
+    profileModal.present();
   }
 
   goTopicDetail(id) {
