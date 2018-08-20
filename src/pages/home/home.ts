@@ -111,6 +111,7 @@ export class HomePage implements OnInit {
           obj["tabsValue"] = String(i);
           this.tabs.push(obj);
         }
+        this.tabContentCache.length = 0;
         this.initTabContentCache();
         this.initHomefeedList();
       }else{

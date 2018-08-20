@@ -86,15 +86,15 @@ export class MarkPage implements OnInit {
   
   }
   ngOnInit() {
-    // this.storage.get('tabsList').then(data => {
-    //   if (data != '' && data != null && data != undefined) {
-    //     let tabList = JSON.parse(data);
-    //     this.myType.length = 0;
-    //     for(let i=0;i<tabList.length;i++){
-    //       this.myType.push(tabList[i]);
-    //     }
-    //   }
-    // });
+    this.storage.get('tabsList').then(data => {
+      if (data != '' && data != null && data != undefined) {
+        let tabList = JSON.parse(data);
+        this.myType.length = 0;
+        for(let i=0;i<tabList.length;i++){
+          this.myType.push(tabList[i]);
+        }
+      }
+    });
   }
 
   finishEdit(){
