@@ -27,6 +27,7 @@ export class HomePage implements OnInit {
     pageNum: 0,
     pageString: '0',
   };
+  currentActiveTabIndex = 0;
   tabs = [{
     tabslabel: '音乐剧',
     tabsValue: '0',
@@ -102,7 +103,10 @@ export class HomePage implements OnInit {
         let tabList = JSON.parse(data);
         this.tabs.length = 0;
         for(let i=0;i<tabList.length;i++){
-          let obj = {};
+          let obj = {
+            tabslabel:'',
+            tabsValue:''
+          };
           obj["tabslabel"] = tabList[i].name;
           obj["tabsValue"] = String(i);
           this.tabs.push(obj);
@@ -217,7 +221,8 @@ export class HomePage implements OnInit {
   //   });
   // }
 
-  doInfinite(infiniteScroll,index) {
+  doInfinite(infiniteScroll) {
+    let index = this.currentActiveTabIndex;
    if(this.tabContentCache[index].next != '' && this.tabContentCache[index].next != null && this.tabContentCache[index].enabled) {
       this.tabContentCache[index].enabled = false;
       this.tabContentCache[index].pageNumber++;
@@ -248,11 +253,13 @@ export class HomePage implements OnInit {
 
   selectedTab(index) {
     this.slider.slideTo(index);
+    this.currentActiveTabIndex = index;
   }
   // On slide changed
   slideChanged() {
     let currentIndex = this.slider.getActiveIndex();
     this.page.pageNum = currentIndex;
+    this.currentActiveTabIndex = currentIndex;
     this.page.pageString = String(currentIndex);
     this.centerScroll();
   }

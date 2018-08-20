@@ -23,7 +23,7 @@
                 <diary *ngIf="item.content_type == 'diary'" [diaryInfo]="item"></diary>
                 <!-- <homevideo></homevideo> -->
             </div>
-            <ion-infinite-scroll [enabled]="items.enabled" threshold="100px" (ionInfinite)="doInfinite($event,i)">
+            <ion-infinite-scroll [enabled]="items.enabled" threshold="100px" (ionInfinite)="doInfinite($event)">
                 <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载中...">
                 </ion-infinite-scroll-content>
             </ion-infinite-scroll>

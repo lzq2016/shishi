@@ -29,6 +29,9 @@ export class PublishDiaryPage {
   token: string = ""
   diaryId: number = 0
   host: string = ""
+  diaryArticle:any = {}
+  diaryMark:any = []
+
   constructor(public navCtrl: NavController,
     public modalCtrl: ModalController,
     private camera: Camera,
@@ -176,6 +179,7 @@ export class PublishDiaryPage {
     let profileModal = this.modalCtrl.create(DiaryMarkPage, { userId: 8675309 });
     profileModal.onDidDismiss(data => {
       console.log(data);
+      this.diaryMark = data;
     });
     profileModal.present();
   }
@@ -184,6 +188,7 @@ export class PublishDiaryPage {
     let profileModal = this.modalCtrl.create(DiaryArticlePage, { userId: 8675309 });
     profileModal.onDidDismiss(data => {
       console.log(data);
+      this.diaryArticle = data;
     });
     profileModal.present();
   }

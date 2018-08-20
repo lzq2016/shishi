@@ -85,7 +85,8 @@ export class ConferenceApp {
     // load the conference data
     // confData.load()
     // let that = this
-    this.splashScreen.show()
+    // 
+    // this.splashScreen.show()
     // this.storage.get('appFirstIn')
     // .then((data) => {
     //   console.log("appFirstIn data:" + data);

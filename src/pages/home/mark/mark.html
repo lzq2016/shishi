@@ -10,11 +10,11 @@
 </ion-header>
 <ion-content>
     <p class="markType">我的分类</p>
-    <div class="markWrap" [sortablejs]="normalList1" [sortablejsOptions]="normalOptions">
-        <span class="mark" *ngFor="let item of myType">{{item}}</span>
+    <div class="markWrap" [sortablejs]="myType" [sortablejsOptions]="normalOptions">
+        <span class="mark" *ngFor="let item of myType">{{item.name}}</span>
     </div>
-    <p class="markType">街舞</p>
-    <div class="markWrap" [sortablejs]="normalList1" [sortablejsOptions]="normalOptions">
-        <span class="mark" *ngFor="let item of type1">{{item}}</span>
+    <p class="markType">可选分类</p>
+    <div class="markWrap" [sortablejs]="type1" [sortablejsOptions]="normalOptions">
+        <span class="mark" *ngFor="let item of type1">{{item.name}}</span>
     </div>
 </ion-content>

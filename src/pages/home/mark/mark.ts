@@ -58,65 +58,9 @@ export class MarkPage implements OnInit {
     {
       name:"音乐会",
       code:"l"
-    },
-    {
-      name:"音乐节",
-      code:"m"
-    },
-    {
-      name:"演唱会",
-      code:"n"
     }
   ];
   type1 = [
-    {
-      name:"音乐剧",
-      code:"a"
-    },
-    {
-      name:"歌剧",
-      code:"b"
-    },
-    {
-      name:"舞剧",
-      code:"c"
-    },
-    {
-      name:"话剧",
-      code:"d"
-    },
-    {
-      name:"戏曲",
-      code:"e"
-    },
-    {
-      name:"街舞",
-      code:"f"
-    },
-    {
-      name:"拉丁舞",
-      code:"g"
-    },
-    {
-      name:"摩登舞",
-      code:"h"
-    },
-    {
-      name:"芭蕾舞",
-      code:"i"
-    },
-    {
-      name:"民族古典舞",
-      code:"j"
-    },
-    {
-      name:"小型现场",
-      code:"k"
-    },
-    {
-      name:"音乐会",
-      code:"l"
-    },
     {
       name:"音乐节",
       code:"m"
@@ -142,15 +86,15 @@ export class MarkPage implements OnInit {
   
   }
   ngOnInit() {
-    this.storage.get('tabsList').then(data => {
-      if (data != '' && data != null && data != undefined) {
-        let tabList = JSON.parse(data);
-        this.myType.length = 0;
-        for(let i=0;i<tabList.length;i++){
-          this.myType.push(tabList[i]);
-        }
-      }
-    });
+    // this.storage.get('tabsList').then(data => {
+    //   if (data != '' && data != null && data != undefined) {
+    //     let tabList = JSON.parse(data);
+    //     this.myType.length = 0;
+    //     for(let i=0;i<tabList.length;i++){
+    //       this.myType.push(tabList[i]);
+    //     }
+    //   }
+    // });
   }
 
   finishEdit(){
@@ -163,6 +107,7 @@ export class MarkPage implements OnInit {
     for (var i=0;i<this.myType.length;i++) {
       paramObj["tab_json"].push(this.myType[i].code);
     }
+        debugger;
     this.httpClient.post("api/v1/entry/" + id + "/update_user_tab", paramObj, function (data) {
       console.log(data);
       that.navCtrl.pop();
