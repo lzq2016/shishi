@@ -58,9 +58,7 @@ export class MarkPage implements OnInit {
     {
       name:"音乐会",
       code:"l"
-    }
-  ];
-  type1 = [
+    },
     {
       name:"音乐节",
       code:"m"
@@ -69,6 +67,88 @@ export class MarkPage implements OnInit {
       name:"演唱会",
       code:"n"
     }
+  ];
+  type1 = [
+    {
+      name:"JAZZ",
+      code:"0",
+      },
+      {
+        name:"Locking",
+        code:"1",
+      },
+      {
+        name:"Popping",
+        code:"2",
+      },
+      {
+        name:"Breaking",
+        code:"3",
+      },
+      {
+        name:"Hip-Hop",
+        code:"4",
+      },
+      {
+        name:"House",
+        code:"5",
+      },
+      {
+        name:"Reggae",
+        code:"6",
+      },
+      {
+        name:"Clown&Krump",
+        code:"7",
+      },
+      {
+        name:"Waacking&Punking&Voguing",
+        code:"8",
+      },
+      {
+        name:"Turfing",
+        code:"9",
+      },
+      {
+      name:"华尔兹",
+      code:"10",
+      },
+      {
+        name:"探戈",
+        code:"11",
+      },
+      {
+        name:"快步",
+        code:"12",
+      },
+      {
+        name:"狐步",
+        code:"13",
+      },
+      {
+        name:"维也纳华尔兹",
+        code:"14",
+      },
+      {
+      name:"伦巴",
+      code:"15",
+      },
+      {
+        name:"恰恰",
+        code:"16",
+      },
+      {
+        name:"牛仔",
+        code:"17",
+      },
+      {
+        name:"桑巴",
+        code:"18",
+      },
+      {
+        name:"斗牛",
+        code:"19",
+      }
   ];
   normalOptions: SortablejsOptions = {
     group: 'normal-group',
@@ -95,12 +175,22 @@ export class MarkPage implements OnInit {
         }
       }
     });
+    this.storage.get('tabsList1').then(data => {
+      if (data != '' && data != null && data != undefined) {
+        let tabList1 = JSON.parse(data);
+        this.type1.length = 0;
+        for(let i=0;i<tabList1.length;i++){
+          this.type1.push(tabList1[i]);
+        }
+      }
+    });
   }
 
   finishEdit(){
     let that = this;
     let id = this.navParams.get('id');
     this.storage.set('tabsList', JSON.stringify(this.myType));
+    this.storage.set('tabsList1', JSON.stringify(this.type1));
     let paramObj = {
       "tab_json": [],
     };
