@@ -244,10 +244,6 @@ export class HomePage implements OnInit {
     profileModal.present();
   }
 
-  goTopicDetail(id) {
-    console.log("topicid:" + id);
-    this.navCtrl.push(ArticleInfoPage, { id: id, type: "topic" });
-  }
   goBlogDetail(id) {
     console.log("blogid:" + id);
     this.navCtrl.push(ArticleInfoPage, { id: id, type: "blog" });

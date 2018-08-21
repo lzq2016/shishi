@@ -21,7 +21,7 @@
             <div *ngFor="let item of items.feedList">
                 <article *ngIf="item.content_type == 'blog'" [articleInfo]="item"></article>
                 <diary *ngIf="item.content_type == 'diary'" [diaryInfo]="item"></diary>
-                <!-- <homevideo></homevideo> -->
+                <homevideo *ngIf="item.content_type == 'vlog'" [videoInfo]="item"></homevideo>
             </div>
             <ion-infinite-scroll [enabled]="items.enabled" threshold="100px" (ionInfinite)="doInfinite($event)">
                 <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载中...">

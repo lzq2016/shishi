@@ -44,15 +44,9 @@ export class ArticleInfoPage implements OnInit {
     let that = this;
     this.requrl = ServiceConfig.getUrl();
     let id = this.navParams.get('id');
-    // this.type = this.navParams.get('type');
     this.globalId = this.navParams.get('id');
     let DetailUrl = "";
     DetailUrl = "api/v1/blog/" + id + "/";
-    // if (this.type == "blog") {
-    //   DetailUrl = "api/v1/blog/" + id + "/";
-    // } else if (this.type == "topic") {
-    //   DetailUrl = "api/v1/topic/" + id + "/";
-    // }
     //获取文章详情
     this.http.get(DetailUrl, function (data) {
       that.info.imgurl = data.cover;

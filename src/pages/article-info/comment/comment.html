@@ -3,17 +3,17 @@
         <div class="reply-user">
             <div class="reply-head">
                 <div class="reply-head-img">
-                    <img src="{{item.avatar}}" (click)="goMe(item.user.id)">
+                    <img src="{{item.user.avatar}}" (click)="goMe(item.user.id)">
                 </div>
                 <div class="reply-info">
-                    <div (click)="goMe(item.user.id)" class="name">{{item.username}}</div>
+                    <div (click)="goMe(item.user.id)" class="name">{{item.user.username}}</div>
                     <p class="time">{{item.updated_at}}</p>
                 </div>
                 <p class="friend">好友</p>
             </div>
         </div>
         <div style="position: relative;padding-left: 46px;">
-            <p class="replycontent">{{item.reply}}</p>
+            <p class="replycontent">{{item.content}}</p>
             <div class="mainimg">
                 <ss-comment-attachments *ngIf="item.plimg.length" [attachments]="item.plimg" [bigImage]="true" style="width: 100%;"></ss-comment-attachments>
             </div>
@@ -21,7 +21,7 @@
                 <img src="assets/img/comment1.png" class="commentImg" (click)="addComment(i,item.id)">
                 <img src="assets/img/zan.png" class="zanImg" (click)="commentZan(item.id)" *ngIf="!item.commentZan">
                 <img src="assets/img/zan1.png" class="zanImg" *ngIf="item.commentZan">
-                <span class="zanNum">{{item.zan}}</span>
+                <span class="zanNum">{{item.like_count}}</span>
             </div>
         </div>
         <div *ngFor="let addzan of item.addZan" style="margin-left:45px;padding-top:10px;border-top:1px solid rgb(236, 234, 234);">

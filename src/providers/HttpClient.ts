@@ -17,7 +17,6 @@ export class HttpClient {
     if (url.indexOf('http') === -1) {
       url = ServiceConfig.getUrl() + url;
     }
-    debugger;
     console.info('请求地址:' + url);
     console.info('参数:' + JSON.stringify(paramObj));
     const headers = new Headers();

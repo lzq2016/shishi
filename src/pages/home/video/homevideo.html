@@ -1,10 +1,10 @@
 <div style="margin-top: 10px;">
     <div class="titleWrap">
         <div class="avatarWrap">
-            <img [src]="articleInfo.avatar" style="width: 40px;height: 40px;">
+            <img [src]="videoInfo.avatar" style="width: 40px;height: 40px;">
         </div>
-        <span class="name">{{articleInfo.username}}</span>
-        <span class="time">{{articleInfo.created_at | timeFormat1}}</span>
+        <span class="name">{{videoInfo.username}}</span>
+        <span class="time">{{videoInfo.created_at | timeFormat1}}</span>
     </div>
     <video src="assets/1.mp4" controls="controls" style="width: 100%;" (click)="goDetail()"></video>
     <div class="dataWrap">
@@ -14,15 +14,15 @@
         </div>
         <div style="float: right;">
             <img src="assets/img/likehome.png" class="collectImg">
-            <span class="collectText">{{articleInfo.collect_count}}</span>
+            <span class="collectText">{{videoInfo.collect_count}}</span>
         </div>
         <div style="float: right;">
             <img src="assets/img/commenthome.png" class="commentImg">
-            <span class="commentText">{{articleInfo.comment_count}}</span>
+            <span class="commentText">{{videoInfo.comment_count}}</span>
         </div>
         <div style="float: right;">
             <img src="assets/img/zanhome.png" class="zanImg">
-            <span class="zanText">{{articleInfo.like_count}}</span>
+            <span class="zanText">{{videoInfo.like_count}}</span>
         </div>
     </div>
 </div>

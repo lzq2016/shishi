@@ -197,7 +197,6 @@ export class MarkPage implements OnInit {
     for (var i=0;i<this.myType.length;i++) {
       paramObj["tab_json"].push(this.myType[i].code);
     }
-        debugger;
     this.httpClient.post("api/v1/entry/" + id + "/update_user_tab", paramObj, function (data) {
       console.log(data);
       // that.navCtrl.pop();

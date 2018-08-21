@@ -5,20 +5,34 @@
 </ion-header>
 <ion-content padding>
     <p style="font-size: 12px;color: #D88F96;margin: 0;">视频</p>
-    <p style="font-size: 16px;color: #6F6F6F;margin: 0;margin-top: 10px;">福利来啦，北京必看电视剧洗衣服，十年经典不是吹的</p>
+    <p style="font-size: 16px;color: #6F6F6F;margin: 0;margin-top: 10px;">{{info.desc}}</p>
     <div style="margin-top: 10px;">
-        <span style="display: inline-block;font-size: 13px;color: #E99C9E;border: 1px solid #E99C9E;padding: 1px 12px;border-radius: 3px;">话剧</span>
+        <span style="display: inline-block;font-size: 13px;color: #E99C9E;border: 1px solid #E99C9E;padding: 1px 12px;border-radius: 3px;margin-right: 5px;margin-bottom: 5px;" *ngFor="let item of info.tags">{{item.name}}</span>
     </div>
     <div style="overflow: hidden;margin-top: 15px;margin-bottom: 15px;">
-        <img src="assets/img/guide1.jpg" style="width: 40px;height: 40px;border-radius: 50%;float: left;">
-        <div style="float: left;margin-top: 5px;margin-left: 10px;">
-            <p style="font-size: 14px;color: #898989;margin: 0;">ENEN</p>
-            <p style="font-size: 13px;color: #C4C4C4;margin: 0;">2018-06-07</p>
+        <img [src]="user.avatar" style="width: 35px;height: 35px;border-radius: 50%;float: left;">
+        <div style="float: left;margin-left: 10px;">
+            <p style="font-size: 14px;color: #898989;margin: 0;">{{user.username}}</p>
+            <p style="font-size: 13px;color: #C4C4C4;margin: 0;">{{info.updated_at | timeFormat1 }}</p>
         </div>
-        <span style="float: right;display: inline-block;font-size: 14px;color: #E99C9E;border: 1px solid #E99C9E;padding: 4px 11px;margin-top: 5px;border-radius: 3px;">+ 关注</span>
+        <span style="float: right;display: inline-block;font-size: 14px;color: #E99C9E;border: 1px solid #E99C9E;padding: 3px 11px;margin-top: 5px;border-radius: 3px;">+ 关注</span>
     </div>
-    <video src="assets/1.mp4" style="width: 100%;" controls="controls"></video>
+    <video [src]="info.video" style="width: 100%;" controls="controls"></video>
     <p style="font-size: 14px;color: #737373;">
             http://doclever.cn/controller/share/share.html#5acf04a0d52abd5e98747619 
     </p>
+    <detailComment type="vlog" [id]="globalId" *ngIf="globalId"></detailComment>
+    <div style="height: 55px;width: 100%;"></div>
+    <div style="overflow: hidden;position: fixed;bottom: 0;left: 0;width: 100%;background-color: #fff;height: 50px;padding-top: 10px;padding-bottom: 10px;border-top: 1px solid #EAEAEA;">
+        <div style="float: left;width: 50%;display: inline-block;border-right:1px solid #EAEAEA;height: 30px;line-height: 30px;text-align: center;"
+            (click)="makeComment()">
+            <img src="assets/img/comment1.png" style="width: 21px;height: 21px;vertical-align: middle">
+            <span style="font-size: 14px;color: #9F9F9F;margin-left: 5px;vertical-align: middle;">评论</span>
+        </div>
+        <div style="float:right;width: 50%;display: inline-block;line-height: 30px;text-align: center;">
+            <img src="assets/img/zan.png" style="width: 21px;height: 21px;vertical-align: middle;" *ngIf="!hasZan" (click)="like()">
+            <img src="assets/img/zan1.png" style="width: 21px;height: 21px;vertical-align: middle;" *ngIf="hasZan">
+            <span style="font-size: 14px;color: #9F9F9F;vertical-align: middle;margin-left: 5px;">赞</span>
+        </div>
+    </div>
 </ion-content>
