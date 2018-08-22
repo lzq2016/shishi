@@ -28,5 +28,6 @@ export class ServiceConfig {
     public static GETUSERDETAIL = "api/v1/entry/"; //个人空间数据
     public static INTERESTED = "api/v1/follow/interested/"; //可能感兴趣的人
     public static FOLLOWUSER = "api/v1/follow/follow_user/"; //关注
+    public static HOTPEOPLE = "api/v1/feed/hot_user/"; //关注
 
 }

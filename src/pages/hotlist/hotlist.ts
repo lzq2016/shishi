@@ -3,6 +3,8 @@ import {ArticleHotListPage} from './articlehotlist/articlehotlist';
 import {TopicHotListPage} from './topichotlist/topichotlist';
 import {PeopleHotListPage} from './peoplehotlist/peoplehotlist';
 import {VideoHotListPage} from './videohotlist/videohotlist';
+import { HttpClient } from '../../providers/httpClient';
+import { ServiceConfig } from '../../providers/service.config';
 
 @Component({
   selector: 'page-hotlist',
@@ -14,17 +16,26 @@ export class HotListPage implements OnInit, OnDestroy {
   topichotlist = TopicHotListPage
   peoplehotlist = PeopleHotListPage
   videohotlist = VideoHotListPage
-  constructor() {
-  }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad BookmarkPage')
+  slides = [];
+
+  constructor(
+        public http: HttpClient,
+        ) {
   }
 
   ngOnInit(){
    console.log("init")
+   this.initload();
   }
   
+  initload() {
+    let self = this;
+      self.http.get(ServiceConfig.SLIDE, function (data) {
+        console.log(data);
+        self.slides = data;
+    });
+  }
 
   ngOnDestroy(){ 
     console.log("destroy")
