@@ -13,8 +13,6 @@ export class TopicHotListPage implements OnInit, OnDestroy {
   constructor(public http: HttpClient) {
   }
 
-
-
   ngOnInit(){
    console.log("init")
    this.initTopicList();
@@ -22,11 +20,20 @@ export class TopicHotListPage implements OnInit, OnDestroy {
 
   initTopicList(){
     let that = this;
-    that.http.get(ServiceConfig.HOMEFEED + '?content_type=vlog', function (data) {
+    that.http.get(ServiceConfig.TOPICLIST, function (data) {
         console.log(data);
-        that.videoList = that.videoList.concat(data.results);
+        that.topicList = that.topicList.concat(data.results);
         that.nextPage = data.next;
     });
+  }
+
+  doInfinite(infiniteScroll) {
+    let that = this;
+    if(that.nextPage){
+      that.initTopicList();
+    }else{
+      infiniteScroll.enable(false);
+    }
   }
 
   ngOnDestroy(){ 

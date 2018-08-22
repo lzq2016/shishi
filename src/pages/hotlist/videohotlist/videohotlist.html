@@ -20,27 +20,31 @@
         </div>
     </div> -->
     <ion-grid>
-        <ion-row justify-content-between style="overflow: hidden;padding-left: 15px;padding-right: 15px;padding-bottom: 10px;border-bottom: 1px solid #F3F3F3;">
+        <ion-row justify-content-between style="overflow: hidden;padding-left: 15px;padding-right: 15px;padding-bottom: 10px;border-bottom: 1px solid #F3F3F3;" *ngFor="let item of videoList;index as i">
             <ion-col col-5>
-                <span style="font-size: 12px;color: #F07E7E;vertical-align: top;">1</span>
-                <img src="assets/img/guide1.jpg" style="width: 100px;height: 80px;">
+                <span style="font-size: 12px;color: #F07E7E;vertical-align: top;">{{i}}</span>
+                <img [src]="item.image_set[0]" style="width: 100px;height: 80px;">
             </ion-col>
             <ion-col col-7>
                 <div style="overflow: hidden;">
-                    <p style="font-size: 14px;color: #939393;margin: 0;">网上大部分人给的做法都是用style里面的float方法</p>
-                    <p style="font-size: 12px;color: #BDBDBD;margin: 0;margin-top: 5px;;">上传：ENEN</p>
+                    <p style="font-size: 14px;color: #939393;margin: 0;">{{item.title}}</p>
+                    <p style="font-size: 12px;color: #BDBDBD;margin: 0;margin-top: 5px;;">上传：{{item.username}}</p>
                     <div style="overflow: hidden;">
                         <div style="float: left;">
                             <img src="assets/img/fire.png" style="width: 15px;">
-                            <span style="font-size: 12px;color: #C3C3C3;">199万</span>
+                            <span style="font-size: 12px;color: #C3C3C3;">{{item.score}}</span>
                         </div>
                         <div style="float: right;margin-top: 5px;">
                             <img src="assets/img/commenthome.png" style="width: 15px;">
-                            <span style="font-size: 12px;color: #C3C3C3;">1298</span>
+                            <span style="font-size: 12px;color: #C3C3C3;">{{item.comment_count}}</span>
                         </div>
                     </div>
                 </div>
             </ion-col>
         </ion-row>
     </ion-grid>
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载中...">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
 </ion-content>
