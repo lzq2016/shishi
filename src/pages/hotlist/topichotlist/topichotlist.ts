@@ -1,7 +1,8 @@
 import {Component,OnInit,OnDestroy} from '@angular/core'
 import { HttpClient } from '../../../providers/httpClient';
 import { ServiceConfig } from '../../../providers/service.config';
-
+import {ModalController} from 'ionic-angular';
+import { TopicPage } from '../../topic/topic';
 @Component({
   selector: 'page-topichotlist',
   templateUrl: 'topichotlist.html',
@@ -10,7 +11,10 @@ export class TopicHotListPage implements OnInit, OnDestroy {
   topicList = [];
   nextPage:string = ""
 
-  constructor(public http: HttpClient) {
+  constructor(
+    public http: HttpClient,
+    public modalCtrl: ModalController,
+  ) {
   }
 
   ngOnInit(){
@@ -36,6 +40,13 @@ export class TopicHotListPage implements OnInit, OnDestroy {
     }
   }
 
+  goTopicDetail(id){
+    let profileModal = this.modalCtrl.create(TopicPage, { id:id });
+    profileModal.onDidDismiss(data => {
+      console.log(data);
+    });
+    profileModal.present();
+  }
   ngOnDestroy(){ 
     console.log("destroy")
   }

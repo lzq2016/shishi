@@ -3,8 +3,8 @@ page-hotlist {
         height: 30%;
     }
     ion-tabs {
-        height: 70%;
-        top: 30%;
+        height: 100%;
+        // top: 30%;
     }
     .tabs-md .tabbar {
         background: #fff;
@@ -12,5 +12,8 @@ page-hotlist {
     .tabs-md .tab-button[aria-selected=true] {
         color: #A3A3A3;
         border-bottom: 2px solid #CACACA;
+    }
+    .tab-button-text{
+        font-size: 14px!important;
     }
 }

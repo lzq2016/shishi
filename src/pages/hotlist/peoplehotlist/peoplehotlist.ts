@@ -22,6 +22,9 @@ export class PeopleHotListPage implements OnInit, OnDestroy {
     let that = this;
     that.http.get(ServiceConfig.HOTPEOPLE, function (data) {
         console.log(data);
+        // data.results.map(function(item){
+        //   item.avatar ? '':item.avatar = 'assets/img/defaultAvatar.png';
+        // });
         that.peopleList = that.peopleList.concat(data.results);
         that.nextPage = data.next;
     });
