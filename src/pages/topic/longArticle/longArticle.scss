@@ -1,0 +1,57 @@
+page-longArticle {
+    .dataWrap {
+        margin-left: 15px;
+        margin-right: 15px;
+        margin-top: 10px;
+        overflow: hidden;
+        border-bottom: 1px solid #DADADA;
+        padding-bottom: 10px;
+    }
+    .fireImg {
+        width: 15px;
+        height: 18px;
+        vertical-align: middle;
+    }
+    .collectImg {
+        width: 16px;
+        height: 16px;
+        vertical-align: middle;
+    }
+    .commentImg {
+        width: 16px;
+        height: 16px;
+        vertical-align: middle;
+    }
+    .zanImg {
+        width: 16px;
+        height: 16px;
+        vertical-align: middle;
+    }
+    .fireText {
+        color: #A1A1A1;
+        font-size: 12px;
+        margin-left: 2px;
+        vertical-align: middle;
+    }
+    .collectText {
+        color: #A1A1A1;
+        font-size: 12px;
+        margin-left: 2px;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+    .commentText {
+        color: #A1A1A1;
+        font-size: 12px;
+        margin-left: 2px;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+    .zanText {
+        color: #A1A1A1;
+        font-size: 12px;
+        margin-left: 2px;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+}

@@ -1,0 +1,38 @@
+<ion-content>
+    <div style="background: #fff;">
+        <div>
+            <div style="float: left;">
+                <div>
+                    <img src="assets/img/guide1.jpg" style="width: 40px;height: 40px;border-radius: 50%;overflow: hidden;">
+                    <span style="font-size: 14px;color: #A3A3A3;">做个好学生</span>
+                </div>
+                <p style="font-size: 15px;color: #9C9C9C;">标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题</p>
+                <p style="font-size: 14px;color: #C1C1C1;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;">正文</p>
+            </div>
+            <img src="assets/img/guide1.jpg" style="width: 80px;height: 80px;float: right;">
+        </div>
+        <div class="dataWrap">
+            <div style="float: left;">
+                <img src="assets/img/fire.png" class="fireImg">
+                <span class="fireText">22</span>
+            </div>
+            <div style="float: right;">
+                <img src="assets/img/likehome.png" class="collectImg">
+                <span class="collectText">{{articleInfo.collect_count}}</span>
+            </div>
+            <div style="float: right;">
+                <img src="assets/img/commenthome.png" class="commentImg">
+                <span class="commentText">{{articleInfo.comment_count}}</span>
+            </div>
+            <div style="float: right;">
+                <img src="assets/img/zanhome.png" class="zanImg">
+                <span class="zanText">{{articleInfo.like_count}}</span>
+            </div>
+        </div>
+    </div>
+    <!-- <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载中...">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll> -->
+</ion-content>

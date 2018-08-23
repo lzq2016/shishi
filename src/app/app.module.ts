@@ -29,6 +29,11 @@ import {BookmarkPage} from '../pages/bookmark/bookmark';
 import {NodataPage} from '../pages/nodata/nodata';
 import {GetlikePage} from '../pages/getlike/getlike';
 import {HotListPage} from '../pages/hotlist/hotlist';
+import {TopicPage} from '../pages/topic/topic';
+import {TopicBriefPage} from '../pages/topic/topicBrief/topicBrief';
+import {LongArticlePage} from '../pages/topic/longArticle/longArticle';
+import {TopicDiaryPage} from '../pages/topic/topicDiary/topicDiary';
+import {TopicVideoPage} from '../pages/topic/topicVideo/topicVideo';
 import {AttentionPage} from '../pages/attention/attention';
 import {MsgcommentPage} from '../pages/msgcomment/msgcomment';
 import {MsgcollectionPage} from '../pages/msgcollection/msgcollection';
@@ -200,6 +205,11 @@ export class myHammerConfig extends HammerGestureConfig {
     VideoComponent,
     VideoDetailPage,
     CommentComponent,
+    TopicPage,
+    TopicBriefPage,
+    LongArticlePage,
+    TopicDiaryPage,
+    TopicVideoPage,
   ],
   imports: [
     BrowserModule,
@@ -292,6 +302,11 @@ export class myHammerConfig extends HammerGestureConfig {
     DiaryArticlePage,
     VideoDetailPage,
     CommentComponent,
+    TopicPage,
+    TopicBriefPage,
+    LongArticlePage,
+    TopicDiaryPage,
+    TopicVideoPage,
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},
