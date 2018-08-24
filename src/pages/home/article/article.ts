@@ -10,6 +10,7 @@ import { ArticleInfoPage } from '../../article-info/article-info'
 export class ArticleComponent {
 
   @Input() articleInfo: any = {};
+  @Input() from = '';
   
   constructor(public navCtrl: NavController) {
   }

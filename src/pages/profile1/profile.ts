@@ -1,6 +1,6 @@
 import {Component} from '@angular/core'
 import {NavController,NavParams} from 'ionic-angular'
-// import {SettingPage} from "../setting/setting";
+import {SettingPage} from "../setting/setting";
 import { HttpClient } from '../../providers/httpClient';
 import { ServiceConfig } from '../../providers/service.config';
 import { Storage } from '@ionic/storage';
@@ -14,7 +14,7 @@ import {RecordInfoPage} from '../record-info/record-info';
 })
 export class ProfilePage {
   user: any;
-  userInfo = [];
+  items = [];
   url: string = '';
   next: string = '';
   userId: string = '';
@@ -64,22 +64,22 @@ export class ProfilePage {
     self.http.get(ServiceConfig.ACTION + '?user_id=' + this.userId + '&page=' + this.pageNumber, function(data){
       self.next = data.next;
       for(let d of data.results.reverse()) {
-        self.userInfo.push(d);
+        self.items.push(d);
       }
     });
   }
-  // openSetting() {
-  //   this.navCtrl.push(SettingPage)
-  // }
+  openSetting() {
+    this.navCtrl.push(SettingPage)
+  }
 
   goBack(){
     this.navCtrl.pop();
   }
 
-  // goTopicDetail(id){
-  //   console.log("topicid:"+id);
-  //   this.navCtrl.push(ArticleInfoPage, {id:id,type:"topic"});
-  // }
+  goTopicDetail(id){
+    console.log("topicid:"+id);
+    this.navCtrl.push(ArticleInfoPage, {id:id,type:"topic"});
+  }
   goBlogDetail(id){
     console.log("blogid:"+id);
     this.navCtrl.push(ArticleInfoPage, {id:id,type:"blog"});

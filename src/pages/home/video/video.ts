@@ -9,6 +9,7 @@ import { VideoDetailPage } from '../../videodetail/videodetail'
 export class VideoComponent implements OnInit{
   id = 0;
   @Input() videoInfo: any = {};
+  @Input() from = '';
   
   constructor(public navCtrl: NavController) {
   }

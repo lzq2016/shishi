@@ -1,0 +1,111 @@
+<ion-content padding class="transparent-header">
+    <!--<ion-header>-->
+    <!--<ion-navbar>-->
+    <!--</ion-navbar>-->
+    <!--</ion-header>-->
+    <div id="profile-bg" style="background: url(assets/img/background/background-4.jpg)"></div>
+    <div id="content" *ngIf="user">
+        <div id="profile-info" padding>
+            <!-- <ion-avatar item-start>
+                <img src="{{url + user.avatar}}">
+            </ion-avatar> -->
+            <!-- <img id="profile-image" [src]="url + user.avatar"> -->
+            <span id="profile-image" [ngStyle]="{'background-image': 'url(' +  user.avatar + ')'}"></span>
+            <ion-icon name="ios-arrow-round-back" class="arrowBack" (click)="goBack()" *ngIf="fromOtherUser"></ion-icon>
+            <ion-icon name="ios-settings-outline" tappable (click)="openSetting()" *ngIf="!fromOtherUser" class="setting"></ion-icon>
+            <div id="profile-name">{{user.username}}</div>
+            <p class="profile-description">{{user.description}}</p>
+            <div class="follow-area">
+                <div class="left">
+                    <div>
+                        <div>{{user.follower_count}}</div>
+                        <div>关注</div>
+                    </div>
+                    <div>
+                        <div>{{user.idol_count}}</div>
+                        <div>粉丝</div>
+                    </div>
+                </div>
+                <!--<div class="right">
+          <button ion-button *ngIf="!following" small color="purple" (click)="follow()">关注</button>
+          <button ion-button *ngIf="following" class="follow-button" small color="purple" (click)="follow()">Following<ion-icon name="checkmark"></ion-icon></button>
+        </div>-->
+            </div>
+            <div style="text-align:center;">
+                <img src="assets/img/tips.png" style="width: 80%;">
+            </div>
+        </div>
+        <hr/>
+        <timeline endIcon="call">
+            <timeline-item *ngFor="let item of items;let i = index;">
+                <timeline-time [time]="item.created_at.split('-')[1]" *ngIf="item.created_at.split('-')[1] != items[i].created_at.split('-')[1] || i==0"></timeline-time>
+                <ion-icon></ion-icon>
+                <ion-card *ngIf="item.content_type == 'topic'">
+                    <ion-item class="topicItem">
+                        <div class="image-box" [ngStyle]="{'background-image': 'url(' + item.image_set[0] + ')'}" (click)="goTopicDetail(item.object_id)">
+                            <div class="content">
+                                <div (click)="goTopicDetail(item.object_id)">#{{item.title}}#</div>
+                            </div>
+                        </div>
+                    </ion-item>
+                </ion-card>
+                <ion-card *ngIf="item.content_type == 'blog'">
+                    <ion-item class="slideItem">
+                        <div class="slideCard">
+                            <div class="content">
+                                <div class="title" (click)="goBlogDetail(item.object_id)">{{item.title}}</div>
+                                <img [src]="item.image_set[0]" (click)="goBlogDetail(item.object_id)">
+                                <div class="subTitle" (click)="goBlogDetail(item.object_id)">{{item.prefetch_content.length > 50 ? item.prefetch_content.substring(50) : item.prefetch_content}}</div>
+                            </div>
+                        </div>
+                        <div class="bottomContent">
+                            <button ion-button outline>文章</button>
+                            <div class="mark">{{item.comment_count}}浏览.{{item.collect_count}}收藏</div>
+                        </div>
+                    </ion-item>
+                </ion-card>
+                <ion-card class="diaryCard" *ngIf="item.content_type == 'diary'">
+                    <ion-item>
+                        <ion-avatar item-start>
+                            <img [src]="item?.avatar">
+                        </ion-avatar>
+                        <div>
+                            <span class="userName">{{item?.username}}</span>
+                            <span class="userTime">{{item?.created_at.substring(5,10)}}</span>
+                        </div>
+                    </ion-item>
+                    <!--<img src="{{item?.cover}}">-->
+                    <ss-comment-attachments *ngIf="item?.image_set" [attachments]="item.image_set"></ss-comment-attachments>
+                    <ion-card-content>
+                        <h2 style="color: #484848;" (click)="goDiaryDetail(item.object_id)">{{item?.title}}</h2>
+                        <p class="content" (click)="goDiaryDetail(item.object_id)">{{item.prefetch_content.length > 50 ? item.prefetch_content.substring(50) : item.prefetch_content}}</p>
+                        <div class="diaryCount">
+                            <div>
+                                <ion-icon name="md-heart-outline"></ion-icon>
+                                <span style="color: #484848;font-size: 18px;">{{item.like_count}}</span>
+                            </div>
+                            <div>
+                                <ion-icon name="ios-chatbubbles-outline"></ion-icon>
+                                <span style="color: #484848;font-size: 18px;">{{item.comment_count}}</span>
+                            </div>
+                            <div>
+                                <ion-icon name="ios-star-outline"></ion-icon>
+                                <span style="color: #484848;font-size: 18px;">{{item.collect_count}}</span>
+                            </div>
+                        </div>
+                    </ion-card-content>
+                </ion-card>
+            </timeline-item>
+        </timeline>
+    </div>
+    <ion-infinite-scroll immediate-check="false" distance="1%" (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>
+<!--<ion-header>-->
+<!--<ion-navbar>-->
+<!--<ion-title>profile</ion-title>-->
+<!--</ion-navbar>-->
+<!--</ion-header>-->
+<!--<ion-content padding>-->
+<!--</ion-content>-->

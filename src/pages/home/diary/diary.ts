@@ -9,6 +9,7 @@ import { RecordInfoPage } from '../../record-info/record-info';
 export class DiaryComponent {
 
   @Input() diaryInfo: any = [];
+  @Input() from = '';
   
   constructor(public navCtrl: NavController) {
   }
