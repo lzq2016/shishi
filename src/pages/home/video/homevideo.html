@@ -7,6 +7,7 @@
         <span class="time">{{videoInfo.created_at | timeFormat1}}</span>
     </div>
     <!-- <video src="assets/1.mp4" controls="controls" style="width: 100%;" (click)="goDetail()"></video> -->
+    <img [src]="videoInfo.image_set[0]" style="width: 100%;" (click)="goDetail()">
     <div class="dataWrap">
         <div style="float: left;">
             <img src="assets/img/fire.png" class="fireImg">

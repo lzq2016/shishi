@@ -40,8 +40,8 @@ export class TopicHotListPage implements OnInit, OnDestroy {
     }
   }
 
-  goTopicDetail(id){
-    let profileModal = this.modalCtrl.create(TopicPage, { id:id });
+  goTopicDetail(id,title){
+    let profileModal = this.modalCtrl.create(TopicPage, { id:id,title:title });
     profileModal.onDidDismiss(data => {
       console.log(data);
     });

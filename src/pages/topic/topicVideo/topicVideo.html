@@ -1,4 +1,7 @@
-<ion-content>
+<ion-content style="background: #F8F8F8;padding-top: 15px;">
+    <div *ngFor="let item of videoList" style="margin-bottom: 10px;">
+        <homevideo [videoInfo]="item"></homevideo>
+    </div>
     <!-- <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
         <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载中...">
         </ion-infinite-scroll-content>

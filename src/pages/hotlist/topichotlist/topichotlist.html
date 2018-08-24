@@ -1,5 +1,5 @@
 <ion-content>
-    <div style="padding-left: 15px;padding-right: 15px;padding-bottom: 15px;padding-top:15px;border-bottom: 1px solid #F5F5F5;overflow: hidden;" *ngFor="let item of topicList;index as i" (click)="goTopicDetail(item.id)">
+    <div style="padding-left: 15px;padding-right: 15px;padding-bottom: 15px;padding-top:15px;border-bottom: 1px solid #F5F5F5;overflow: hidden;" *ngFor="let item of topicList;index as i" (click)="goTopicDetail(item.id,item.title)">
         <div style="float: left;overflow: hidden;width: 60%;height: 82px;position: relative;">
             <div style="overflow: hidden;">
                 <span style="float: left;color: #F07E7E;font-size: 17px;margin-top: -1px;margin-right: 2%;">{{i}}</span>

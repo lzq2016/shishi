@@ -1,40 +1,42 @@
 import {Component,OnInit,OnDestroy} from '@angular/core'
 import { HttpClient } from '../../../providers/httpClient';
-// import { ServiceConfig } from '../../../providers/service.config';
+import { ServiceConfig } from '../../../providers/service.config';
+import {NavParams} from 'ionic-angular';
 
 @Component({
   selector: 'page-topicVideo',
   templateUrl: 'topicVideo.html',
 })
 export class TopicVideoPage implements OnInit, OnDestroy {
-  // videoList = [];
-  // nextPage:string = ""
-
-  constructor(public http: HttpClient) {
+  videoList = [];
+  nextPage:string = ""
+  title = ''
+  constructor(public http: HttpClient,public navParams:NavParams) {
   }
 
   ngOnInit(){
    console.log("init")
-   // this.initVideoList();
+   this.title = this.navParams.data
+   this.initVideoList();
   }   
 
-  // initVideoList(){
-  //   let that = this;
-  //   that.http.get(ServiceConfig.HOMEFEED + '?content_type=vlog', function (data) {
-  //       console.log(data);
-  //       that.videoList = that.videoList.concat(data.results);
-  //       that.nextPage = data.next;
-  //   });
-  // }
+  initVideoList(){
+    let that = this;
+    that.http.get(ServiceConfig.TOPICFEED + '?content_type=vlog&topic_title=' + this.title, function (data) {
+        console.log(data);
+        that.videoList = that.videoList.concat(data.results);
+        that.nextPage = data.next;
+    });
+  }
 
-  // doInfinite(infiniteScroll) {
-  //   let that = this;
-  //   if(that.nextPage){
-  //     that.initVideoList();
-  //   }else{
-  //     infiniteScroll.enable(false);
-  //   }
-  // }
+  doInfinite(infiniteScroll) {
+    let that = this;
+    if(that.nextPage){
+      that.initVideoList();
+    }else{
+      infiniteScroll.enable(false);
+    }
+  }
   
   ngOnDestroy(){ 
     console.log("destroy")

@@ -9,9 +9,9 @@
         <span style="display: inline-block;font-size: 14px;color: #fff;background: #EF7A7A;padding: 8px 18px;position: absolute;bottom: 10px;right: 10px;border-radius: 10px;">关注话题</span>
     </div>
     <ion-tabs tabsPlacement="top" mode="md">
-        <ion-tab [root]="topicBrief" tabTitle="简介"></ion-tab>
-        <ion-tab [root]="longArticle" tabTitle="长文"></ion-tab>
-        <ion-tab [root]="topicDiary" tabTitle="日记"></ion-tab>
-        <ion-tab [root]="topicVideo" tabTitle="视频"></ion-tab>
+        <ion-tab [root]="topicBrief" [rootParams]="articleTitle" tabTitle="简介"></ion-tab>
+        <ion-tab [root]="longArticle" [rootParams]="articleTitle" tabTitle="长文"></ion-tab>
+        <ion-tab [root]="topicDiary" [rootParams]="articleTitle" tabTitle="日记"></ion-tab>
+        <ion-tab [root]="topicVideo" [rootParams]="articleTitle" tabTitle="视频"></ion-tab>
     </ion-tabs>
 </ion-content>

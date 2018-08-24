@@ -1,4 +1,5 @@
-import {Component,OnInit,OnDestroy} from '@angular/core'
+import {Component,OnInit,OnDestroy} from '@angular/core';
+import {NavParams} from 'ionic-angular';
 import {TopicBriefPage} from './topicBrief/topicBrief';
 import {LongArticlePage} from './longArticle/longArticle';
 import {TopicDiaryPage} from './topicDiary/topicDiary';
@@ -17,15 +18,19 @@ export class TopicPage implements OnInit, OnDestroy {
   topicDiary = TopicDiaryPage
   topicVideo = TopicVideoPage
 
+  articleTitle = '';
+
   // slides = [];
 
   constructor(
         public http: HttpClient,
+        public navParams:NavParams
         ) {
   }
 
   ngOnInit(){
    console.log("init")
+   this.articleTitle = this.navParams.data.title;
    // this.initload();
   }
   
