@@ -9,6 +9,7 @@ import {NavParams} from 'ionic-angular';
 })
 export class TopicVideoPage implements OnInit, OnDestroy {
   videoList = [];
+  count = 0
   nextPage:string = ""
   title = ''
   constructor(public http: HttpClient,public navParams:NavParams) {
@@ -24,6 +25,7 @@ export class TopicVideoPage implements OnInit, OnDestroy {
     let that = this;
     that.http.get(ServiceConfig.TOPICFEED + '?content_type=vlog&topic_title=' + this.title, function (data) {
         console.log(data);
+        that.count = data.count
         that.videoList = that.videoList.concat(data.results);
         that.nextPage = data.next;
     });

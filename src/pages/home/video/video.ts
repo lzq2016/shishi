@@ -19,7 +19,7 @@ export class VideoComponent implements OnInit{
   }
 
   goDetail(){
-    this.navCtrl.push(VideoDetailPage,{id:this.id});
+    this.navCtrl.push(VideoDetailPage,{id:this.videoInfo.object_id});
   }
   
 

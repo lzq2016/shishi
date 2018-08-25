@@ -1,6 +1,6 @@
 <ion-content class="transparent-header" style="background: #F8F8F8;">
     <div style="height: 270px;background:url('assets/img/meBg.png');background-position: center;background-size: cover;position: relative;padding-top: 90px;">
-        <ion-icon name="ios-arrow-round-back" style="font-size: 40px;color: #fff;position: absolute;top: 20px;left: 20px;" *ngIf="fromOtherUser"></ion-icon>
+        <ion-icon name="ios-arrow-round-back" style="font-size: 40px;color: #fff;position: absolute;top: 20px;left: 20px;" *ngIf="fromOtherUser" (click)="goBack()"></ion-icon>
         <span style="font-size: 15px;color: #fff;display: inline-block;background: #EF7A7A;padding: 5px 10px;border-radius: 5px;position: absolute;top: 20px;right: 20px;" *ngIf="fromOtherUser">+关注</span>
         <div style="width: 80px;height: 80px;border: 2px solid #fff;border-radius: 50%;overflow: hidden;margin: 0 auto;">
             <img src="assets/img/guide1.jpg" style="width: 80px;height: 80px;">

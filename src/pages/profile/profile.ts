@@ -73,6 +73,7 @@ export class ProfilePage {
   // }
 
   goBack(){
+    console.log(123)
     this.navCtrl.pop();
   }
 

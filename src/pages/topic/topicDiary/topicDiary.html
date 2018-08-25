@@ -1,4 +1,8 @@
-<ion-content>
+<ion-content style="background: #F8F8F8;padding-top: 15px;">
+    <p style="font-size: 12px;color: #C6C6C6;margin: 0;margin-top: 10px;margin-bottom: 10px;margin-left: 16px;">{{count}}篇日记</p>
+    <div *ngFor="let item of diaryList" style="margin-bottom: 10px;background: #fff;padding-top: 1px;">
+        <diary [diaryInfo]="item"></diary>
+    </div>
     <!-- <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
         <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载中...">
         </ion-infinite-scroll-content>

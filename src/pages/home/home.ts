@@ -182,10 +182,6 @@ export class HomePage implements OnInit {
           } else {
             self.tabContentCache[i].enabled = true;
           }
-          // for(let d of data.results) {
-          //   self.diaryList.push(d);
-          //   obj['feedList'] = d;
-          // }
           self.tabContentCache[i]['feedList'] = data2.results;
         });
       });
@@ -205,23 +201,6 @@ export class HomePage implements OnInit {
     });
   }
 
-  // doInfinite(infiniteScroll): Promise<any> {
-  //   return new Promise(resolve => {
-  //     setTimeout(() => {
-  //       if (this.next != '' && this.next != null && this.enabled) {
-  //         this.enabled = false;
-  //         this.pageNumber++;
-  //         this.getHomefeedList();
-  //         infiniteScroll.complete();
-  //         resolve();
-  //       } else {
-  //         resolve();
-  //         infiniteScroll.complete();
-  //       }
-  //     }, 500);
-  //   });
-  // }
-
   doInfinite(infiniteScroll) {
     let index = this.currentActiveTabIndex;
    if(this.tabContentCache[index].next != '' && this.tabContentCache[index].next != null && this.tabContentCache[index].enabled) {
@@ -235,7 +214,6 @@ export class HomePage implements OnInit {
   }
 
   goTabSelect(){
-    // this.navCtrl.push(MarkPage,{id:1});
     let profileModal = this.modalCtrl.create(MarkPage, { id:1 });
     profileModal.onDidDismiss(data => {
       console.log(data);

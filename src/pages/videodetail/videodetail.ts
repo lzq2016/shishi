@@ -3,6 +3,7 @@ import { HttpClient } from '../../providers/httpClient';
 import { NavController, NavParams,ToastController } from 'ionic-angular';
 import { ServiceConfig } from '../../providers/service.config';
 import { PublishCommentPage } from '../comment/publish-comment';
+import { ProfilePage } from '../profile/profile';
 
 
 @Component({
@@ -15,6 +16,7 @@ export class VideoDetailPage implements OnInit, OnDestroy {
   contentId: number = 0
   hasZan: boolean = false
   hasCollected:boolean = false
+  isAttention:boolean = false
   info = {};
   user = {};
   constructor(
@@ -33,19 +35,46 @@ export class VideoDetailPage implements OnInit, OnDestroy {
    console.log("init")
    let that = this;
     this.requrl = ServiceConfig.getUrl();
-    let id = this.navParams.get('id');
-    this.globalId = this.navParams.get('id');
-    this.http.get("api/v1/vlog/" + id + "/", function (data) {
+    this.globalId = this.navParams.data.id
+    this.http.get("api/v1/vlog/" + that.globalId + "/", function (data) {
       that.info = data;
       that.user = data.user;
-      that.contentId = data.data.id;
+      that.contentId = data.id;
       that.hasZan = data.has_liked;
       that.hasCollected = data.has_collected;
     });
+    this.checkAttention();
   }
 
   ngOnDestroy(){ 
     console.log("destroy")
+  }
+
+  checkAttention(){
+    let self = this;
+    self.http.get(ServiceConfig.ISATTENTION + "?user_id=" + self.globalId, function (data) {
+      console.log(data);
+      self.isAttention = data.is_follower
+    });
+  }
+  goAttention(){
+    let self = this;
+    self.http.post(ServiceConfig.FOLLOWUSER, { user_id: self.globalId }, function (data) {
+      console.log(data);
+      self.isAttention = true;
+    });
+  }
+
+  concelAttention(){
+    let self = this;
+    self.http.post(ServiceConfig.CANCELATTENTION, { idol_id: self.globalId }, function (data) {
+      console.log(data);
+      self.isAttention = false;
+    });
+  }
+
+  goMe(id){
+    this.navCtrl.push(ProfilePage, { userId:id,fromOtherUser:true });
   }
 
   makeComment() {

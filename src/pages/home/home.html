@@ -7,7 +7,7 @@
     <img src="assets/img/guide1.jpg" style="width: 20px;height: 20px;vertical-align: middle;" (click)="goTabSelect()">
     <ion-slides #slider (ionSlideDidChange)="slideChanged()">
         <ion-slide style="display: block;text-align: left;" *ngFor="let items of tabContentCache; index as i">
-            <div class="slide-wrap" [style.height]="slideH">
+            <!-- <div class="slide-wrap" [style.height]="slideH">
                 <ion-slides pager loop="true">
                     <ion-slide *ngFor="let item of items.slideList" (click)="slideDetail(item.content_type,item.object_id)">
                         <ion-card class="ss-full-card">
@@ -17,13 +17,13 @@
                         </ion-card>
                     </ion-slide>
                 </ion-slides>
-            </div>
+            </div> -->
             <div *ngFor="let item of items.feedList">
                 <article *ngIf="item.content_type == 'blog'" [articleInfo]="item"></article>
                 <diary *ngIf="item.content_type == 'diary'" [diaryInfo]="item"></diary>
                 <homevideo *ngIf="item.content_type == 'vlog'" [videoInfo]="item"></homevideo>
             </div>
-            <ion-infinite-scroll [enabled]="items.enabled" threshold="100px" (ionInfinite)="doInfinite($event)">
+            <ion-infinite-scroll [enabled]="items.enabled" threshold="50px" (ionInfinite)="doInfinite($event)">
                 <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载中...">
                 </ion-infinite-scroll-content>
             </ion-infinite-scroll>
