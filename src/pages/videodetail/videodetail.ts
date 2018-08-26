@@ -1,6 +1,6 @@
-import {Component,OnInit,OnDestroy} from '@angular/core'
+import { Component, OnInit, OnDestroy } from '@angular/core'
 import { HttpClient } from '../../providers/httpClient';
-import { NavController, NavParams,ToastController } from 'ionic-angular';
+import { NavController, NavParams, ToastController } from 'ionic-angular';
 import { ServiceConfig } from '../../providers/service.config';
 import { PublishCommentPage } from '../comment/publish-comment';
 import { ProfilePage } from '../profile/profile';
@@ -15,8 +15,8 @@ export class VideoDetailPage implements OnInit, OnDestroy {
   globalId: number = 0;
   contentId: number = 0
   hasZan: boolean = false
-  hasCollected:boolean = false
-  isAttention:boolean = false
+  hasCollected: boolean = false
+  isAttention: boolean = false
   info = {};
   user = {};
   constructor(
@@ -28,12 +28,12 @@ export class VideoDetailPage implements OnInit, OnDestroy {
   }
 
   ionViewDidLoad() {
-    
+
   }
 
-  ngOnInit(){
-   console.log("init")
-   let that = this;
+  ngOnInit() {
+    console.log("init")
+    let that = this;
     this.requrl = ServiceConfig.getUrl();
     this.globalId = this.navParams.data.id
     this.http.get("api/v1/vlog/" + that.globalId + "/", function (data) {
@@ -46,18 +46,18 @@ export class VideoDetailPage implements OnInit, OnDestroy {
     this.checkAttention();
   }
 
-  ngOnDestroy(){ 
+  ngOnDestroy() {
     console.log("destroy")
   }
 
-  checkAttention(){
+  checkAttention() {
     let self = this;
     self.http.get(ServiceConfig.ISATTENTION + "?user_id=" + self.globalId, function (data) {
       console.log(data);
       self.isAttention = data.is_follower
     });
   }
-  goAttention(){
+  goAttention() {
     let self = this;
     self.http.post(ServiceConfig.FOLLOWUSER, { user_id: self.globalId }, function (data) {
       console.log(data);
@@ -65,7 +65,7 @@ export class VideoDetailPage implements OnInit, OnDestroy {
     });
   }
 
-  concelAttention(){
+  concelAttention() {
     let self = this;
     self.http.post(ServiceConfig.CANCELATTENTION, { idol_id: self.globalId }, function (data) {
       console.log(data);
@@ -73,8 +73,33 @@ export class VideoDetailPage implements OnInit, OnDestroy {
     });
   }
 
-  goMe(id){
-    this.navCtrl.push(ProfilePage, { userId:id,fromOtherUser:true });
+  makecollect() {
+    let self = this;
+    self.http.post(ServiceConfig.MAKECOLLECT, { object_id: self.globalId, content_type: 'vlog' }, function (data) {
+      console.log(data);
+      if (!data.success) {
+        const toast = self.toastCtrl.create({
+          message: '自己的无需收藏',
+          duration: 3000,
+          position: 'middle'
+        });
+        toast.present();
+      } else {
+        self.hasCollected = true;
+      }
+    });
+  }
+
+  cancelcollect() {
+    let self = this;
+    self.http.post(ServiceConfig.CANCELCOLLECT, { object_id: self.globalId, content_type: 'vlog' }, function (data) {
+      console.log(data);
+      self.hasCollected = false;
+    });
+  }
+
+  goMe(id) {
+    this.navCtrl.push(ProfilePage, { userId: id, fromOtherUser: true });
   }
 
   makeComment() {
@@ -84,32 +109,18 @@ export class VideoDetailPage implements OnInit, OnDestroy {
 
   like() {
     let that = this
-    this.http.post("/api/v1/like/", { content_type: 'vlog', object_id: that.globalId }, function (data) {
+    this.http.post(ServiceConfig.MAKELIKE, { content_type: 'vlog', object_id: that.globalId }, function (data) {
       if (data.success) {
         that.hasZan = true
-        let toast = that.toastCtrl.create({
-          message: '点赞成功',
-          duration: 2000,
-          position: 'middle'
-        });
-        toast.present();
-      } else if (data.detail == "你已经赞过了") {
-        that.hasZan = true
-        let toast = that.toastCtrl.create({
-          message: data.detail,
-          duration: 2000,
-          position: 'middle'
-        });
-        toast.present();
-      } else {
-        that.hasZan = true
-        let toast = that.toastCtrl.create({
-          message: data.detail,
-          duration: 2000,
-          position: 'middle'
-        });
-        toast.present();
       }
+    });
+  }
+
+  cancelLike() {
+    let that = this
+    this.http.post(ServiceConfig.CANCELLIKE, { content_type: 'vlog', object_id: that.globalId }, function (data) {
+      console.log(data);
+      that.hasZan = false
     });
   }
 

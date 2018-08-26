@@ -1,11 +1,16 @@
 <ion-header>
     <ion-navbar>
         <ion-title>视频详情页</ion-title>
-        <ion-buttons end>
+        <ion-buttons end *ngIf="!hasCollected" (click)="makecollect()">
             <button ion-button icon-only>
-                <img src="assets/img/likehome.png">
+                <img src="assets/img/likehome.png" style="width: 28px;margin-right: 10px;">
             </button>
         </ion-buttons>
+        <ion-buttons end *ngIf="hasCollected" (click)="cancelcollect()">
+                <button ion-button icon-only>
+                    <img src="assets/img/likehomeselected.png" style="width: 28px;margin-right: 10px;">
+                </button>
+            </ion-buttons>
     </ion-navbar>
 </ion-header>
 <ion-content padding>
@@ -24,9 +29,9 @@
         <span style="float: right;display: inline-block;font-size: 14px;color: #fff;border: 1px solid #E99C9E;padding: 3px 11px;margin-top: 5px;border-radius: 3px;background-color: #E99C9E;" *ngIf="isAttention" (click)="concelAttention()">已关注</span>
     </div>
     <video [src]="info.video" style="width: 100%;" controls="controls"></video>
-    <p style="font-size: 14px;color: #737373;">
+    <!-- <p style="font-size: 14px;color: #737373;">
         http://doclever.cn/controller/share/share.html#5acf04a0d52abd5e98747619
-    </p>
+    </p> -->
     <detailComment type="vlog" [id]="globalId" *ngIf="globalId"></detailComment>
     <div style="height: 55px;width: 100%;"></div>
     <div style="overflow: hidden;position: fixed;bottom: 0;left: 0;width: 100%;background-color: #fff;height: 50px;padding-top: 10px;padding-bottom: 10px;border-top: 1px solid #EAEAEA;">
@@ -36,7 +41,7 @@
         </div>
         <div style="float:right;width: 50%;display: inline-block;line-height: 30px;text-align: center;">
             <img src="assets/img/zan.png" style="width: 21px;height: 21px;vertical-align: middle;" *ngIf="!hasZan" (click)="like()">
-            <img src="assets/img/zan1.png" style="width: 21px;height: 21px;vertical-align: middle;" *ngIf="hasZan">
+            <img src="assets/img/zan1.png" style="width: 21px;height: 21px;vertical-align: middle;" *ngIf="hasZan" (click)="cancelLike()">
             <span style="font-size: 14px;color: #9F9F9F;vertical-align: middle;margin-left: 5px;">赞</span>
         </div>
     </div>

@@ -5,7 +5,7 @@ import { ProfilePage } from '../../profile/profile'
 
 @Component({
   selector: 'detailComment',
-  templateUrl: 'comment.html'
+  templateUrl: 'detailComment.html'
 })
 export class CommentComponent implements OnInit {
 

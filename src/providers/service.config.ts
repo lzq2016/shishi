@@ -33,5 +33,9 @@ export class ServiceConfig {
     public static CANCELATTENTION = "api/v1/follow/cancel_idol/"; //取消关注
     public static HOTPEOPLE = "api/v1/feed/hot_user/"; 
     public static TOPICLIST = "api/v1/topic/"; 
+    public static MAKECOLLECT = "api/v1/collect/"; //收藏
+    public static CANCELCOLLECT = "api/v1/collect/delete/"; //取消收藏
+    public static MAKELIKE = "api/v1/like/";  //点赞
+    public static CANCELLIKE = "api/v1/like/delete/";  //取消点赞
 
 }
