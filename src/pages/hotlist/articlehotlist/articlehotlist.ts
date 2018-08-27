@@ -1,6 +1,8 @@
 import {Component,OnInit,OnDestroy} from '@angular/core'
 import { HttpClient } from '../../../providers/httpClient';
 import { ServiceConfig } from '../../../providers/service.config';
+import {ModalController} from 'ionic-angular';
+import { ArticleInfoPage } from '../../article-info/article-info'
 
 @Component({
   selector: 'page-articlehotlist',
@@ -10,7 +12,10 @@ export class ArticleHotListPage implements OnInit, OnDestroy {
   articleList = [];
   nextPage:string = ""
 
-  constructor(public http: HttpClient) {
+  constructor(
+    public http: HttpClient,
+    public modalCtrl: ModalController
+    ) {
   }
 
   ngOnInit(){
@@ -34,6 +39,14 @@ export class ArticleHotListPage implements OnInit, OnDestroy {
     }else{
       infiniteScroll.enable(false);
     }
+  }
+
+  goArticleDetail(id){
+    let profileModal = this.modalCtrl.create(ArticleInfoPage, { id:id },{showBackdrop:true,enableBackdropDismiss:true});
+    profileModal.onDidDismiss(data => {
+      console.log(data);
+    });
+    profileModal.present();
   }
 
   ngOnDestroy(){ 

@@ -1,6 +1,8 @@
 import {Component,OnInit,OnDestroy} from '@angular/core'
 import { HttpClient } from '../../../providers/httpClient';
 import { ServiceConfig } from '../../../providers/service.config';
+import {ModalController} from 'ionic-angular';
+import { ProfilePage } from '../../profile/profile';
 
 @Component({
   selector: 'page-peoplehotlist',
@@ -10,7 +12,10 @@ export class PeopleHotListPage implements OnInit, OnDestroy {
   peopleList = [];
   nextPage:string = ""
 
-  constructor(public http: HttpClient) {
+  constructor(
+    public http: HttpClient,
+    public modalCtrl: ModalController
+    ) {
   }
 
   ngOnInit(){
@@ -22,9 +27,6 @@ export class PeopleHotListPage implements OnInit, OnDestroy {
     let that = this;
     that.http.get(ServiceConfig.HOTPEOPLE, function (data) {
         console.log(data);
-        // data.results.map(function(item){
-        //   item.avatar ? '':item.avatar = 'assets/img/defaultAvatar.png';
-        // });
         that.peopleList = that.peopleList.concat(data.results);
         that.nextPage = data.next;
     });
@@ -39,6 +41,14 @@ export class PeopleHotListPage implements OnInit, OnDestroy {
     }
   }
   
+  goMe(id){
+    let profileModal = this.modalCtrl.create(ProfilePage, { userId:id,fromOtherUser: true },{showBackdrop:true,enableBackdropDismiss:true});
+    profileModal.onDidDismiss(data => {
+      console.log(data);
+    });
+    profileModal.present();
+  }
+
   ngOnDestroy(){ 
     console.log("destroy")
   }

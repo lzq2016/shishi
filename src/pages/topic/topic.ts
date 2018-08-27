@@ -5,7 +5,7 @@ import {LongArticlePage} from './longArticle/longArticle';
 import {TopicDiaryPage} from './topicDiary/topicDiary';
 import {TopicVideoPage} from './topicVideo/topicVideo';
 import { HttpClient } from '../../providers/httpClient';
-// import { ServiceConfig } from '../../providers/service.config';
+import { ServiceConfig } from '../../providers/service.config';
 
 @Component({
   selector: 'page-topic',
@@ -18,9 +18,14 @@ export class TopicPage implements OnInit, OnDestroy {
   topicDiary = TopicDiaryPage
   topicVideo = TopicVideoPage
 
-  articleTitle = '';
-
-  // slides = [];
+  // articleTitle = '';
+  topicId = 0;
+  topicInfo = {}
+  hasAttention:boolean = false
+  topicParams : any = {
+    topicTitle:"",
+    id:0
+  }
 
   constructor(
         public http: HttpClient,
@@ -30,17 +35,38 @@ export class TopicPage implements OnInit, OnDestroy {
 
   ngOnInit(){
    console.log("init")
-   this.articleTitle = this.navParams.data.title;
-   // this.initload();
+   this.topicParams.topicTitle = this.navParams.data.title;
+   this.topicParams.id = this.navParams.data.id;
+   this.topicId = this.navParams.data.id;
+   this.checkAttention();
+   this.initload();
   }
   
-  // initload() {
-  //   let self = this;
-  //     self.http.get(ServiceConfig.SLIDE, function (data) {
-  //       console.log(data);
-  //       self.slides = data;
-  //   });
-  // }
+  initload() {
+    let self = this;
+      self.http.get(ServiceConfig.TOPICLIST + self.topicId, function (data) {
+        console.log(data);
+        self.topicInfo = data;
+    });
+  }
+
+  checkAttention(){
+    let self = this;
+      self.http.get("api/v1/topic/" + self.topicId + "/has_follow/", function (data) {
+        console.log(data);
+        if(data.has_follow){
+          self.hasAttention = true;
+        }
+        
+    });
+  }
+
+  makeAttention(){
+    let self = this;
+    this.http.post("api/v1/topic/" + self.topicId + "/follow/",function(data){
+      console.log(data);
+    });
+  }
 
   ngOnDestroy(){ 
     console.log("destroy")

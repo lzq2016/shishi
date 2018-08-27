@@ -17,7 +17,7 @@ export class TopicVideoPage implements OnInit, OnDestroy {
 
   ngOnInit(){
    console.log("init")
-   this.title = this.navParams.data
+   this.title = this.navParams.data.topicTitle
    this.initVideoList();
   }   
 

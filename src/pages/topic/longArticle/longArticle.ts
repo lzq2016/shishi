@@ -1,7 +1,9 @@
 import {Component,OnInit,OnDestroy} from '@angular/core'
 import { HttpClient } from '../../../providers/httpClient';
 import { ServiceConfig } from '../../../providers/service.config';
-import {NavParams} from 'ionic-angular';
+import {NavParams,NavController,ModalController} from 'ionic-angular';
+import { ProfilePage } from '../../profile/profile';
+import { ArticleInfoPage } from '../../article-info/article-info'
 
 @Component({
   selector: 'page-longArticle',
@@ -13,12 +15,17 @@ export class LongArticlePage implements OnInit, OnDestroy {
   nextPage:string = ""
   title = ''
 
-  constructor(public http: HttpClient,public navParams:NavParams) {
+  constructor(
+    public http: HttpClient,
+    public navParams:NavParams,
+    public navCtrl: NavController,
+    public modalCtrl: ModalController
+    ) {
   }
 
   ngOnInit(){
    console.log("init")
-   this.title = this.navParams.data
+   this.title = this.navParams.data.topicTitle
    this.initArticleList();
   }   
 
@@ -39,6 +46,22 @@ export class LongArticlePage implements OnInit, OnDestroy {
     }else{
       infiniteScroll.enable(false);
     }
+  }
+
+  goMe(id) {
+    let profileModal = this.modalCtrl.create(ProfilePage, { userId: id, fromOtherUser: true });
+    profileModal.onDidDismiss(data => {
+      console.log(data);
+    });
+    profileModal.present();
+  }
+
+  goArticleDetail(id,title){
+    let profileModal = this.modalCtrl.create(ArticleInfoPage, { id:id,title:title });
+    profileModal.onDidDismiss(data => {
+      console.log(data);
+    });
+    profileModal.present();
   }
 
   ngOnDestroy(){ 

@@ -20,7 +20,7 @@
         </div>
     </div> -->
     <ion-grid>
-        <ion-row justify-content-between style="overflow: hidden;padding-left: 15px;padding-right: 15px;padding-bottom: 15px;padding-top:15px;border-bottom: 1px solid #F3F3F3;" *ngFor="let item of videoList;index as i">
+        <ion-row justify-content-between style="overflow: hidden;padding-left: 15px;padding-right: 15px;padding-bottom: 15px;padding-top:15px;border-bottom: 1px solid #F3F3F3;" *ngFor="let item of videoList;index as i" (click)="goVideoDetail(item.object_id)">
             <ion-col col-5>
                 <span style="font-size: 17px;color: #F07E7E;vertical-align: top;margin-right: 10px;">{{i}}</span>
                 <img [src]="item.image_set[0]" style="width: 100px;height: 80px;">

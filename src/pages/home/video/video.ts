@@ -1,5 +1,5 @@
 import {Component, Input,OnInit} from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController,ModalController } from 'ionic-angular';
 import { VideoDetailPage } from '../../videodetail/videodetail'
 
 @Component({
@@ -11,7 +11,7 @@ export class VideoComponent implements OnInit{
   @Input() videoInfo: any = {};
   @Input() from = '';
   
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController,public modalCtrl: ModalController) {
   }
 
   ngOnInit() {
@@ -19,7 +19,12 @@ export class VideoComponent implements OnInit{
   }
 
   goDetail(){
-    this.navCtrl.push(VideoDetailPage,{id:this.videoInfo.object_id});
+    // this.navCtrl.push(VideoDetailPage,{id:this.videoInfo.object_id});
+    let profileModal = this.modalCtrl.create(VideoDetailPage, { id:this.videoInfo.object_id });
+    profileModal.onDidDismiss(data => {
+      console.log(data);
+    });
+    profileModal.present();
   }
   
 

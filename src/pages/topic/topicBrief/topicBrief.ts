@@ -1,6 +1,7 @@
 import {Component,OnInit,OnDestroy} from '@angular/core'
 import { HttpClient } from '../../../providers/httpClient';
-// import { ServiceConfig } from '../../../providers/service.config';
+import {NavParams} from 'ionic-angular';
+import { ServiceConfig } from '../../../providers/service.config';
 
 @Component({
   selector: 'page-topicBrief',
@@ -9,23 +10,25 @@ import { HttpClient } from '../../../providers/httpClient';
 export class TopicBriefPage implements OnInit, OnDestroy {
   // articleList = [];
   // nextPage:string = ""
+  topicId = 0;
+  topicInfo = {}
 
-  constructor(public http: HttpClient) {
+  constructor(public http: HttpClient,public navParams:NavParams) {
   }
 
   ngOnInit(){
    console.log("init")
-   // this.initArticleList();
+   this.topicId = this.navParams.data.id
+   this.initloaded();
   }   
 
-  // initArticleList(){
-  //   let that = this;
-  //   that.http.get(ServiceConfig.HOMEFEED + '?content_type=blog', function (data) {
-  //       console.log(data);
-  //       that.articleList = that.articleList.concat(data.results);
-  //       that.nextPage = data.next;
-  //   });
-  // }
+  initloaded(){
+    let self = this;
+      self.http.get(ServiceConfig.TOPICLIST + self.topicId, function (data) {
+        console.log(data);
+        self.topicInfo = data;
+    });
+  }
 
   // doInfinite(infiniteScroll) {
   //   let that = this;

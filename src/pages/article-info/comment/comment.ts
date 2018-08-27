@@ -12,6 +12,7 @@ export class CommentComponent implements OnInit {
   @Input() type: any = '';
   @Input() id: any = '';
   commentInfo: any = [];
+  count = 0;
   commentNextPage: string = ""
 
 
@@ -31,9 +32,10 @@ export class CommentComponent implements OnInit {
     this.http.get("api/v1/comment?content_type=" + that.type + "&object_id=" + that.id, function (data) {
       console.log(data);
       if (data.results) {
+        that.count = data.count 
         that.commentInfo = data.results;
         that.commentInfo.map((item) => {
-          item["commentZan"] = false;
+          item["commentZan"] = item.has_liked;
           item["addZanAction"] = false;
           item["addZanContent"] = '';
           item["addZan"] = [];
@@ -47,7 +49,7 @@ export class CommentComponent implements OnInit {
             console.dir(data1);
             if(data1.results && data1.results.length){
               for(let item1 of data1.results){
-                item1['commentZan'] = false;
+                item1['commentZan'] = item1.has_liked;
                 item1['time'] = that.format(item1.updated_at);
                 item["addZan"].push(item1);
               }
@@ -193,8 +195,9 @@ export class CommentComponent implements OnInit {
     if (that.commentNextPage) {
       this.http.get(that.commentNextPage, function (data) {
         console.log(data);
+        that.count = data.count
         data.results.map((item) => {
-          item["commentZan"] = false;
+          item["commentZan"] = item.has_liked;
           item["addZanAction"] = false;
           item["addZanContent"] = '';
           item["addZan"] = [];
@@ -208,7 +211,7 @@ export class CommentComponent implements OnInit {
             console.dir(data1);
             if(data1.results && data1.results.length){
               for(let item1 of data1.results){
-                item1['commentZan'] = false;
+                item1['commentZan'] = item1.has_liked;
                 item1['time'] = that.format(item1.updated_at);
                 item["addZan"].push(item1);
               }

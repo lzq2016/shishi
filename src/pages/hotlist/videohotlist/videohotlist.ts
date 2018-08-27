@@ -1,6 +1,8 @@
 import {Component,OnInit,OnDestroy} from '@angular/core'
 import { HttpClient } from '../../../providers/httpClient';
 import { ServiceConfig } from '../../../providers/service.config';
+import {ModalController} from 'ionic-angular';
+import { VideoDetailPage } from '../../videodetail/videodetail'
 
 @Component({
   selector: 'page-videohotlist',
@@ -10,7 +12,10 @@ export class VideoHotListPage implements OnInit, OnDestroy {
   videoList = [];
   nextPage:string = ""
 
-  constructor(public http: HttpClient) {
+  constructor(
+    public http: HttpClient,
+    public modalCtrl: ModalController
+    ) {
   }
 
   ngOnInit(){
@@ -34,6 +39,14 @@ export class VideoHotListPage implements OnInit, OnDestroy {
     }else{
       infiniteScroll.enable(false);
     }
+  }
+
+  goVideoDetail(id){
+    let profileModal = this.modalCtrl.create(VideoDetailPage, { id:id },{showBackdrop:true,enableBackdropDismiss:true});
+    profileModal.onDidDismiss(data => {
+      console.log(data);
+    });
+    profileModal.present();
   }
   
   ngOnDestroy(){ 

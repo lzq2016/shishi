@@ -32,7 +32,7 @@ export class ServiceConfig {
     public static ISATTENTION = "api/v1/follow/is_follower/"; //是否关注
     public static CANCELATTENTION = "api/v1/follow/cancel_idol/"; //取消关注
     public static HOTPEOPLE = "api/v1/feed/hot_user/"; 
-    public static TOPICLIST = "api/v1/topic/"; 
+    public static TOPICLIST = "api/v1/topic/"; //获取话题详情
     public static MAKECOLLECT = "api/v1/collect/"; //收藏
     public static CANCELCOLLECT = "api/v1/collect/delete/"; //取消收藏
     public static MAKELIKE = "api/v1/like/";  //点赞

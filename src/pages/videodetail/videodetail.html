@@ -7,32 +7,33 @@
             </button>
         </ion-buttons>
         <ion-buttons end *ngIf="hasCollected" (click)="cancelcollect()">
-                <button ion-button icon-only>
-                    <img src="assets/img/likehomeselected.png" style="width: 28px;margin-right: 10px;">
-                </button>
-            </ion-buttons>
+            <button ion-button icon-only>
+                <img src="assets/img/likehomeselected.png" style="width: 28px;margin-right: 10px;">
+            </button>
+        </ion-buttons>
     </ion-navbar>
 </ion-header>
-<ion-content padding>
-    <p style="font-size: 12px;color: #D88F96;margin: 0;">视频</p>
-    <p style="font-size: 16px;color: #6F6F6F;margin: 0;margin-top: 10px;">{{info.desc}}</p>
-    <div style="margin-top: 10px;">
-        <span style="display: inline-block;font-size: 13px;color: #E99C9E;border: 1px solid #E99C9E;padding: 1px 12px;border-radius: 3px;margin-right: 5px;margin-bottom: 5px;" *ngFor="let item of info.tags">{{item.name}}</span>
-    </div>
-    <div style="overflow: hidden;margin-top: 15px;margin-bottom: 15px;">
-        <img [src]="user.avatar" style="width: 35px;height: 35px;border-radius: 50%;float: left;" (click)="goMe(info.user.id)">
-        <div style="float: left;margin-left: 10px;">
-            <p style="font-size: 14px;color: #898989;margin: 0;" (click)="goMe(info.user.id)">{{user.username}}</p>
-            <p style="font-size: 13px;color: #C4C4C4;margin: 0;">{{info.updated_at | timeFormat1 }}</p>
+<ion-content style="background: #F8F8F8;">
+    <div style="background: #fff;padding:16px;">
+        <p style="font-size: 12px;color: #D88F96;margin: 0;">视频</p>
+        <p style="font-size: 16px;color: #6F6F6F;margin: 0;margin-top: 10px;">{{info.desc}}</p>
+        <div style="margin-top: 10px;">
+            <span style="display: inline-block;font-size: 13px;color: #E99C9E;border: 1px solid #E99C9E;padding: 1px 12px;border-radius: 3px;margin-right: 5px;margin-bottom: 5px;" *ngFor="let item of info.tags">{{item.name}}</span>
         </div>
-        <span style="float: right;display: inline-block;font-size: 14px;color: #E99C9E;border: 1px solid #E99C9E;padding: 3px 11px;margin-top: 5px;border-radius: 3px;" *ngIf="!isAttention" (click)="goAttention()">+ 关注</span>
-        <span style="float: right;display: inline-block;font-size: 14px;color: #fff;border: 1px solid #E99C9E;padding: 3px 11px;margin-top: 5px;border-radius: 3px;background-color: #E99C9E;" *ngIf="isAttention" (click)="concelAttention()">已关注</span>
+        <div style="overflow: hidden;margin-top: 15px;margin-bottom: 15px;">
+            <img [src]="user.avatar" style="width: 35px;height: 35px;border-radius: 50%;float: left;" (click)="goMe(info.user.id)">
+            <div style="float: left;margin-left: 10px;">
+                <p style="font-size: 14px;color: #898989;margin: 0;" (click)="goMe(info.user.id)">{{user.username}}</p>
+                <p style="font-size: 13px;color: #C4C4C4;margin: 0;">{{info.updated_at | timeFormat1 }}</p>
+            </div>
+            <span style="float: right;display: inline-block;font-size: 14px;color: #E99C9E;border: 1px solid #E99C9E;padding: 3px 11px;margin-top: 5px;border-radius: 3px;" *ngIf="!isAttention" (click)="goAttention()">+ 关注</span>
+            <span style="float: right;display: inline-block;font-size: 14px;color: #fff;border: 1px solid #E99C9E;padding: 3px 11px;margin-top: 5px;border-radius: 3px;background-color: #E99C9E;" *ngIf="isAttention" (click)="concelAttention()">已关注</span>
+        </div>
+        <video [src]="info.video" style="width: 100%;" controls="controls"></video>
     </div>
-    <video [src]="info.video" style="width: 100%;" controls="controls"></video>
-    <!-- <p style="font-size: 14px;color: #737373;">
-        http://doclever.cn/controller/share/share.html#5acf04a0d52abd5e98747619
-    </p> -->
-    <detailComment type="vlog" [id]="globalId" *ngIf="globalId"></detailComment>
+    <div style="background: #fff;margin-top: 10px;">
+        <detailComment type="vlog" [id]="globalId" *ngIf="globalId"></detailComment>
+    </div>
     <div style="height: 55px;width: 100%;"></div>
     <div style="overflow: hidden;position: fixed;bottom: 0;left: 0;width: 100%;background-color: #fff;height: 50px;padding-top: 10px;padding-bottom: 10px;border-top: 1px solid #EAEAEA;">
         <div style="float: left;width: 50%;display: inline-block;border-right:1px solid #EAEAEA;height: 30px;line-height: 30px;text-align: center;" (click)="makeComment()">

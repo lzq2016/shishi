@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavController, NavParams,ToastController} from 'ionic-angular';
 import {HttpClient} from '../../providers/httpClient';
 import {ServiceConfig} from '../../providers/service.config';
-// import {CommentInfoPage} from '../comment-info/comment-info';
 import {PublishCommentPage} from '../comment/publish-comment';
 import {ProfilePage} from '../profile/profile'
 
@@ -13,12 +12,13 @@ import {ProfilePage} from '../profile/profile'
 })
 export class RecordInfoPage {
 
-  // private comment = [];
   info = {};
   private requrl:string;
   commentNextPage:string = ""
   contentId:number = 0
   hasZan: boolean = false
+  hasCollected: boolean = false
+  isAttention:boolean = false
   globalId: number = 0
 
   constructor(public navCtrl: NavController,
@@ -39,7 +39,10 @@ export class RecordInfoPage {
          that.info["username"] = data.user.username;
          that.contentId = data.id;
          that.hasZan = data.has_liked;
+         that.hasCollected = data.has_collected;
+
     });
+    this.checkAttention();
   }
 
   ionViewDidLoad() {
@@ -83,5 +86,70 @@ export class RecordInfoPage {
     if(userId){
       this.navCtrl.push(ProfilePage,{userId:userId,fromOtherUser:true});
     }
+  }
+
+  makecollect() {
+    let self = this;
+    self.http.post(ServiceConfig.MAKECOLLECT, { object_id: self.globalId, content_type: 'diary' }, function (data) {
+      console.log(data);
+      if (!data.success) {
+        const toast = self.toastCtrl.create({
+          message: '自己的无需收藏',
+          duration: 3000,
+          position: 'middle'
+        });
+        toast.present();
+      } else {
+        self.hasCollected = true;
+      }
+    });
+  }
+
+  cancelcollect() {
+    let self = this;
+    self.http.post(ServiceConfig.CANCELCOLLECT, { object_id: self.globalId, content_type: 'diary' }, function (data) {
+      console.log(data);
+      self.hasCollected = false;
+    });
+  }
+
+  checkAttention() {
+    let self = this;
+    self.http.get(ServiceConfig.ISATTENTION + "?user_id=" + self.globalId, function (data) {
+      console.log(data);
+      self.isAttention = data.is_follower
+    });
+  }
+  goAttention() {
+    let self = this;
+    self.http.post(ServiceConfig.FOLLOWUSER, { user_id: self.globalId }, function (data) {
+      console.log(data);
+      self.isAttention = true;
+    });
+  }
+
+  concelAttention() {
+    let self = this;
+    self.http.post(ServiceConfig.CANCELATTENTION, { idol_id: self.globalId }, function (data) {
+      console.log(data);
+      self.isAttention = false;
+    });
+  }
+
+  like() {
+    let that = this
+    this.http.post(ServiceConfig.MAKELIKE, { content_type: 'diary', object_id: that.globalId }, function (data) {
+      if (data.success) {
+        that.hasZan = true
+      }
+    });
+  }
+
+  cancelLike() {
+    let that = this
+    this.http.post(ServiceConfig.CANCELLIKE, { content_type: 'diary', object_id: that.globalId }, function (data) {
+      console.log(data);
+      that.hasZan = false
+    });
   }
 }
