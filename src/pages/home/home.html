@@ -1,10 +1,10 @@
 <ion-content>
-    <ion-segment #segments mode="md" [(ngModel)]="page.pageString" style="width: 80%;display: inline-block;vertical-align: middle;">
+    <ion-segment #segments mode="md" [(ngModel)]="page.pageString" style="width: 85%;display: inline-block;vertical-align: middle;">
         <ion-segment-button class="tabText" *ngFor="let item of tabs" value="{{item.tabsValue}}" (click)="selectedTab(item.tabsValue)">
             {{item.tabslabel}}
         </ion-segment-button>
     </ion-segment>
-    <img src="assets/img/guide1.jpg" style="width: 20px;height: 20px;vertical-align: middle;" (click)="goTabSelect()">
+    <img src="assets/img/tabs.png" style="width: 20px;height: 20px;vertical-align: middle;margin-left: 4%;" (click)="goTabSelect()">
     <ion-slides #slider (ionSlideDidChange)="slideChanged()">
         <ion-slide style="display: block;text-align: left;" *ngFor="let items of tabContentCache; index as i">
             <!-- <div class="slide-wrap" [style.height]="slideH">

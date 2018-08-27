@@ -89,6 +89,7 @@ import {FlowCardStreamService} from "../components/flow-card-stream/flow-card-st
 import {PublishDiaryPage} from '../pages/diary/publish-diary'
 import {PublishCommentPage} from '../pages/comment/publish-comment'
 import {CommentDetailPage} from '../pages/comment/comment-detail'
+import {ActiveUserPage} from '../pages/activeuser/activeuser'
 import {CommentAttachmentsComponent} from '../components/comment/comment-attachments'
 import { TimelineComponent,TimelineTimeComponent,TimelineItemComponent } from '../components/timeline/timeline';
 import {HomePage} from '../pages/home/home'
@@ -210,6 +211,7 @@ export class myHammerConfig extends HammerGestureConfig {
     LongArticlePage,
     TopicDiaryPage,
     TopicVideoPage,
+    ActiveUserPage,
   ],
   imports: [
     BrowserModule,
@@ -307,6 +309,7 @@ export class myHammerConfig extends HammerGestureConfig {
     LongArticlePage,
     TopicDiaryPage,
     TopicVideoPage,
+    ActiveUserPage,
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},

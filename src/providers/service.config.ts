@@ -5,10 +5,10 @@ export class ServiceConfig {
     public static getUrl() {
         if (this.ISDEBUG) {
             //测试环境URL
-            return "https://juyaer.com/";
+            return "https://dev.juyaer.com/";
         } else {
             //生产环境URL
-            return "https://juyaer.com/";
+            return "https://dev.juyaer.com/";
         }
 
     }

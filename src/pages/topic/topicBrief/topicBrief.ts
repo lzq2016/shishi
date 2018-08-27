@@ -1,7 +1,8 @@
 import {Component,OnInit,OnDestroy} from '@angular/core'
 import { HttpClient } from '../../../providers/httpClient';
-import {NavParams} from 'ionic-angular';
+import {NavParams,ModalController} from 'ionic-angular';
 import { ServiceConfig } from '../../../providers/service.config';
+import {ActiveUserPage} from '../../activeuser/activeuser'
 
 @Component({
   selector: 'page-topicBrief',
@@ -13,7 +14,10 @@ export class TopicBriefPage implements OnInit, OnDestroy {
   topicId = 0;
   topicInfo = {}
 
-  constructor(public http: HttpClient,public navParams:NavParams) {
+  constructor(
+    public http: HttpClient,
+    public navParams:NavParams,
+    public modalCtrl: ModalController) {
   }
 
   ngOnInit(){
@@ -38,6 +42,14 @@ export class TopicBriefPage implements OnInit, OnDestroy {
   //     infiniteScroll.enable(false);
   //   }
   // }
+
+  goMore(){
+    let profileModal = this.modalCtrl.create(ActiveUserPage, { id:this.topicId},{showBackdrop:true,enableBackdropDismiss:true});
+    profileModal.onDidDismiss(data => {
+      console.log(data);
+    });
+    profileModal.present();
+  }
 
   ngOnDestroy(){ 
     console.log("destroy")
