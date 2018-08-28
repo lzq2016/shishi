@@ -23,10 +23,6 @@
                 <diary *ngIf="item.content_type == 'diary'" [diaryInfo]="item"></diary>
                 <homevideo *ngIf="item.content_type == 'vlog'" [videoInfo]="item"></homevideo>
             </div>
-            <ion-infinite-scroll [enabled]="items.enabled" threshold="50px" (ionInfinite)="doInfinite($event)">
-                <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载中...">
-                </ion-infinite-scroll-content>
-            </ion-infinite-scroll>
         </ion-slide>
         <!-- <ion-slide>
             <h1>Tab 2</h1>
@@ -41,6 +37,10 @@
             <h1>Tab 5</h1>
         </ion-slide> -->
     </ion-slides>
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+            <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载中...">
+            </ion-infinite-scroll-content>
+        </ion-infinite-scroll>
     <!--日记列表-->
     <!-- <ion-list class="diary-list">
         <div *ngFor="let diary of diaryList">

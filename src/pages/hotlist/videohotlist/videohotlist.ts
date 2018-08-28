@@ -32,10 +32,21 @@ export class VideoHotListPage implements OnInit, OnDestroy {
     });
   }
 
+  getVideoList(){
+    let that = this;
+    that.http.get(that.nextPage, function (data) {
+        console.log(data);
+        that.videoList = that.videoList.concat(data.results);
+        that.nextPage = data.next;
+    });
+  }
+
   doInfinite(infiniteScroll) {
     let that = this;
+    infiniteScroll.enable(false);
     if(that.nextPage){
-      that.initVideoList();
+      that.getVideoList();
+      infiniteScroll.complete();
     }else{
       infiniteScroll.enable(false);
     }

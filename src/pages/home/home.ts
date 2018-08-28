@@ -189,14 +189,14 @@ export class HomePage implements OnInit {
     }
   }
 
-  getHomefeedList(index) {
+  getHomefeedList(index,infiniteScroll) {
     let self = this;
-    self.http.get(ServiceConfig.HOMEFEED + '?page=' + self.tabContentCache[index].pageNumber + '&tag_name=' + self.tabs[index].tabslabel, function (data) {
+    self.http.get(this.tabContentCache[index].next, function (data) {
       self.tabContentCache[index].next = data.next;
       if (data.next == '' || data.next == null) {
-        self.tabContentCache[index].enabled = false;
+        // self.tabContentCache[index].enabled = false;
       } else {
-        self.tabContentCache[index].enabled = true;
+        infiniteScroll.enable(true); 
       }
       self.tabContentCache[index]['feedList'] = self.tabContentCache[index]['feedList'].concat(data.results);
           console.log(self.tabContentCache);
@@ -204,14 +204,15 @@ export class HomePage implements OnInit {
   }
 
   doInfinite(infiniteScroll) {
+    infiniteScroll.enable(false);    
     let index = this.currentActiveTabIndex;
-   if(this.tabContentCache[index].next != '' && this.tabContentCache[index].next != null && this.tabContentCache[index].enabled) {
-      this.tabContentCache[index].enabled = false;
-      this.tabContentCache[index].pageNumber++;
-      this.getHomefeedList(index);
+   if(this.tabContentCache[index].next != '' && this.tabContentCache[index].next != null) {
+      // this.tabContentCache[index].enabled = false;
+      // this.tabContentCache[index].pageNumber++;
+      this.getHomefeedList(index,infiniteScroll);
       infiniteScroll.complete();
     } else {
-      infiniteScroll.complete();
+      infiniteScroll.enable(false); 
     }
   }
 
