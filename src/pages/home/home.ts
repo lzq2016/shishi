@@ -183,6 +183,7 @@ export class HomePage implements OnInit {
             self.tabContentCache[i].enabled = true;
           }
           self.tabContentCache[i]['feedList'] = data2.results;
+          console.log(self.tabContentCache);
         });
       });
     }
@@ -198,6 +199,7 @@ export class HomePage implements OnInit {
         self.tabContentCache[index].enabled = true;
       }
       self.tabContentCache[index]['feedList'] = self.tabContentCache[index]['feedList'].concat(data.results);
+          console.log(self.tabContentCache);
     });
   }
 
