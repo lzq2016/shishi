@@ -32,12 +32,16 @@ export class VideoHotListPage implements OnInit, OnDestroy {
     });
   }
 
-  getVideoList(){
+  getVideoList(infiniteScroll){
     let that = this;
     that.http.get(that.nextPage, function (data) {
         console.log(data);
-        that.videoList = that.videoList.concat(data.results);
         that.nextPage = data.next;
+        if(data.next){
+          infiniteScroll.enable(true);
+        }
+        that.videoList = that.videoList.concat(data.results);
+        infiniteScroll.complete();
     });
   }
 
@@ -45,10 +49,9 @@ export class VideoHotListPage implements OnInit, OnDestroy {
     let that = this;
     infiniteScroll.enable(false);
     if(that.nextPage){
-      that.getVideoList();
-      infiniteScroll.complete();
+      that.getVideoList(infiniteScroll);
     }else{
-      infiniteScroll.enable(false);
+      infiniteScroll.complete();
     }
   }
 

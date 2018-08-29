@@ -32,12 +32,26 @@ export class PeopleHotListPage implements OnInit, OnDestroy {
     });
   }
 
+  getPeopleList(infiniteScroll){
+    let that = this;
+    that.http.get(that.nextPage, function (data) {
+        console.log(data);
+        that.nextPage = data.next;
+        if(data.next){
+          infiniteScroll.enable(true);
+        }
+        that.peopleList = that.peopleList.concat(data.results);
+        infiniteScroll.complete();
+    });
+  }
+
   doInfinite(infiniteScroll) {
+    infiniteScroll.enable(false);
     let that = this;
     if(that.nextPage){
-      that.initPeopleList();
+      that.getPeopleList(infiniteScroll);
     }else{
-      infiniteScroll.enable(false);
+      infiniteScroll.complete();
     }
   }
   

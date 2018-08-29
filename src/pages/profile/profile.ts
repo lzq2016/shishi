@@ -31,13 +31,13 @@ export class ProfilePage {
     }
     if(user_id){
       this.userId = user_id;
-      this.getActionList();
+      this.initActionList();
       this.getUserDetail();
     }else{
       this.storage.get('token').then(data => {
         if (data != '' && data != null && data != undefined) {
           this.userId = Base64.decode(data).split('"user_id":')[1].split(',')[0];
-          this.getActionList();
+          this.initActionList();
           this.getUserDetail();
         }
       });
@@ -45,10 +45,10 @@ export class ProfilePage {
     console.log('ionViewDidLoad ProfilePage')
   }
   doInfinite(infiniteScroll) {
+    infiniteScroll.enable(false);
     if(this.next != '' && this.next != null) {
-      this.pageNumber++;
-      this.getActionList();
-      infiniteScroll.complete();
+      // this.pageNumber++;
+      this.getActionList(infiniteScroll);
     }else {
       infiniteScroll.complete();
     }
@@ -59,13 +59,27 @@ export class ProfilePage {
       self.user = data
     });
   }
-  getActionList(){
+  initActionList(){
     let self = this;
     self.http.get(ServiceConfig.ACTION + '?user_id=' + this.userId + '&page=' + this.pageNumber, function(data){
       self.next = data.next;
       for(let d of data.results.reverse()) {
         self.userInfo.push(d);
       }
+    });
+  }
+
+  getActionList(infiniteScroll){
+    let self = this;
+    self.http.get(self.next, function(data){
+      self.next = data.next;
+      if(data.next != '' && data.next != null){
+        infiniteScroll.enable(true);
+      }
+      for(let d of data.results.reverse()) {
+        self.userInfo.push(d);
+      }
+      infiniteScroll.complete();
     });
   }
   // openSetting() {
@@ -77,10 +91,6 @@ export class ProfilePage {
     this.navCtrl.pop();
   }
 
-  // goTopicDetail(id){
-  //   console.log("topicid:"+id);
-  //   this.navCtrl.push(ArticleInfoPage, {id:id,type:"topic"});
-  // }
   goBlogDetail(id){
     console.log("blogid:"+id);
     this.navCtrl.push(ArticleInfoPage, {id:id,type:"blog"});

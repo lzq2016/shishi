@@ -31,12 +31,26 @@ export class TopicHotListPage implements OnInit, OnDestroy {
     });
   }
 
+  getTopicList(infiniteScroll){
+    let that = this;
+    that.http.get(that.nextPage, function (data) {
+        console.log(data);
+        that.nextPage = data.next;
+        if(data.next){
+          infiniteScroll.enable(true);
+        }
+        that.topicList = that.topicList.concat(data.results);
+        infiniteScroll.complete();
+    });
+  }
+
   doInfinite(infiniteScroll) {
+    infiniteScroll.enable(false);
     let that = this;
     if(that.nextPage){
-      that.initTopicList();
+      that.getTopicList(infiniteScroll);
     }else{
-      infiniteScroll.enable(false);
+      infiniteScroll.complete();
     }
   }
 

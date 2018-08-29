@@ -75,12 +75,11 @@ export class HomePage implements OnInit {
   tabContentCache = [];
 
   slideH = screen.width * 0.7 + 'px'
-  // slideList: any = []
-  // diaryList: any = []
   pageNumber: number = 1;
   next: string = '';
   enabled: boolean = true;
   host: string = "";
+  infiniteScroll:any = {};
   
   constructor(public alertCtrl: AlertController,
     public loadingCtrl: LoadingController,
@@ -194,23 +193,25 @@ export class HomePage implements OnInit {
     self.http.get(this.tabContentCache[index].next, function (data) {
       self.tabContentCache[index].next = data.next;
       if (data.next == '' || data.next == null) {
-        // self.tabContentCache[index].enabled = false;
+        self.tabContentCache[index].enabled = false;
       } else {
+        self.tabContentCache[index].enabled = true;
         infiniteScroll.enable(true); 
       }
       self.tabContentCache[index]['feedList'] = self.tabContentCache[index]['feedList'].concat(data.results);
-          console.log(self.tabContentCache);
+      infiniteScroll.complete();
+      console.log(self.tabContentCache);
     });
   }
 
   doInfinite(infiniteScroll) {
-    infiniteScroll.enable(false);    
+    infiniteScroll.enable(false);
+    this.infiniteScroll = infiniteScroll;
     let index = this.currentActiveTabIndex;
    if(this.tabContentCache[index].next != '' && this.tabContentCache[index].next != null) {
       // this.tabContentCache[index].enabled = false;
       // this.tabContentCache[index].pageNumber++;
       this.getHomefeedList(index,infiniteScroll);
-      infiniteScroll.complete();
     } else {
       infiniteScroll.enable(false); 
     }
@@ -238,6 +239,11 @@ export class HomePage implements OnInit {
   selectedTab(index) {
     this.slider.slideTo(index);
     this.currentActiveTabIndex = index;
+    if(this.tabContentCache[index].enabled){
+      this.infiniteScroll.enable(true);
+    }else{
+      this.infiniteScroll.enable(false);
+    }
   }
   // On slide changed
   slideChanged() {
