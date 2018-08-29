@@ -12,13 +12,13 @@
     <div style="margin-top: 10px;">
         <p class="title">一级标签（多选）</p>
         <div style="margin-top: 15px;">
-            <span class="mymark selectedmark" *ngFor="let item of type1" (click)="selectTag1(item.code)">{{item.name}}</span>
+            <span class="mymark" [ngClass]="{'selectedmark': item.selected }" *ngFor="let item of type1" (click)="selectTag1(item.code)">{{item.name}}</span>
         </div>
     </div>
     <div style="margin-top: 10px;">
         <p class="title">二级标签（多选）</p>
         <div style="margin-top: 15px;">
-            <span class="canselectmark" *ngFor="let item of currentType2" (click)="selectTag2(item.code)">{{item.name}}</span>
+            <span class="canselectmark canselectmarkselected" [ngClass]="{'canselectmarkselected': item.selected }" *ngFor="let item of currentType2" (click)="selectTag2(item.code)">{{item.name}}</span>
         </div>
     </div>
 </ion-content>
