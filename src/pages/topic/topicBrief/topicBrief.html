@@ -6,12 +6,12 @@
     <p style="font-size: 13px;color: #BABABA;margin: 0;padding-left: 16px;margin-bottom: 10px;margin-top: 10px;">活跃用户</p>
     <div style="background: #fff;">
         <div style="padding:10px 16px;overflow: hidden; ">
-            <img src="assets/img/guide1.jpg" style="width: 35px;height: 35px;border-radius: 50%;overflow: hidden;float: left;">
-            <div style="float: left;margin-left: 10px;">
-                <p style="font-size: 14px;color: #999999;margin: 0;">喜剧爱好者</p>
-                <p style="font-size: 12px;color: #999999;margin: 0;">做个好学生</p>
+            <img [src]="hotUser.avatar" style="width: 35px;height: 35px;border-radius: 50%;overflow: hidden;float: left;">
+            <div style="float: left;margin-left: 10px;width: 67%;">
+                <p style="font-size: 14px;color: #999999;margin: 0;">{{hotUser.nickname}}</p>
+                <p style="font-size: 12px;color: #999999;margin: 0;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">{{hotUser.brief}}</p>
             </div>
-            <span style="font-size: 13px;display: inline-block;color: #F4A9A9;border: 1px solid #F4A9A9;padding: 4px 10px;float: right;border-radius: 3px;">+关注</span>
+            <span style="font-size: 13px;display: inline-block;color: #F4A9A9;border: 1px solid #F4A9A9;padding: 4px 10px;float: right;border-radius: 3px;margin-top: 3px;">+关注</span>
         </div>
         <p style="font-size: 12px;color: #CDCDCD;margin: 0;margin-left: 16px;padding-bottom: 10px;">30篇相关文章，4350位用户关注了她</p>
     </div>

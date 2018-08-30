@@ -10,11 +10,11 @@
 </ion-header>
 <ion-content>
     <ion-item no-line style="background: #FAFAFA;border-bottom: 1px solid #E5E5E5;height: 60px;padding-left: 16px;padding-right: 16px;height: 52px;">
-        <ion-input placeholder="话题" type="search" clearInput style="background: #fff;border-radius: 13px;margin-top: 3px;height: 38px;font-size: 16px;font-size: 16px;border: 1px solid #e8e5e5;" ng-keyup="changeValue(e)"></ion-input>
+        <ion-input placeholder="话题" type="search" clearInput style="background: #fff;border-radius: 13px;margin-top: 3px;height: 38px;font-size: 16px;font-size: 16px;border: 1px solid #e8e5e5;" (keyup)="changeValue(e)"></ion-input>
     </ion-item>
     <div style="padding-left: 16px;padding-right: 16px;">
-        <div style="overflow: hidden;margin-top: 15px;margin-bottom: 15px;" *ngFor="let item of topicList; index as i" (click)="selectTopic(i)">
-            <span style="font-size: 17px;color: #7E7E7E;float: left;">{{item.title}}</span>
+        <div style="overflow: hidden;margin-top: 20px;margin-bottom: 20px;" *ngFor="let item of topicList; index as i" (click)="selectTopic(i)">
+            <span style="font-size: 17px;color: #7E7E7E;float: left;width: 70%;">{{item.title}}</span>
             <span style="color: #9F9F9F;font-size: 15px;float: right;">{{item.diary_count}}篇相关日记</span>
         </div>
     </div>

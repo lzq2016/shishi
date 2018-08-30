@@ -13,6 +13,7 @@ export class TopicBriefPage implements OnInit, OnDestroy {
   // nextPage:string = ""
   topicId = 0;
   topicInfo = {}
+  hotUser = {}
 
   constructor(
     public http: HttpClient,
@@ -34,7 +35,7 @@ export class TopicBriefPage implements OnInit, OnDestroy {
     });
     self.http.get("api/v1/topic/" + self.topicId + "/hot_users/", function (data) {
       console.log(data);
-      
+      self.hotUser = data[0]
     });
 
   }

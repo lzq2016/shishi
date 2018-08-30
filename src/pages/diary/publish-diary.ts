@@ -188,7 +188,7 @@ export class PublishDiaryPage {
     let profileModal = this.modalCtrl.create(DiaryArticlePage, { userId: 8675309 });
     profileModal.onDidDismiss(data => {
       console.log(data);
-      this.diaryArticle = data;
+      this.diaryArticle = "#" + data;
     });
     profileModal.present();
   }
