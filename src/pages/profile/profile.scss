@@ -2,4 +2,10 @@ page-profile {
     .dataWrap {
         border-bottom: none!important;
     }
+    .female {
+        background: url('/assets/img/female.png') no-repeat right center;
+    }
+    .male {
+        background: url('/assets/img/male.png') no-repeat right center;
+    }
 }

@@ -13,13 +13,15 @@ import {RecordInfoPage} from '../record-info/record-info';
   templateUrl: 'profile.html',
 })
 export class ProfilePage {
-  user: any;
+  user: any = {};
   userInfo = [];
   url: string = '';
   next: string = '';
   userId: string = '';
   pageNumber: number = 1;
   fromOtherUser:boolean = false;
+  isAttention: boolean = false;
+
   constructor(public navCtrl: NavController, public storage: Storage, public http: HttpClient,public navParams:NavParams) {
   }
 
@@ -31,12 +33,14 @@ export class ProfilePage {
     }
     if(user_id){
       this.userId = user_id;
+      this.checkAttention();
       this.initActionList();
       this.getUserDetail();
     }else{
       this.storage.get('token').then(data => {
         if (data != '' && data != null && data != undefined) {
           this.userId = Base64.decode(data).split('"user_id":')[1].split(',')[0];
+          this.checkAttention();
           this.initActionList();
           this.getUserDetail();
         }
@@ -56,6 +60,7 @@ export class ProfilePage {
   getUserDetail(){
     let self = this;
     self.http.get(ServiceConfig.GETUSERDETAIL + this.userId + '/get_user_detail', function(data){
+      console.log(data);
       self.user = data
     });
   }
@@ -85,6 +90,29 @@ export class ProfilePage {
   // openSetting() {
   //   this.navCtrl.push(SettingPage)
   // }
+  checkAttention() {
+    let self = this;
+    self.http.get(ServiceConfig.ISATTENTION + "?user_id=" + self.userId, function (data) {
+      console.log(data);
+      self.isAttention = data.is_follower
+    });
+  }
+
+  goAttention() {
+    let self = this;
+    self.http.post(ServiceConfig.FOLLOWUSER, { user_id: self.userId }, function (data) {
+      console.log(data);
+      self.isAttention = true;
+    });
+  }
+
+  concelAttention() {
+    let self = this;
+    self.http.post(ServiceConfig.CANCELATTENTION, { idol_id: self.userId }, function (data) {
+      console.log(data);
+      self.isAttention = false;
+    });
+  }
 
   goBack(){
     console.log(123)

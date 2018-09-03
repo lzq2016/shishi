@@ -1,15 +1,16 @@
 <ion-content class="transparent-header" style="background: #F8F8F8;">
     <div style="height: 270px;background:url('assets/img/meBg.png');background-position: center;background-size: cover;position: relative;padding-top: 90px;">
         <ion-icon name="ios-arrow-round-back" style="font-size: 40px;color: #fff;position: absolute;top: 20px;left: 20px;" *ngIf="fromOtherUser" (click)="goBack()"></ion-icon>
-        <span style="font-size: 15px;color: #fff;display: inline-block;background: #EF7A7A;padding: 5px 10px;border-radius: 5px;position: absolute;top: 20px;right: 20px;" *ngIf="fromOtherUser">+关注</span>
+        <span style="font-size: 15px;color: #fff;display: inline-block;background: #EF7A7A;padding: 5px 10px;border-radius: 5px;position: absolute;top: 20px;right: 20px;" *ngIf="fromOtherUser&&!isAttention" (click)="goAttention()">+关注</span>
+        <span style="font-size: 15px;color: #fff;display: inline-block;background: #EF7A7A;padding: 5px 10px;border-radius: 5px;position: absolute;top: 20px;right: 20px;" *ngIf="fromOtherUser&&isAttention" (click)="concelAttention()">已关注</span>
         <div style="width: 80px;height: 80px;border: 2px solid #fff;border-radius: 50%;overflow: hidden;margin: 0 auto;">
             <img src="assets/img/guide1.jpg" style="width: 80px;height: 80px;">
         </div>
         <div style="text-align: center;margin-top: 10px;">
-            <span style="font-size: 16px;color: #fff;">做一个好学生</span>
+            <span style="font-size: 16px;color: #fff;background-size: 13px 14px;padding-right: 20px;" [ngClass]="{'male':user.gender == '男','female':user.gender == '女'}">{{user.username}}</span>
         </div>
-        <p style="margin: 0;text-align: center;font-size: 14px;color: #fff;margin-top: 5px;">21岁 北京</p>
-        <p style="font-size: 12px;color: #fff;margin: 0;text-align: center;margin-top: 15px;">have fun</p>
+        <p style="margin: 0;text-align: center;font-size: 14px;color: #fff;margin-top: 5px;">{{user.age}}岁 {{user.location}}</p>
+        <p style="font-size: 12px;color: #fff;margin: 0;text-align: center;margin-top: 15px;">{{user.brief}}</p>
     </div>
     <div *ngFor="let item of userInfo" style="margin-bottom: 10px;background: #fff;padding-top: 10px;">
         <article *ngIf="item.content_type == 'blog'" [articleInfo]="item" from="me"></article>
