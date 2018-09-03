@@ -18,31 +18,18 @@
     <p style="font-size: 14px;color: #999999;text-align: center;height: 28px;line-height: 28px;background: #fff;margin: 0;margin-top: 5px;" (click)="goMore()">更多>></p>
     <p style="font-size: 13px;color: #BABABA;margin: 0;padding-left: 16px;margin-bottom: 10px;margin-top: 10px;">相关话题</p>
     <div style="padding-bottom: 20px;">
-        <div style="padding-left: 16px;padding-right: 16px;border-bottom: 1px solid #F2F2F2;background: #fff;">
+        <div style="padding-left: 16px;padding-right: 16px;border-bottom: 1px solid #F2F2F2;background: #fff;" *ngFor="let item of relateTopic;index as i">
             <div style="overflow: hidden;padding-top: 10px;">
-                <img src="assets/img/guide1.jpg" style="width: 40px;height: 40px;float: left;">
-                <div style="float: left;margin-left: 10px;">
-                    <p style="font-size: 14px;color: #999999;margin: 0;margin-top: 1px;">喜剧</p>
-                    <p style="font-size: 12px;color: #B9B9B9;margin: 0;margin-top: 3px;">721人关注</p>
+                <img [src]="item.cover" style="width: 40px;height: 40px;float: left;">
+                <div style="float: left;margin-left: 10px;width: 60%;">
+                    <p style="font-size: 14px;color: #999999;margin: 0;margin-top: 1px;width: 100%;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">{{item.title}}</p>
+                    <p style="font-size: 12px;color: #B9B9B9;margin: 0;margin-top: 3px;">{{item.follower_count}}人关注</p>
                 </div>
-                <span style="font-size: 13px;color: #F4A9A9;display: inline-block;border: 1px solid #F4A9A9;float: right;padding: 4px 10px;border-radius: 3px;">+关注</span>
+                <span style="font-size: 13px;color: #F4A9A9;display: inline-block;border: 1px solid #F4A9A9;float: right;padding: 4px 10px;border-radius: 3px;" *ngIf="!item.isAttention" (click)="goAttention(item.id,i)">+关注</span>
+                <span style="font-size: 13px;color: #F4A9A9;display: inline-block;border: 1px solid #F4A9A9;float: right;padding: 4px 10px;border-radius: 3px;" *ngIf="item.isAttention" (click)="concelAttention(item.id,i)">已关注</span>
             </div>
-            <p style="font-size: 13px;color: #C9C9C9;">简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介</p>
+            <p style="font-size: 13px;color: #C9C9C9;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;">{{item.content}}</p>
         </div>
-        <div style="padding-left: 16px;padding-right: 16px;border-bottom: 1px solid #F2F2F2;background: #fff;">
-            <div style="overflow: hidden;padding-top: 10px;">
-                <img src="assets/img/guide1.jpg" style="width: 40px;height: 40px;float: left;">
-                <div style="float: left;margin-left: 10px;">
-                    <p style="font-size: 14px;color: #999999;margin: 0;margin-top: 1px;">喜剧</p>
-                    <p style="font-size: 12px;color: #B9B9B9;margin: 0;margin-top: 3px;">721人关注</p>
-                </div>
-                <span style="font-size: 13px;color: #F4A9A9;display: inline-block;border: 1px solid #F4A9A9;float: right;padding: 4px 10px;border-radius: 3px;">+关注</span>
-            </div>
-            <p style="font-size: 13px;color: #C9C9C9;">简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介</p>
-        </div>
+        
     </div>
-    <!-- <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
-        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载中...">
-        </ion-infinite-scroll-content>
-    </ion-infinite-scroll> -->
 </ion-content>

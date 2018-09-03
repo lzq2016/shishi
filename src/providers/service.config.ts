@@ -37,5 +37,4 @@ export class ServiceConfig {
     public static CANCELCOLLECT = "api/v1/collect/delete/"; //取消收藏
     public static MAKELIKE = "api/v1/like/";  //点赞
     public static CANCELLIKE = "api/v1/like/delete/";  //取消点赞
-
 }

@@ -14,6 +14,7 @@ export class TopicBriefPage implements OnInit, OnDestroy {
   topicId = 0;
   topicInfo = {}
   hotUser = {}
+  relateTopic = []
 
   constructor(
     public http: HttpClient,
@@ -32,6 +33,13 @@ export class TopicBriefPage implements OnInit, OnDestroy {
     self.http.get(ServiceConfig.TOPICLIST + self.topicId, function (data) {
       console.log(data);
       self.topicInfo = data;
+      self.relateTopic = data.related_topics;
+      self.relateTopic.map(function(item,index){
+        self.http.get("api/v1/topic/" + item.id + "/has_follow/", function (data1) {
+          console.log(data1);
+          self.relateTopic[index]["isAttention"] = data1.has_follow
+        });
+      });
     });
     self.http.get("api/v1/topic/" + self.topicId + "/hot_users/", function (data) {
       console.log(data);
@@ -55,6 +63,22 @@ export class TopicBriefPage implements OnInit, OnDestroy {
       console.log(data);
     });
     profileModal.present();
+  }
+
+  goAttention(id,index) {
+    let self = this;
+    self.http.post("api/v1/topic/" + id + "/follow/", { id: id }, function (data) {
+      console.log(data);
+      self.relateTopic[index]["isAttention"] = true;
+    });
+  }
+
+  concelAttention(id,index) {
+    let self = this;
+    self.http.post("api/v1/topic/" + id + "/follow/", { id: id }, function (data) {
+      console.log(data);
+      self.relateTopic[index]["isAttention"] = false;
+    });
   }
 
   ngOnDestroy() {
