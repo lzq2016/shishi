@@ -28,6 +28,9 @@ export class ProfilePage {
   ionViewDidLoad() {
     this.url = ServiceConfig.getUrl();
     let user_id = this.navParams.get("userId");
+    this.storage.get('token').then(data => {
+      console.log(data);
+    });
     if(this.navParams.get("fromOtherUser")){
       this.fromOtherUser = true;
     }

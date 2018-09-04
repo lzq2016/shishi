@@ -26,6 +26,10 @@ export class CommentComponent implements OnInit {
     this.getComment();
   }
 
+  ionViewDidEnter() {
+    console.log(567);
+  }
+
   getComment() {
     //获取评论列表
     let that = this;

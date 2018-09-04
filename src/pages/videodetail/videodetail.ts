@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core'
 import { HttpClient } from '../../providers/httpClient';
-import { NavController, NavParams, ToastController } from 'ionic-angular';
+import { NavController, NavParams, ToastController,ModalController } from 'ionic-angular';
 import { ServiceConfig } from '../../providers/service.config';
 import { PublishCommentPage } from '../comment/publish-comment';
 import { ProfilePage } from '../profile/profile';
@@ -24,11 +24,15 @@ export class VideoDetailPage implements OnInit, OnDestroy {
     public navParams: NavParams,
     public http: HttpClient,
     public toastCtrl: ToastController,
+    public modalCtrl: ModalController,
   ) {
   }
 
   ionViewDidLoad() {
+  }
 
+  ionViewDidEnter() {
+    console.log(5678);
   }
 
   ngOnInit() {
@@ -104,7 +108,12 @@ export class VideoDetailPage implements OnInit, OnDestroy {
 
   makeComment() {
     let that = this
-    this.navCtrl.push(PublishCommentPage, { id: that.contentId, content_type: 'vlog', type: "comment" });
+    // this.navCtrl.push(PublishCommentPage, { id: that.contentId, content_type: 'vlog', type: "comment" });
+    let profileModal = this.modalCtrl.create(PublishCommentPage, { id: that.contentId, content_type: 'vlog', type: "comment" });
+    profileModal.onDidDismiss(data => {
+      console.log(data);
+    });
+    profileModal.present();
   }
 
   like() {

@@ -1,24 +1,25 @@
-import {Component, ViewChild} from '@angular/core'
-import {Events, MenuController, Nav, Platform} from 'ionic-angular'
-import {SplashScreen} from '@ionic-native/splash-screen'
-import {Storage} from '@ionic/storage'
-import {AccountPage} from '../pages/account/account'
-import {LoginPage} from '../pages/login/login'
-import {SignupPage} from '../pages/signup/signup'
-import {TabsPage} from '../pages/tabs-page/tabs-page'
+import { Component, ViewChild } from '@angular/core'
+import { Events, MenuController, Nav, Platform } from 'ionic-angular'
+import { SplashScreen } from '@ionic-native/splash-screen'
+import { Storage } from '@ionic/storage'
+import { AccountPage } from '../pages/account/account'
+import { LoginPage } from '../pages/login/login'
+import { SignupPage } from '../pages/signup/signup'
+import { TabsPage } from '../pages/tabs-page/tabs-page'
 // import {GuidePage} from '../pages/guide/guide'
-import {TutorialPage} from '../pages/tutorial/tutorial'
-import {SchedulePage} from '../pages/schedule/schedule'
-import {SpeakerListPage} from '../pages/speaker-list/speaker-list'
-import {SupportPage} from '../pages/support/support'
+import { TutorialPage } from '../pages/tutorial/tutorial'
+import { SchedulePage } from '../pages/schedule/schedule'
+import { SpeakerListPage } from '../pages/speaker-list/speaker-list'
+import { SupportPage } from '../pages/support/support'
 // import {testPage} from '../pages/test/test'
-import {ConferenceData} from '../providers/conference-data'
-import {UserData} from '../providers/user-data'
-import {NoticePage} from '../pages/notice/notice'
-import {ProfilePage} from '../pages/profile/profile'
+import { ConferenceData } from '../providers/conference-data'
+import { UserData } from '../providers/user-data'
+import { NoticePage } from '../pages/notice/notice'
+import { ProfilePage } from '../pages/profile/profile'
 import { StatusBar } from '@ionic-native/status-bar';
 import { HttpClient } from '../providers/httpClient';
 // import { ServiceConfig } from '../providers/service.config';
+import { Base64 } from 'js-base64';
 
 export interface PageInterface {
   title: string;
@@ -40,22 +41,22 @@ export class ConferenceApp {
 
   // List of pages that can be navigated to from the left menu the left menu only works after login the login page disables the left menu
   appPages: PageInterface[] = [
-    {title: '首页', name: 'TabsPage', component: TabsPage, tabComponent: SchedulePage, index: 0, icon: 'home'},
-    {title: '精选', name: 'TabsPage', component: TabsPage, tabComponent: SpeakerListPage, index: 1, icon: 'rose'},
+    { title: '首页', name: 'TabsPage', component: TabsPage, tabComponent: SchedulePage, index: 0, icon: 'home' },
+    { title: '精选', name: 'TabsPage', component: TabsPage, tabComponent: SpeakerListPage, index: 1, icon: 'rose' },
     // {title: '消息', name: 'TabsPage', component: TabsPage, tabComponent: MapPage, index: 2, icon: 'map'},
-    {title: '消息', name: 'TabsPage', component: TabsPage, tabComponent: NoticePage, index: 2, icon: 'notifications'},
+    { title: '消息', name: 'TabsPage', component: TabsPage, tabComponent: NoticePage, index: 2, icon: 'notifications' },
     // {title: '我的', name: 'TabsPage', component: TabsPage, tabComponent: AboutPage, index: 3, icon: 'information-circle'}
-    {title: '我的', name: 'TabsPage', component: ProfilePage, tabComponent: ProfilePage, index: 3, icon: 'contact'}
+    { title: '我的', name: 'TabsPage', component: ProfilePage, tabComponent: ProfilePage, index: 3, icon: 'contact' }
   ]
   loggedInPages: PageInterface[] = [
-    {title: '用户信息', name: 'AccountPage', component: AccountPage, icon: 'person'},
-    {title: '支持', name: 'SupportPage', component: SupportPage, icon: 'help'},
-    {title: '登出', name: 'TabsPage', component: LoginPage, icon: 'log-out', logsOut: true}
+    { title: '用户信息', name: 'AccountPage', component: AccountPage, icon: 'person' },
+    { title: '支持', name: 'SupportPage', component: SupportPage, icon: 'help' },
+    { title: '登出', name: 'TabsPage', component: LoginPage, icon: 'log-out', logsOut: true }
   ]
   loggedOutPages: PageInterface[] = [
-    {title: '登录', name: 'LoginPage', component: LoginPage, icon: 'log-in'},
-    {title: '支持', name: 'SupportPage', component: SupportPage, icon: 'help'},
-    {title: '注册', name: 'SignupPage', component: SignupPage, icon: 'person-add'}
+    { title: '登录', name: 'LoginPage', component: LoginPage, icon: 'log-in' },
+    { title: '支持', name: 'SupportPage', component: SupportPage, icon: 'help' },
+    { title: '注册', name: 'SignupPage', component: SignupPage, icon: 'person-add' }
   ]
   rootPage: any
 
@@ -84,53 +85,52 @@ export class ConferenceApp {
 
     // load the conference data
     // confData.load()
-    // let that = this
-    // 
+
+    let that = this
     // this.splashScreen.show()
     // this.storage.get('appFirstIn')
-    // .then((data) => {
-    //   console.log("appFirstIn data:" + data);
-    //   if (data == null) {
-    //     that.rootPage = GuidePage
-    //     that.platformReady()
-    //   }else {
-    //     that.storage.get('token')
-    //     .then((data) => {
-    //       console.log("token data:" + data);
-    //       if (data) {
-    //         that.rootPage = TabsPage
-    //       }else {
-    //         that.rootPage = LoginPage
-    //       }
+    //   .then((data) => {
+    //     console.log("appFirstIn data:" + data);
+    //     if (data == null) {
+    //       that.rootPage = GuidePage
     //       that.platformReady()
-    //     });
-    //   }
-    // });
+    //     } else {
+    //       that.storage.get('token')
+    //         .then((data) => {
+    //           console.log("token data:" + data);
+    //           if (data) {
+    //             let exp = Base64.decode(data).split('"exp":')[1].split(',')[0];
+    //             if (new Date().getTime() / 1000 > exp) {
+    //               that.rootPage = LoginPage
+    //             } else {
+    //               that.rootPage = TabsPage
+    //             }
+    //           } else {
+    //             that.rootPage = LoginPage
+    //           }
+    //           that.platformReady()
+    //         });
+    //     }
+    //   });
     // that.rootPage = testPage
     // that.platformReady()
 
     this.storage.get('token')
-    .then((data) => {
-      console.log("token data:" + data);
-      // if(data){
-      //   this.http.get(ServiceConfig.SLIDE, function (data1) {
-      //     if(data1.detail == 'Signature has expired.'){
-      //       this.rootPage = LoginPage;
-      //     }else{
-      //       this.rootPage = TabsPage
-      //     }
-      //   });
-      // }else{
-      //   this.rootPage = LoginPage;
-      // }
-      if (data) {
-        this.rootPage = TabsPage
-      }else {
-        this.rootPage = LoginPage
-      }
-      this.platformReady()
-    });
-    
+      .then((data) => {
+        console.log("token data:" + data);
+        if (data) {
+          let exp = Base64.decode(data).split('"exp":')[1].split(',')[0];
+          if (new Date().getTime() / 1000 > exp) {
+            that.rootPage = LoginPage
+          } else {
+            that.rootPage = TabsPage
+          }
+        } else {
+          that.rootPage = LoginPage
+        }
+        this.platformReady()
+      });
+
 
     // decide which menu items should be hidden by current login status stored in local storage
     // this.userData.hasLoggedIn().then(hasLoggedIn => {
@@ -151,7 +151,7 @@ export class ConferenceApp {
 
       // the nav component was found using @ViewChild(Nav) setRoot on the nav to remove previous pages and only have this page we wouldn't want the back button to show in this scenario
       if (page.index) {
-        params = {tabIndex: page.index}
+        params = { tabIndex: page.index }
       }
 
       // If we are already on tabs just change the selected tab don't setRoot again, this maintains the history stack of the tabs even if changing them from the menu

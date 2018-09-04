@@ -18,19 +18,15 @@ import { DiaryArticlePage } from '../diaryarticle/diaryarticle'
 })
 export class PublishDiaryPage {
   diary: any = {
-    title: '', content: '', attachments: [
-      // {url: 'https://tse2-mm.cn.bing.net/th?id=OIP.HOPk3iifOhlWjUuLrr8imwHaEK&p=0&o=5&pid=1.1'},
-      // {url: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAEMElEQVR4nO2bsWvyQBTA70/onyC5Fuq5mMmtdOnmUBxd7OgidHFxKjh0LIXuQueCeyl0FZduiiYhoEEQKaJ8iCDyvsFeuMQ7zRn1mtiDtzQxee/37r1399JDiDPsRPrMOL+8NjGpGRr5MjAZG5hA1MTExDYxqXdx6o5nJ3d0L1LpH6OVG7BX0chX9yKVFhq+8nrqKareDiodjTxwARha8l61csogdC9S6bh73i9uONiJ9JmBk5+qFTq2mJjYCCGEOjh5q1oZZbMAp+6QiUldtSIKZ0EdmZjYqhVRKONTBwBItQKq5Q+Aqhdbega+n1/g+/nl9AA4+QIs+g7QMao+ngYAS8/AuPYKy8kU2DFrNOMPoJfNwb/3D+CNIABG1UcAAJi32tDL5qIFwMkX1rwuC2DyVvf8Zl9hc1AAdMrzDGb/HgSApWdg3mp7njNvtcG+uvmdAJx8YU3h5WQKo+ojWHrGndKyOeD7+cXzzEXfAUvPHB+ApWeEwkt081YbBsWS+/tdARh4lU/YKhImiUoBoIlsUzzzxrj2uualMAAMTMC+uvG849/7x2EB2Fc30obPGk1w8gXu87YBsPQMDMuVjTHu5Aue9w3LlcMB8Jew5WQqlFmj6ca66HnbAMwaTff6ptXisFzx6HQwAPteuW0D4E+gm8KEvVd2FgQC4I+3sKUnCABe2RPF+aBYcu9Z9J3DAwhTdoICoOIve2wlEc1Q0T2RBGBg7ypQFOdsLpDZYUYCgN/DvDjvZXPu9clbPX4AWA/zcoGlZzZejzwA1kBRGNB1ikwijAwA1kAA4F6nVSO2AGgeEM0Ael1maR0ZAKwO81Z77TobIrFMguxih5fk2Cowrr3GDwC7N+AtdNgqEbuFEHuvKMFRQMvJVGqp/usBDMsVT/bnLYLYbbFsXyAQADbBABxvM+Tfgotim71P1H8IBcDA3ho8azShl80JZ0Ivm9uqyDYA/i4wr6vk9/4unaXAAHjdXTrYpDMollxYs0ZTOFuCNkSWk6lwj9/L5jyOkfW+FAADrzcp6GDrLpuN6eA1UILkgEGxJATo7xfIlL6dAVDFZ40mLPoOLPoOt+83qj56dm88I8N2hdm4l1n4hAYgC4sdy8nU/ay1KwB/VZi32mq+C8h4y99NdvKFnXaD/sS4Kcf8GgBUeV6TUwYA2xpjvzCF1e2on8f9HpQBQKuQ/wtTpAAYeD0vyOQAJ1/Yi9eVAqCG7ALgEKLsf4ToB85NC51YA2BBqHy/cgCq5Q+AagVUyx8A48ROiqwDiOMJsYBiYmIjE5OaakUUAqijLk7dqVZEmWjJ+58jc6cXBiYmtp1InyGEEGonLhOqFTq6nF9eew9Ork6NqlfsKMannrinRzsaeVCu3BGMd6e+6PB0LA9SaeSrg5O3QsN5Z4lNTOoRhjFe6Z78NLTkvcjr/wGx8AgFSB+2ywAAAABJRU5ErkJggg=='},
-    ]
+    title: '', content: '', attachments: []
   };
-  // imageList:any = ['data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAEMElEQVR4nO2bsWvyQBTA70/onyC5Fuq5mMmtdOnmUBxd7OgidHFxKjh0LIXuQueCeyl0FZduiiYhoEEQKaJ8iCDyvsFeuMQ7zRn1mtiDtzQxee/37r1399JDiDPsRPrMOL+8NjGpGRr5MjAZG5hA1MTExDYxqXdx6o5nJ3d0L1LpH6OVG7BX0chX9yKVFhq+8nrqKareDiodjTxwARha8l61csogdC9S6bh73i9uONiJ9JmBk5+qFTq2mJjYCCGEOjh5q1oZZbMAp+6QiUldtSIKZ0EdmZjYqhVRKONTBwBItQKq5Q+Aqhdbega+n1/g+/nl9AA4+QIs+g7QMao+ngYAS8/AuPYKy8kU2DFrNOMPoJfNwb/3D+CNIABG1UcAAJi32tDL5qIFwMkX1rwuC2DyVvf8Zl9hc1AAdMrzDGb/HgSApWdg3mp7njNvtcG+uvmdAJx8YU3h5WQKo+ojWHrGndKyOeD7+cXzzEXfAUvPHB+ApWeEwkt081YbBsWS+/tdARh4lU/YKhImiUoBoIlsUzzzxrj2uualMAAMTMC+uvG849/7x2EB2Fc30obPGk1w8gXu87YBsPQMDMuVjTHu5Aue9w3LlcMB8Jew5WQqlFmj6ca66HnbAMwaTff6ptXisFzx6HQwAPteuW0D4E+gm8KEvVd2FgQC4I+3sKUnCABe2RPF+aBYcu9Z9J3DAwhTdoICoOIve2wlEc1Q0T2RBGBg7ypQFOdsLpDZYUYCgN/DvDjvZXPu9clbPX4AWA/zcoGlZzZejzwA1kBRGNB1ikwijAwA1kAA4F6nVSO2AGgeEM0Ael1maR0ZAKwO81Z77TobIrFMguxih5fk2Cowrr3GDwC7N+AtdNgqEbuFEHuvKMFRQMvJVGqp/usBDMsVT/bnLYLYbbFsXyAQADbBABxvM+Tfgotim71P1H8IBcDA3ho8azShl80JZ0Ivm9uqyDYA/i4wr6vk9/4unaXAAHjdXTrYpDMollxYs0ZTOFuCNkSWk6lwj9/L5jyOkfW+FAADrzcp6GDrLpuN6eA1UILkgEGxJATo7xfIlL6dAVDFZ40mLPoOLPoOt+83qj56dm88I8N2hdm4l1n4hAYgC4sdy8nU/ay1KwB/VZi32mq+C8h4y99NdvKFnXaD/sS4Kcf8GgBUeV6TUwYA2xpjvzCF1e2on8f9HpQBQKuQ/wtTpAAYeD0vyOQAJ1/Yi9eVAqCG7ALgEKLsf4ToB85NC51YA2BBqHy/cgCq5Q+AagVUyx8A48ROiqwDiOMJsYBiYmIjE5OaakUUAqijLk7dqVZEmWjJ+58jc6cXBiYmtp1InyGEEGonLhOqFTq6nF9eew9Ork6NqlfsKMannrinRzsaeVCu3BGMd6e+6PB0LA9SaeSrg5O3QsN5Z4lNTOoRhjFe6Z78NLTkvcjr/wGx8AgFSB+2ywAAAABJRU5ErkJggg=='];
   submitted = false
   imageList: any = []
   token: string = ""
   diaryId: number = 0
   host: string = ""
-  diaryArticle:any = {}
-  diaryMark:any = []
+  diaryArticle: any = ""
+  diaryMark: any = []
 
   constructor(public navCtrl: NavController,
     public modalCtrl: ModalController,
@@ -68,7 +64,29 @@ export class PublishDiaryPage {
       alert.present();
       return;
     }
+
+    if (this.diaryMark.length == 0) {
+      let alert = this.alertCtrl.create({
+        title: '提示',
+        subTitle: "请选择标签",
+        buttons: ['确定']
+      });
+      alert.present();
+      return;
+    }
+
+    if (this.diaryArticle == "") {
+      let alert = this.alertCtrl.create({
+        title: '提示',
+        subTitle: "请选择话题",
+        buttons: ['确定']
+      });
+      alert.present();
+      return;
+    }
+
     let that = this;
+
     let paramObj = {
       title: this.diary.title,
       content: this.diary.content,
@@ -115,6 +133,25 @@ export class PublishDiaryPage {
             })
         }
       }
+
+      that.httpClient.post("api/v1/diary/" + that.diaryId + "/change_topic/", { topic_title: that.diaryArticle }, function (data) {
+        console.log("日记话题上传:");
+        console.log(data);
+      });
+
+      that.diaryMark.forEach(function (item) {
+        let diaryMarkParam = {
+          content_type: "diary",
+          object_id: that.diaryId,
+          name: item.name,
+          level: item.level,
+          type: "content"
+        };
+        that.httpClient.post("api/v1/tag/", diaryMarkParam, function (data) {
+          console.log("日记标签上传:");
+          console.log(data);
+        });
+      });
     });
   }
 
@@ -188,7 +225,7 @@ export class PublishDiaryPage {
     let profileModal = this.modalCtrl.create(DiaryArticlePage, { userId: 8675309 });
     profileModal.onDidDismiss(data => {
       console.log(data);
-      this.diaryArticle = "#" + data;
+      this.diaryArticle = "#" + data.title;
     });
     profileModal.present();
   }

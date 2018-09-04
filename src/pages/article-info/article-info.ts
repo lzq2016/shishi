@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, NavParams, ToastController } from 'ionic-angular';
+import { NavController, NavParams, ToastController,ModalController } from 'ionic-angular';
 import { HttpClient } from '../../providers/httpClient';
 import { ServiceConfig } from '../../providers/service.config';
 import { PublishCommentPage } from '../comment/publish-comment';
@@ -30,6 +30,7 @@ export class ArticleInfoPage implements OnInit {
     public navParams: NavParams,
     public http: HttpClient,
     public toastCtrl: ToastController,
+    public modalCtrl: ModalController,
     ) {
   }
 
@@ -77,7 +78,12 @@ export class ArticleInfoPage implements OnInit {
 
   makeComment() {
     let that = this
-    this.navCtrl.push(PublishCommentPage, { id: that.contentId, content_type: 'blog', type: "comment" });
+    // this.navCtrl.push(PublishCommentPage, { id: that.contentId, content_type: 'blog', type: "comment" });
+    let profileModal = this.modalCtrl.create(PublishCommentPage, { id: that.contentId, content_type: 'blog', type: "comment" });
+    profileModal.onDidDismiss(data => {
+      console.log(data);
+    });
+    profileModal.present();
   }
 
   makecollect() {

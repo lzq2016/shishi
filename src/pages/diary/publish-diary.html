@@ -2,7 +2,7 @@
     <ion-navbar>
         <ion-title>发布笔记</ion-title>
         <ion-buttons end>
-            <button ion-button clear (click)="onPublishDiary(targetForm)" style="color: #F0C3C8;font-size: 16px;">
+            <button ion-button clear (click)="onPublishDiary(targetForm)" style="color: #ee959f;font-size: 16px;">
                 发布
             </button>
         </ion-buttons>
@@ -85,8 +85,8 @@
                 <span style="color: #8B8B8B;font-size: 14px;float: float:left;">话题</span>
                 <img src="assets/img/arrowright.png" style="width: 7px;height: 13px;float: right;margin-top: 2px;">
             </div>
-            <div style="margin-top: 10px;">
-                <span style="font-size: 15x;color: #DB999B;margin-top: 5px;margin-right: 5px;">{{diaryArticle.title}}</span>
+            <div [ngStyle]="{'margin-top':diaryArticle ? '10px' : '0' }">
+                <span style="font-size: 15x;color: #DB999B;" [ngStyle]="{'margin-top':diaryArticle ? '5px' : '0','margin-right':diaryArticle ? '5px' : '0' }">{{diaryArticle}}</span>
 
             </div>
         </div>
