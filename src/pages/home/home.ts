@@ -23,6 +23,8 @@ export class HomePage implements OnInit {
 
   @ViewChild('slider') slider: Slides;
   @ViewChild("segments") segments;
+  updateShow:Boolean = false;
+  updateVersion = 0;
   page = {
     pageNum: 0,
     pageString: '0',
@@ -133,26 +135,28 @@ export class HomePage implements OnInit {
     let self = this;
     let appVersion = ServiceConfig.appVersion;
     self.http.get("check_update/", function (data) {
+      self.updateVersion = data.version;
       if (data.version != appVersion) {
-        let alert = self.alertCtrl.create({
-          title: '提示',
-          subTitle: "有新版本请更新",
-          buttons: [
-            {
-              text: '取消',
-              handler: () => {
-                console.log('Disagree clicked');
-              }
-            },
-            {
-              text: '确定',
-              handler: () => {
-                window.open(self.host + data.url, '_system', 'location=yes');
-              }
-            }
-          ]
-        });
-        alert.present();
+        self.updateShow = true;
+        // let alert = self.alertCtrl.create({
+        //   title: '提示',
+        //   subTitle: "有新版本请更新",
+        //   buttons: [
+        //     {
+        //       text: '取消',
+        //       handler: () => {
+        //         console.log('Disagree clicked');
+        //       }
+        //     },
+        //     {
+        //       text: '确定',
+        //       handler: () => {
+        //         window.open(self.host + data.url, '_system', 'location=yes');
+        //       }
+        //     }
+        //   ]
+        // });
+        // alert.present();
       }
     });
   }
@@ -297,5 +301,9 @@ export class HomePage implements OnInit {
       }
       this.segments.nativeElement.scrollLeft = newX;
     }, 1000 / 60); // 60 fps
+  }
+
+  cancelUpdate(){
+    this.updateShow = false;
   }
 }

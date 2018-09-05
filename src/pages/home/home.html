@@ -89,4 +89,12 @@
     <ion-infinite-scroll [enabled]="enabled" threshold="100px" (ionInfinite)="$event.waitFor(doInfinite($event))">
         <ion-infinite-scroll-content></ion-infinite-scroll-content>
     </ion-infinite-scroll> -->
+    <div style="position: fixed;top: 0;left: 0;width: 100%;height: 100%;z-index: 1000;" *ngIf="updateShow"></div>
+    <div style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);background: #fff;z-index: 10000;width: 283px;height: 170px;    border-top-left-radius: 5px;border-top-right-radius: 5px;" *ngIf="updateShow">
+        <img src="assets/img/update.png" style="width: 283px;height: 170px;">
+        <p style="font-size: 20px;color: #CD6767;margin:0;text-align: center;position: absolute;top: 72px;left: 74px;">升级到最新版本</p>
+        <p style="font-size: 14px;color: #CD6767;text-align: center;margin: 0;position: absolute;top: 100px;left: 83px;">(最新版本{{updateVersion}})</p>
+        <span style="font-size: 18px;color:#A3A1A1; position: absolute;top: 130px;left: 38px;" (click)="cancelUpdate()">取消</span>
+        <span style="font-size: 18px;color:#F1B248;position: absolute;top: 130px;right: 38px;">立即下载</span>
+    </div>
 </ion-content>

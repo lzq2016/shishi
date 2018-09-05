@@ -1,7 +1,7 @@
 export class ServiceConfig {
     private static ISDEBUG = false;
     public static PAGESIZE = 10;
-    public static appVersion = "1.0"
+    public static appVersion = "0.9"
     public static getUrl() {
         if (this.ISDEBUG) {
             //测试环境URL
