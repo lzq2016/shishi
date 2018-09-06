@@ -11,7 +11,8 @@
                 <p style="font-size: 14px;color: #999999;margin: 0;">{{hotUser.nickname}}</p>
                 <p style="font-size: 12px;color: #999999;margin: 0;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">{{hotUser.brief}}</p>
             </div>
-            <span style="font-size: 13px;display: inline-block;color: #F4A9A9;border: 1px solid #F4A9A9;padding: 4px 10px;float: right;border-radius: 3px;margin-top: 3px;">+关注</span>
+            <span style="font-size: 13px;display: inline-block;color: #F4A9A9;border: 1px solid #F4A9A9;padding: 4px 10px;float: right;border-radius: 3px;margin-top: 3px;" *ngIf="!attentionHotUser" (click)="goHotUserAttention()">+关注</span>
+            <span style="font-size: 13px;display: inline-block;color: #F4A9A9;border: 1px solid #F4A9A9;padding: 4px 10px;float: right;border-radius: 3px;margin-top: 3px;" *ngIf="attentionHotUser" (click)="concelHotUserAttention()">已关注</span>
         </div>
         <p style="font-size: 12px;color: #CDCDCD;margin: 0;margin-left: 16px;padding-bottom: 10px;">30篇相关文章，4350位用户关注了她</p>
     </div>

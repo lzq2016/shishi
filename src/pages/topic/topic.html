@@ -6,7 +6,7 @@
 <ion-content>
     <div class="bannerWrap" [ngStyle]="{'background-image': 'url('+ topicInfo.cover + ')'}">
         <span style="position: absolute;bottom: 10px;left: 10px;font-size: 22px;color: #fff;">#{{topicInfo.title}}</span>
-        <span style="display: inline-block;font-size: 14px;color: #EF7A7A;background: #fff;padding: 8px 18px;position: absolute;bottom: 10px;right: 10px;border-radius: 10px;border: 1px solid #EF7A7A;" *ngIf="!hasAttention" (click)="makeAttention()">关注话题</span>
+        <span style="display: inline-block;font-size: 14px;color: #fff;background: #EF7A7A;padding: 8px 18px;position: absolute;bottom: 10px;right: 10px;border-radius: 10px;border: 1px solid #EF7A7A;" *ngIf="!hasAttention" (click)="makeAttention()">关注话题</span>
         <span style="display: inline-block;font-size: 14px;color: #fff;background: #EF7A7A;padding: 8px 18px;position: absolute;bottom: 10px;right: 10px;border-radius: 10px;" *ngIf="hasAttention" (click)="makeAttention()">已关注话题</span>
     </div>
     <ion-tabs tabsPlacement="top" mode="md">

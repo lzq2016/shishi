@@ -63,8 +63,9 @@ export class TopicPage implements OnInit, OnDestroy {
 
   makeAttention(){
     let self = this;
-    this.http.post("api/v1/topic/" + self.topicId + "/follow/",function(data){
+    this.http.post("api/v1/topic/" + self.topicId + "/follow/",{id:self.topicId},function(data){
       console.log(data);
+      self.hasAttention = !self.hasAttention;
     });
   }
 

@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core'
 import { HttpClient } from '../../../providers/httpClient';
-import { NavParams, ModalController } from 'ionic-angular';
+import { NavParams, ModalController,ToastController } from 'ionic-angular';
 import { ServiceConfig } from '../../../providers/service.config';
 import { ActiveUserPage } from '../../activeuser/activeuser'
 
@@ -15,11 +15,13 @@ export class TopicBriefPage implements OnInit, OnDestroy {
   topicInfo = {}
   hotUser = {}
   relateTopic = []
+  attentionHotUser = false;
 
   constructor(
     public http: HttpClient,
     public navParams: NavParams,
-    public modalCtrl: ModalController) {
+    public modalCtrl: ModalController,
+    public toastCtrl: ToastController) {
   }
 
   ngOnInit() {
@@ -43,7 +45,8 @@ export class TopicBriefPage implements OnInit, OnDestroy {
     });
     self.http.get("api/v1/topic/" + self.topicId + "/hot_users/", function (data) {
       console.log(data);
-      self.hotUser = data[0]
+      self.hotUser = data[0];
+      self.checkHotUserAttention(self.hotUser["id"]);
     });
 
   }
@@ -78,6 +81,40 @@ export class TopicBriefPage implements OnInit, OnDestroy {
     self.http.post("api/v1/topic/" + id + "/follow/", { id: id }, function (data) {
       console.log(data);
       self.relateTopic[index]["isAttention"] = false;
+    });
+  }
+
+  checkHotUserAttention(id) {
+    let self = this;
+    self.http.get(ServiceConfig.ISATTENTION + "?user_id=" + id, function (data) {
+      console.log(data);
+      self.attentionHotUser = data.is_follower
+    });
+  }
+
+  goHotUserAttention() {
+    let self = this;
+    self.http.post(ServiceConfig.FOLLOWUSER, { user_id: self.hotUser["id"] }, function (data) {
+      console.log(data);
+      debugger;
+      if(data.detail){
+        const toast = self.toastCtrl.create({
+          message: data.detail,
+          duration: 3000,
+          position: 'middle'
+        });
+        toast.present();
+      }else{
+        self.attentionHotUser = true;
+      }
+    });
+  }
+
+  concelHotUserAttention() {
+    let self = this;
+    self.http.post(ServiceConfig.CANCELATTENTION, { idol_id: self.hotUser["id"] }, function (data) {
+      console.log(data);
+      self.attentionHotUser = false;
     });
   }
 
